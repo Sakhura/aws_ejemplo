@@ -501,7 +501,7 @@ export default function Modulo2Clase5() {
           <Nota><p>Ahora ya conocemos las piezas:</p></Nota>
           <Flow steps={[
             { icon: 'lock', label: 'IAM' },
-            { icon: 'user', label: 'Identidades · 🎭 Roles · 📜 Políticas' },
+            { icon: 'user', label: 'Identidades · Roles · Políticas' },
             { icon: 'target', label: 'Permisos' },
             { icon: 'cloud', label: 'Recursos AWS' },
           ]} />

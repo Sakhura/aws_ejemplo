@@ -301,7 +301,7 @@ export default function Modulo3Clase4() {
           <Nota><p>Este dibujo debería quedar visible durante el laboratorio.</p></Nota>
           <Flow steps={[
             { icon: 'map-pin', label: 'INTERNET' },
-            { icon: 'globe', label: 'HTTP 80 · 👩 Admin 22' },
+            { icon: 'globe', label: 'HTTP 80 · Admin 22' },
             { icon: 'shield', label: 'Security Group' },
             { icon: 'server', label: 'EC2' },
           ]} />
@@ -532,7 +532,7 @@ export default function Modulo3Clase4() {
         <div className="bridge-callout">
           <div className="lesson-eyebrow"><Icon name="arrow-right" /> Puente hacia la Clase 5</div>
           <Nota><p>Cerraría mostrando nuestra instancia:</p></Nota>
-          <Flow steps={[{ icon: 'map-pin', label: 'Usuario' }, { icon: 'shield', label: 'Security Group' }, { icon: 'server', label: 'EC2' }, { n: '?', label: '💾 ???' }]} />
+          <Flow steps={[{ icon: 'map-pin', label: 'Usuario' }, { icon: 'shield', label: 'Security Group' }, { icon: 'server', label: 'EC2' }, { n: '?', label: '???' }]} />
           <Dialogo>"Ya podemos llegar de forma controlada a nuestro servidor. Pero ¿dónde está guardado su sistema operativo y qué pasa con sus archivos si detenemos la instancia?"</Dialogo>
           <p>Aquí aparece la siguiente pieza:</p>
           <ConceptBadge>Módulo 3 · Clase 5 — Amazon EBS: almacenamiento, volúmenes y snapshots</ConceptBadge>
