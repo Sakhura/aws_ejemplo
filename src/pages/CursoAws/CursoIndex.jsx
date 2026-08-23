@@ -138,6 +138,17 @@ export default function CursoIndex() {
         Quién puede entrar a la cuenta de AWS y qué puede hacer una vez dentro: usuarios, grupos y el principio de mínimo privilegio.
       </p>
       <ClassGrid classes={MODULO_2} />
+
+      <h3 style={{ margin: 'var(--space-8) 0 4px' }}>Módulo 3 · Amazon EC2</h3>
+      <p className="view-intro" style={{ marginBottom: 'var(--space-4)' }}>
+        Servidores virtuales en AWS: elegir, crear, proteger y administrar una instancia EC2, hasta publicar tu propia página web. Las clases todavía no están publicadas.
+      </p>
+      <Link to="/aprendizaje/aws-desde-cero/modulo-3" className="card elev-sm" style={{ textDecoration: 'none', color: 'inherit', display: 'block', maxWidth: 420 }}>
+        <div className="card-kicker">Vista previa · 7 clases planificadas</div>
+        <div className="card-title">Hoja de ruta del Módulo 3</div>
+        <p className="card-body">De "¿qué es EC2?" al laboratorio integrador: crear, proteger y publicar tu primer servidor.</p>
+        <div className="course-card-req">Clases individuales: próximamente</div>
+      </Link>
     </div>
   );
 }
