@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import {
   Nota, Dialogo, ConceptBadge, RoleGrid, Flow, InfoBox, CompareCols, QaItem, Reveal, Quiz,
 } from './lessonComponents.jsx';
@@ -564,7 +565,9 @@ export default function Modulo3Clase5() {
           <Nota>
             <p>Esa clase integrará estados de instancia, métricas básicas con CloudWatch, utilización de CPU, revisión de recursos y disciplina de costos, manteniendo exactamente este mismo formato.</p>
           </Nota>
-          <span className="tag tag-outline">Módulo 3 · Clase 6 · próximamente</span>
+          <Link to="/aprendizaje/aws-desde-cero/modulo-3/clase-6" className="btn btn-primary" style={{ marginTop: 'var(--space-2)' }}>
+            Ir a Clase 6: Estados, monitoreo, costos y buenas prácticas →
+          </Link>
         </div>
 
       </div>

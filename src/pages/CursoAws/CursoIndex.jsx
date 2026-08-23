@@ -143,6 +143,14 @@ const MODULO_3 = [
     resumen: 'EC2 procesa; EBS guarda. Qué persiste al detener una instancia, Delete on termination, y por qué un snapshot no es "otro disco".',
     requisito: 'Módulo 3 · Clases 1 a 4',
   },
+  {
+    to: '/aprendizaje/aws-desde-cero/modulo-3/clase-6',
+    numero: 6,
+    duracion: '45 min',
+    titulo: 'Estados, monitoreo, costos y buenas prácticas de EC2',
+    resumen: 'Crear un recurso es solo el comienzo: estados de instancia, CloudWatch, CPUUtilization, modelos de compra y la disciplina de limpieza.',
+    requisito: 'Módulo 3 · Clases 1 a 5',
+  },
 ];
 
 function ClassGrid({ classes }) {
