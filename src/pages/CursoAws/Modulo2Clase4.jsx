@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import {
   Nota, Dialogo, ConceptBadge, StrikeChip, RoleGrid, Flow, InfoBox, CompareCols, QaItem, Reveal, Quiz,
 } from './lessonComponents.jsx';
@@ -520,7 +521,9 @@ export default function Modulo2Clase4() {
           <Dialogo>¿Cómo protegemos correctamente el acceso a estas identidades?</Dialogo>
           <p>Contraseñas. MFA. Credenciales. Access Keys. Rotación. Y algunas malas prácticas que conviene evitar antes de que provoquen incendios digitales. 🔥🧯</p>
           <ConceptBadge>🛡️ Módulo 2 · Clase 5 — Credenciales, contraseñas, MFA y buenas prácticas de seguridad</ConceptBadge>
-          <span className="tag tag-outline">Módulo 2 · Clase 5 · próximamente</span>
+          <Link to="/aprendizaje/aws-desde-cero/modulo-2/clase-5" className="btn btn-primary" style={{ marginTop: 'var(--space-2)' }}>
+            Ir a Clase 5: Credenciales, contraseñas, MFA y buenas prácticas →
+          </Link>
         </div>
 
       </div>

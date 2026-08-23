@@ -84,6 +84,14 @@ const MODULO_2 = [
     resumen: 'Qué hacer cuando quien necesita permiso es un servidor y no una persona: roles, confianza y credenciales temporales.',
     requisito: 'Clases 1 a 3 de este módulo',
   },
+  {
+    to: '/aprendizaje/aws-desde-cero/modulo-2/clase-5',
+    numero: 5,
+    duracion: '45 min',
+    titulo: 'Credenciales, contraseñas, MFA y buenas prácticas',
+    resumen: 'Cómo proteger las identidades que construimos en las clases anteriores: contraseñas, MFA, Access Keys y los errores más comunes.',
+    requisito: 'Clases 1 a 4 de este módulo',
+  },
 ];
 
 function ClassGrid({ classes }) {
