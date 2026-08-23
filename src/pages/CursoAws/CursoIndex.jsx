@@ -162,6 +162,49 @@ const MODULO_3 = [
   },
 ];
 
+const MODULO_4 = [
+  {
+    to: '/aprendizaje/aws-desde-cero/modulo-4/clase-1',
+    numero: 1,
+    duracion: '45 min',
+    titulo: '¿Qué es Amazon S3? Buckets, objetos y almacenamiento de objetos',
+    resumen: 'De discos conectados a servidores a almacenamiento de objetos: qué es un bucket, un objeto y una key, y en qué se diferencia S3 de EBS.',
+    requisito: 'Módulo 3 completado',
+  },
+  {
+    to: '/aprendizaje/aws-desde-cero/modulo-4/clase-2',
+    numero: 2,
+    duracion: '45 min',
+    titulo: 'Crear nuestro primer bucket y trabajar con objetos',
+    resumen: 'Primer laboratorio S3 completo: crear bucket, subir, descargar, copiar y eliminar objetos, comprendiendo keys y prefijos.',
+    requisito: 'Módulo 4 · Clase 1',
+  },
+  {
+    to: '/aprendizaje/aws-desde-cero/modulo-4/clase-3',
+    numero: 3,
+    duracion: '45 min',
+    titulo: 'Permisos, Bucket Policies y acceso público en Amazon S3',
+    resumen: 'IAM Policies vs. Bucket Policies, Principal/Action/Resource/Effect, Block Public Access y por qué "privado" no significa "inutilizable".',
+    requisito: 'Módulo 4 · Clases 1 y 2',
+  },
+  {
+    to: '/aprendizaje/aws-desde-cero/modulo-4/clase-4',
+    numero: 4,
+    duracion: '45 min',
+    titulo: 'Versioning, recuperación y protección frente a errores',
+    resumen: 'Version ID, Current vs. Noncurrent, Delete Marker, recuperación de versiones y por qué Versioning no es un backup perfecto.',
+    requisito: 'Módulo 4 · Clases 1 a 3',
+  },
+  {
+    to: '/aprendizaje/aws-desde-cero/modulo-4/clase-5',
+    numero: 5,
+    duracion: '45 min',
+    titulo: 'Storage Classes y Lifecycle, almacenar de forma inteligente',
+    resumen: 'Standard, IA, One Zone-IA, Intelligent-Tiering y Glacier, más reglas de Lifecycle para mover o eliminar datos automáticamente.',
+    requisito: 'Módulo 4 · Clases 1 a 4',
+  },
+];
+
 function ClassGrid({ classes }) {
   return (
     <div className="course-grid">
@@ -203,10 +246,16 @@ export default function CursoIndex() {
       <p className="view-intro" style={{ marginBottom: 'var(--space-4)' }}>
         Servidores virtuales en AWS: elegir, crear, proteger y administrar una instancia EC2, hasta publicar tu propia página web.
       </p>
-      <Link to="/aprendizaje/aws-desde-cero/modulo-3" className="btn btn-ghost" style={{ marginBottom: 'var(--space-4)', display: 'inline-block' }}>
-        Ver la hoja de ruta completa del módulo (7 clases planificadas) →
-      </Link>
       <ClassGrid classes={MODULO_3} />
+
+      <h3 style={{ margin: 'var(--space-8) 0 4px' }}>Módulo 4 · Amazon S3</h3>
+      <p className="view-intro" style={{ marginBottom: 'var(--space-4)' }}>
+        Almacenamiento de objetos: buckets, keys, permisos, versionado, clases de almacenamiento y Lifecycle.
+      </p>
+      <Link to="/aprendizaje/aws-desde-cero/modulo-4" className="btn btn-ghost" style={{ marginBottom: 'var(--space-4)', display: 'inline-block' }}>
+        Ver la hoja de ruta completa del módulo (6 clases planificadas) →
+      </Link>
+      <ClassGrid classes={MODULO_4} />
     </div>
   );
 }
