@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import {
   Nota, Dialogo, ConceptBadge, Flow, QaItem, Reveal, Quiz,
 } from './lessonComponents.jsx';
@@ -376,7 +377,9 @@ export default function Clase3() {
           <Nota>
             <p>Esta clase será especialmente importante antes de presentar servicios como Amazon S3 y Amazon RDS, porque primero entenderán qué problema resuelve cada tipo de almacenamiento y después aprenderán el nombre del servicio AWS.</p>
           </Nota>
-          <span className="tag tag-outline">Clase 4 · próximamente</span>
+          <Link to="/aprendizaje/aws-desde-cero/clase-4" className="btn btn-primary" style={{ marginTop: 'var(--space-2)' }}>
+            Ir a Clase 4: Archivos, almacenamiento y bases de datos →
+          </Link>
         </div>
 
       </div>

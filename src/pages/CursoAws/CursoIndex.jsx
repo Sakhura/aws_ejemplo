@@ -25,6 +25,14 @@ const CLASES = [
     resumen: 'Qué podemos arrendar exactamente en la nube: infraestructura, plataforma o software, con la analogía de una pizzería.',
     requisito: 'Clases 1 y 2',
   },
+  {
+    to: '/aprendizaje/aws-desde-cero/clase-4',
+    numero: 4,
+    duracion: '45 min',
+    titulo: 'Archivos, almacenamiento y bases de datos',
+    resumen: 'La diferencia entre guardar un archivo y organizar información consultable, antes de conocer Amazon S3 y Amazon RDS.',
+    requisito: 'Clases 1, 2 y 3',
+  },
 ];
 
 export default function CursoIndex() {
