@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import {
   Nota, Dialogo, ConceptBadge, StrikeChip, RoleGrid, Flow, CompareCols,
   QaItem, Reveal, Quiz, TrueFalseQuiz,
@@ -402,7 +403,9 @@ export default function Clase5() {
           <p>Y preguntaría:</p>
           <Dialogo>"¿Podemos contar ahora la historia completa desde que una persona abre una página hasta que recibe la información?"</Dialogo>
           <p>Esa será la misión final del módulo.</p>
-          <span className="tag tag-outline">Clase 6 · próximamente</span>
+          <Link to="/aprendizaje/aws-desde-cero/clase-6" className="btn btn-primary" style={{ marginTop: 'var(--space-2)' }}>
+            Ir a Clase 6: Cómo se conecta todo →
+          </Link>
         </div>
 
       </div>

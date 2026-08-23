@@ -41,6 +41,14 @@ const CLASES = [
     resumen: 'Por qué no conviene depender de un único servidor ni de un único lugar: redundancia, disponibilidad y la analogía de los huevos.',
     requisito: 'Clases 1 a 4',
   },
+  {
+    to: '/aprendizaje/aws-desde-cero/clase-6',
+    numero: 6,
+    duracion: '45 min',
+    titulo: 'Cómo se conecta todo',
+    resumen: 'Clase de integración y evaluación final del módulo: reconstruimos el recorrido completo, desde el navegador hasta la respuesta.',
+    requisito: 'Clases 1 a 5',
+  },
 ];
 
 export default function CursoIndex() {
