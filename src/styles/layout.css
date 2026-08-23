@@ -239,6 +239,101 @@
 .checklist-item-name { font-size: 13.5px; }
 .checklist-item-meta { font-size: 11.5px; color: color-mix(in srgb, var(--color-text) 55%, transparent); }
 
+/* — lesson / course content (Aprendizaje › AWS desde cero) — */
+.lesson-eyebrow { font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-accent); margin-bottom: 4px; }
+.lesson-subtitle { font-size: 15px; color: color-mix(in srgb, var(--color-text) 80%, transparent); margin: 2px 0 var(--space-6); max-width: 68ch; }
+
+.lesson-meta { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: var(--space-4); margin-bottom: var(--space-8); max-width: 1080px; }
+.lesson-meta-item { padding: var(--space-3) var(--space-4); border-radius: var(--radius-md); background: var(--color-surface); box-shadow: var(--shadow-sm); }
+.lesson-meta-label { font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-accent); margin-bottom: 3px; }
+.lesson-meta-value { font-size: 13.5px; }
+
+.lesson-body { max-width: 760px; display: flex; flex-direction: column; }
+.lesson-section { padding: var(--space-8) 0; border-bottom: 1px solid var(--color-divider); }
+.lesson-section:first-child { padding-top: 0; }
+.lesson-section:last-child { border-bottom: none; }
+.lesson-section h3 { display: flex; align-items: baseline; gap: 8px; }
+.lesson-section > p { font-size: 14.5px; line-height: 1.65; color: color-mix(in srgb, var(--color-text) 82%, transparent); }
+.lesson-section .plain-list { margin: var(--space-2) 0 var(--space-4); padding-left: 20px; font-size: 14.5px; line-height: 1.7; color: color-mix(in srgb, var(--color-text) 82%, transparent); }
+.lesson-section .plain-list li { margin-bottom: 2px; }
+
+.note-block { display: flex; gap: var(--space-4); padding: var(--space-4); border-radius: var(--radius-md); background: color-mix(in srgb, var(--color-accent) 6%, var(--color-surface)); box-shadow: inset 2px 0 0 var(--color-accent); margin: var(--space-4) 0; }
+.note-tag { flex: none; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-accent); font-weight: 600; white-space: nowrap; padding-top: 2px; }
+.note-text { font-size: 14px; line-height: 1.65; color: color-mix(in srgb, var(--color-text) 85%, transparent); }
+.note-text p { margin: 0 0 8px; }
+.note-text p:last-child { margin-bottom: 0; }
+.note-text strong { color: var(--color-accent-200); font-weight: 600; }
+
+.dialogo { margin: var(--space-3) 0; padding: var(--space-3) var(--space-4); border-left: 3px solid var(--color-accent-600); font-style: italic; font-size: 14px; color: color-mix(in srgb, var(--color-text) 85%, transparent); background: color-mix(in srgb, var(--color-text) 3%, transparent); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; }
+
+.concept-badge { display: inline-flex; align-items: center; gap: 8px; padding: var(--space-3) var(--space-6); border-radius: var(--radius-lg); background: color-mix(in srgb, var(--color-accent) 16%, var(--color-surface)); box-shadow: inset 0 0 0 1px var(--color-accent); font-family: var(--font-heading); font-weight: 500; font-size: 16px; color: var(--color-accent-100); margin: var(--space-3) 0; }
+.concept-badge.is-danger { background: color-mix(in srgb, var(--color-danger-border) 18%, var(--color-surface)); box-shadow: inset 0 0 0 1px var(--color-danger-border); color: var(--color-danger-title); }
+.concept-badge.is-warning { background: color-mix(in srgb, var(--color-warning-base) 18%, var(--color-surface)); box-shadow: inset 0 0 0 1px var(--color-warning-base); color: var(--color-warning-icon); }
+
+.info-box { padding: var(--space-4) var(--space-6); border-radius: var(--radius-md); background: var(--color-neutral-900); box-shadow: inset 0 0 0 1px var(--color-divider); margin: var(--space-4) 0; max-width: 420px; }
+.info-box-title { font-family: var(--font-heading); font-weight: 500; font-size: 13.5px; color: var(--color-accent-200); margin-bottom: var(--space-3); text-align: center; }
+.info-box-row { display: flex; align-items: center; gap: 8px; font-size: 13px; padding: 3px 0; color: color-mix(in srgb, var(--color-text) 82%, transparent); }
+
+.compare-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: var(--space-4); margin: var(--space-4) 0; }
+.compare-col { padding: var(--space-4); border-radius: var(--radius-md); background: var(--color-surface); box-shadow: var(--shadow-sm); }
+.compare-col-head { display: flex; align-items: center; gap: 8px; font-family: var(--font-heading); font-weight: 500; font-size: 14.5px; margin-bottom: var(--space-3); }
+.compare-col ul { margin: 0; padding-left: 18px; font-size: 13px; line-height: 1.7; color: color-mix(in srgb, var(--color-text) 80%, transparent); }
+
+.capacity-row { display: flex; align-items: center; gap: var(--space-3); padding: var(--space-2) 0; font-size: 13.5px; }
+.capacity-row-label { min-width: 160px; color: color-mix(in srgb, var(--color-text) 70%, transparent); }
+.capacity-row-icons { font-size: 18px; letter-spacing: 2px; }
+
+.strike-chip { display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; border-radius: var(--radius-sm); background: color-mix(in srgb, var(--color-danger-border) 14%, transparent); color: var(--color-danger-title); font-size: 13px; text-decoration: line-through; margin: var(--space-2) 0; }
+
+.tf-item { display: flex; flex-direction: column; gap: 8px; padding: var(--space-3) var(--space-4); border-radius: var(--radius-md); background: var(--color-surface); box-shadow: var(--shadow-sm); margin-bottom: var(--space-3); }
+.tf-statement { font-size: 13.5px; font-weight: 500; }
+.tf-options { display: flex; gap: var(--space-2); }
+.tf-btn { padding: 6px 16px; border-radius: var(--radius-md); border: 1px solid var(--color-divider); background: transparent; color: var(--color-text); cursor: pointer; font-size: 13px; font-family: var(--font-body); }
+.tf-btn:hover:not(:disabled) { background: color-mix(in srgb, var(--color-text) 6%, transparent); }
+.tf-btn:disabled { cursor: default; }
+.tf-btn.is-correct { border-color: var(--color-accent); background: color-mix(in srgb, var(--color-accent) 16%, transparent); color: var(--color-accent-200); }
+.tf-btn.is-wrong { border-color: var(--color-danger-border); background: color-mix(in srgb, var(--color-danger-border) 14%, transparent); color: var(--color-danger-title); }
+
+.course-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: var(--space-6); max-width: 1080px; }
+.course-card-req { font-size: 11.5px; color: color-mix(in srgb, var(--color-text) 55%, transparent); margin-top: 2px; }
+
+.role-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: var(--space-3); margin: var(--space-4) 0; }
+.role-chip { padding: var(--space-3); border-radius: var(--radius-md); background: var(--color-surface); box-shadow: var(--shadow-sm); text-align: center; }
+.role-chip-emoji { font-size: 22px; display: block; margin-bottom: 4px; }
+.role-chip-label { font-family: var(--font-heading); font-weight: 500; font-size: 13px; }
+.role-chip-desc { font-size: 11.5px; color: color-mix(in srgb, var(--color-text) 60%, transparent); }
+
+.flow { display: flex; flex-direction: column; align-items: stretch; margin: var(--space-4) 0; max-width: 420px; }
+.flow-step { display: flex; align-items: flex-start; gap: var(--space-3); padding: var(--space-3) var(--space-4); border-radius: var(--radius-md); background: var(--color-surface); box-shadow: var(--shadow-sm); }
+.flow-step-badge { flex: none; width: 26px; height: 26px; border-radius: 50%; display: grid; place-items: center; font-size: 15px; background: var(--color-neutral-900); }
+.flow-step-badge.is-numeral { font-size: 12px; font-weight: 600; color: var(--color-accent); box-shadow: inset 0 0 0 1px var(--color-accent); }
+.flow-step-label { font-size: 13.5px; font-weight: 500; }
+.flow-step-caption { font-size: 12px; font-style: italic; color: color-mix(in srgb, var(--color-text) 65%, transparent); margin-top: 2px; }
+.flow-arrow { align-self: center; color: var(--color-accent); font-size: 16px; line-height: 1; padding: 4px 0; }
+
+.qa-item { padding: var(--space-3) var(--space-4); border-radius: var(--radius-md); background: var(--color-surface); box-shadow: var(--shadow-sm); margin-bottom: var(--space-3); }
+.qa-question { font-size: 13.5px; font-weight: 500; margin-bottom: 6px; }
+.qa-answer { font-size: 13px; color: var(--color-accent-300); padding-top: 6px; border-top: 1px solid var(--color-divider); }
+
+.quiz-card { padding: var(--space-4); border-radius: var(--radius-md); background: var(--color-surface); box-shadow: var(--shadow-sm); margin-bottom: var(--space-4); }
+.quiz-question { font-family: var(--font-heading); font-weight: 500; font-size: 14.5px; margin-bottom: var(--space-3); }
+.quiz-options { display: flex; flex-direction: column; gap: var(--space-2); }
+.quiz-option { text-align: left; padding: var(--space-2) var(--space-3); border-radius: var(--radius-md); border: 1px solid var(--color-divider); background: transparent; color: var(--color-text); cursor: pointer; font-size: 13.5px; font-family: var(--font-body); }
+.quiz-option:hover:not(:disabled) { background: color-mix(in srgb, var(--color-text) 6%, transparent); }
+.quiz-option:disabled { cursor: default; }
+.quiz-option.is-correct { border-color: var(--color-accent); background: color-mix(in srgb, var(--color-accent) 16%, transparent); color: var(--color-accent-200); }
+.quiz-option.is-wrong { border-color: var(--color-danger-border); background: color-mix(in srgb, var(--color-danger-border) 14%, transparent); color: var(--color-danger-title); }
+.quiz-feedback { margin-top: var(--space-2); font-size: 12.5px; }
+.quiz-feedback.is-correct-fb { color: var(--color-accent-300); }
+.quiz-feedback.is-wrong-fb { color: var(--color-danger-title); }
+.quiz-score { font-size: 13px; color: color-mix(in srgb, var(--color-text) 70%, transparent); margin-top: var(--space-2); }
+
+.reveal-content { margin-top: var(--space-3); }
+
+.lesson-summary-table { max-width: 640px; margin: var(--space-4) 0 var(--space-6); }
+
+.bridge-callout { padding: var(--space-6); border-radius: var(--radius-lg); background: color-mix(in srgb, var(--color-accent) 10%, var(--color-surface)); box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--color-accent) 40%, transparent); margin-top: var(--space-4); }
+
 @media (max-width: 1000px) {
   .content-grid { grid-template-columns: minmax(0, 1fr); }
   .content-card.form-card { min-width: 0; }

@@ -11,6 +11,7 @@ const accesoItems = [
 ];
 
 const aprendizajeItems = [
+  { to: '/aprendizaje/aws-desde-cero', label: 'AWS desde cero' },
   { to: '/aprendizaje/laboratorios', label: 'Laboratorios guiados' },
   { to: '/aprendizaje/errores', label: 'Errores frecuentes' },
   { to: '/aprendizaje/glosario', label: 'Glosario' },

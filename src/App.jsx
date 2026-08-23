@@ -5,6 +5,9 @@ import Grupos from './pages/Grupos.jsx';
 import Roles from './pages/Roles.jsx';
 import Politicas from './pages/Politicas.jsx';
 import Proveedores from './pages/Proveedores.jsx';
+import CursoIndex from './pages/CursoAws/CursoIndex.jsx';
+import Clase1 from './pages/CursoAws/Clase1.jsx';
+import Clase2 from './pages/CursoAws/Clase2.jsx';
 import Laboratorios from './pages/Laboratorios.jsx';
 import Errores from './pages/Errores.jsx';
 import Glosario from './pages/Glosario.jsx';
@@ -20,6 +23,9 @@ export default function App() {
           <Route path="iam/roles" element={<Roles />} />
           <Route path="iam/politicas" element={<Politicas />} />
           <Route path="iam/proveedores" element={<Proveedores />} />
+          <Route path="aprendizaje/aws-desde-cero" element={<CursoIndex />} />
+          <Route path="aprendizaje/aws-desde-cero/clase-1" element={<Clase1 />} />
+          <Route path="aprendizaje/aws-desde-cero/clase-2" element={<Clase2 />} />
           <Route path="aprendizaje/laboratorios" element={<Laboratorios />} />
           <Route path="aprendizaje/errores" element={<Errores />} />
           <Route path="aprendizaje/glosario" element={<Glosario />} />
