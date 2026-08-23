@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import {
   Nota, Dialogo, ConceptBadge, RoleGrid, Flow, InfoBox, CompareCols, QaItem, Reveal, Quiz,
 } from './lessonComponents.jsx';
@@ -507,7 +508,9 @@ export default function Modulo2Clase5() {
           <p>Y sabemos protegerlas con: 🔐 buenas prácticas, 📱 MFA, 🎯 mínimo privilegio, 🎭 acceso temporal cuando corresponde.</p>
           <p>Ahora falta comprobar si el estudiante realmente puede tomar decisiones de seguridad, no simplemente repetir definiciones.</p>
           <ConceptBadge>🏆 Módulo 2 · Clase 6 — Laboratorio y desafío final de IAM</ConceptBadge>
-          <span className="tag tag-outline">Módulo 2 · Clase 6 · próximamente</span>
+          <Link to="/aprendizaje/aws-desde-cero/modulo-2/clase-6" className="btn btn-primary" style={{ marginTop: 'var(--space-2)' }}>
+            Ir a Clase 6: Laboratorio y desafío final de IAM →
+          </Link>
         </div>
 
       </div>

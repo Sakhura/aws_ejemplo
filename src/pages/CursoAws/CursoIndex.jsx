@@ -92,6 +92,14 @@ const MODULO_2 = [
     resumen: 'Cómo proteger las identidades que construimos en las clases anteriores: contraseñas, MFA, Access Keys y los errores más comunes.',
     requisito: 'Clases 1 a 4 de este módulo',
   },
+  {
+    to: '/aprendizaje/aws-desde-cero/modulo-2/clase-6',
+    numero: 6,
+    duracion: '45 min',
+    titulo: 'Laboratorio y desafío final de IAM',
+    resumen: 'Clase de cierre del módulo: resolvemos el caso completo de NovaCloud aplicando usuarios, grupos, roles, políticas, MFA y mínimo privilegio.',
+    requisito: 'Clases 1 a 5 de este módulo',
+  },
 ];
 
 function ClassGrid({ classes }) {
