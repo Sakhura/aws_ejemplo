@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import {
   Nota, Dialogo, ConceptBadge, RoleGrid, Flow, InfoBox, CompareCols, QaItem, Reveal, Quiz,
 } from './lessonComponents.jsx';
@@ -479,7 +480,9 @@ export default function Modulo2Clase3() {
           <p>¿Le creamos un usuario? ¿Le damos una contraseña? ¿Guardamos las credenciales dentro del servidor?</p>
           <p>🚨 Mejor no. Aquí aparece una de las piezas más importantes de IAM:</p>
           <ConceptBadge>🎭 Módulo 2 · Clase 4 — Roles IAM: permisos temporales sin compartir credenciales</ConceptBadge>
-          <span className="tag tag-outline">Módulo 2 · Clase 4 · próximamente</span>
+          <Link to="/aprendizaje/aws-desde-cero/modulo-2/clase-4" className="btn btn-primary" style={{ marginTop: 'var(--space-2)' }}>
+            Ir a Clase 4: Roles IAM, permisos temporales sin compartir credenciales →
+          </Link>
         </div>
 
       </div>

@@ -76,6 +76,14 @@ const MODULO_2 = [
     resumen: 'Cómo le decimos a AWS qué puede hacer un usuario o grupo, leyendo la primera política en JSON sin que dé miedo.',
     requisito: 'Clases 1 y 2 de este módulo',
   },
+  {
+    to: '/aprendizaje/aws-desde-cero/modulo-2/clase-4',
+    numero: 4,
+    duracion: '45 min',
+    titulo: 'Roles IAM, permisos temporales sin compartir credenciales',
+    resumen: 'Qué hacer cuando quien necesita permiso es un servidor y no una persona: roles, confianza y credenciales temporales.',
+    requisito: 'Clases 1 a 3 de este módulo',
+  },
 ];
 
 function ClassGrid({ classes }) {
