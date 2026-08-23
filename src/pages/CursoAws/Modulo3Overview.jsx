@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { Nota, Dialogo, ConceptBadge, Flow, InfoBox, CompareCols } from './lessonComponents.jsx';
 
 const ROADMAP = [
@@ -150,7 +151,9 @@ export default function Modulo3Overview() {
         <div className="bridge-callout">
           <div className="lesson-eyebrow">🔗 Siguiente paso</div>
           <p>El siguiente paso es desarrollar <strong>Módulo 3 · Clase 1: "¿Qué es Amazon EC2 y para qué sirve?"</strong>, todavía muy sencilla, preparando el terreno para que en la Clase 3 lancemos la primera instancia.</p>
-          <span className="tag tag-outline">Módulo 3 · Clase 1 · próximamente</span>
+          <Link to="/aprendizaje/aws-desde-cero/modulo-3/clase-1" className="btn btn-primary" style={{ marginTop: 'var(--space-2)' }}>
+            Ir a Clase 1: ¿Qué es Amazon EC2 y para qué sirve? →
+          </Link>
         </div>
 
       </div>

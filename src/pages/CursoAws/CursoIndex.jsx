@@ -102,6 +102,17 @@ const MODULO_2 = [
   },
 ];
 
+const MODULO_3 = [
+  {
+    to: '/aprendizaje/aws-desde-cero/modulo-3/clase-1',
+    numero: 1,
+    duracion: '45 min',
+    titulo: '¿Qué es Amazon EC2 y para qué sirve?',
+    resumen: 'Por qué comprar un servidor físico es incómodo, y cómo EC2 nos deja obtener capacidad de cómputo bajo demanda, con la analogía del hotel.',
+    requisito: 'Módulos 0, 1 y 2',
+  },
+];
+
 function ClassGrid({ classes }) {
   return (
     <div className="course-grid">
@@ -141,14 +152,12 @@ export default function CursoIndex() {
 
       <h3 style={{ margin: 'var(--space-8) 0 4px' }}>Módulo 3 · Amazon EC2</h3>
       <p className="view-intro" style={{ marginBottom: 'var(--space-4)' }}>
-        Servidores virtuales en AWS: elegir, crear, proteger y administrar una instancia EC2, hasta publicar tu propia página web. Las clases todavía no están publicadas.
+        Servidores virtuales en AWS: elegir, crear, proteger y administrar una instancia EC2, hasta publicar tu propia página web.
       </p>
-      <Link to="/aprendizaje/aws-desde-cero/modulo-3" className="card elev-sm" style={{ textDecoration: 'none', color: 'inherit', display: 'block', maxWidth: 420 }}>
-        <div className="card-kicker">Vista previa · 7 clases planificadas</div>
-        <div className="card-title">Hoja de ruta del Módulo 3</div>
-        <p className="card-body">De "¿qué es EC2?" al laboratorio integrador: crear, proteger y publicar tu primer servidor.</p>
-        <div className="course-card-req">Clases individuales: próximamente</div>
+      <Link to="/aprendizaje/aws-desde-cero/modulo-3" className="btn btn-ghost" style={{ marginBottom: 'var(--space-4)', display: 'inline-block' }}>
+        Ver la hoja de ruta completa del módulo (7 clases planificadas) →
       </Link>
+      <ClassGrid classes={MODULO_3} />
     </div>
   );
 }
