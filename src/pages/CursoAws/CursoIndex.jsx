@@ -205,6 +205,41 @@ const MODULO_4 = [
   },
 ];
 
+const MODULO_5 = [
+  {
+    to: '/aprendizaje/aws-desde-cero/modulo-5/clase-1',
+    numero: 1,
+    duracion: '45 min',
+    titulo: '¿Qué es una red? IP pública, IP privada y cómo viaja la información',
+    resumen: 'Cero AWS todavía: Wi-Fi de casa, direcciones y routers antes de tocar una sola sigla de VPC.',
+    requisito: 'Módulos 0 a 4',
+  },
+  {
+    to: '/aprendizaje/aws-desde-cero/modulo-5/clase-2',
+    numero: 2,
+    duracion: '45 min',
+    titulo: '¿Qué es Amazon VPC? Nuestra red privada dentro de AWS',
+    resumen: 'Nuestro propio terreno dentro de AWS: rango de direcciones, CIDR introductorio, Región y Default vs. Custom VPC.',
+    requisito: 'Módulo 5 · Clase 1',
+  },
+  {
+    to: '/aprendizaje/aws-desde-cero/modulo-5/clase-3',
+    numero: 3,
+    duracion: '45 min',
+    titulo: 'Subnets públicas y privadas, dividiendo nuestra VPC en zonas',
+    resumen: 'La ciudad necesita barrios: qué convierte una subnet en pública, disponibilidad por AZ y por qué el nombre no define nada.',
+    requisito: 'Módulo 5 · Clases 1 y 2',
+  },
+  {
+    to: '/aprendizaje/aws-desde-cero/modulo-5/clase-4',
+    numero: 4,
+    duracion: '45 min',
+    titulo: 'Route Tables e Internet Gateway, enseñándole a nuestra red por dónde ir',
+    resumen: 'Destination, Target, la ruta local, 0.0.0.0/0 y por qué tener puerta y permiso no basta sin un camino.',
+    requisito: 'Módulo 5 · Clases 1 a 3',
+  },
+];
+
 function ClassGrid({ classes }) {
   return (
     <div className="course-grid">
@@ -256,6 +291,15 @@ export default function CursoIndex() {
         Ver la hoja de ruta completa del módulo (6 clases planificadas) →
       </Link>
       <ClassGrid classes={MODULO_4} />
+
+      <h3 style={{ margin: 'var(--space-8) 0 4px' }}>Módulo 5 · Redes y Amazon VPC</h3>
+      <p className="view-intro" style={{ marginBottom: 'var(--space-4)' }}>
+        Cómo se comunican los recursos que ya sabemos crear: redes, direcciones IP, VPC, subnets, rutas y gateways.
+      </p>
+      <Link to="/aprendizaje/aws-desde-cero/modulo-5" className="btn btn-ghost" style={{ marginBottom: 'var(--space-4)', display: 'inline-block' }}>
+        Ver la hoja de ruta completa del módulo (8 clases planificadas) →
+      </Link>
+      <ClassGrid classes={MODULO_5} />
     </div>
   );
 }
