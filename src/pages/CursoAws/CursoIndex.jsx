@@ -111,6 +111,22 @@ const MODULO_3 = [
     resumen: 'Por qué comprar un servidor físico es incómodo, y cómo EC2 nos deja obtener capacidad de cómputo bajo demanda, con la analogía del hotel.',
     requisito: 'Módulos 0, 1 y 2',
   },
+  {
+    to: '/aprendizaje/aws-desde-cero/modulo-3/clase-2',
+    numero: 2,
+    duracion: '45 min',
+    titulo: 'AMI, tipos de instancia y recursos',
+    resumen: 'Las dos grandes decisiones antes de lanzar un servidor: con qué plantilla parte y cuánta capacidad (vCPU y RAM) tendrá.',
+    requisito: 'Módulo 3 · Clase 1',
+  },
+  {
+    to: '/aprendizaje/aws-desde-cero/modulo-3/clase-3',
+    numero: 3,
+    duracion: '45 min',
+    titulo: 'Crear nuestra primera instancia EC2',
+    resumen: 'Laboratorio guiado paso a paso: nombre, AMI, tipo de instancia, key pair, red, Security Group y almacenamiento, hasta ver Running.',
+    requisito: 'Módulo 3 · Clases 1 y 2',
+  },
 ];
 
 function ClassGrid({ classes }) {

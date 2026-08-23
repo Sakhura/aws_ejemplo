@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import {
   Nota, Dialogo, ConceptBadge, RoleGrid, Flow, InfoBox, CompareCols, CapacityRow, QaItem, Reveal, Quiz,
 } from './lessonComponents.jsx';
@@ -467,7 +468,9 @@ export default function Modulo3Clase1() {
           <Nota>
             <p>En esa clase ya podemos acercarnos bastante más a la consola: familias de instancias, vCPU, RAM, AMI y criterios de selección, pero todavía sin lanzar nada. Así, cuando lleguemos a la Clase 3, cada clic tendrá una razón.</p>
           </Nota>
-          <span className="tag tag-outline">Módulo 3 · Clase 2 · próximamente</span>
+          <Link to="/aprendizaje/aws-desde-cero/modulo-3/clase-2" className="btn btn-primary" style={{ marginTop: 'var(--space-2)' }}>
+            Ir a Clase 2: AMI, tipos de instancia y recursos →
+          </Link>
         </div>
 
       </div>
