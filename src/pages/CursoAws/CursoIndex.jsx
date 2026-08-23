@@ -17,6 +17,14 @@ const CLASES = [
     resumen: 'Por qué las empresas dejan de comprar sus propios servidores: elasticidad y pago por uso, con la analogía del hotel.',
     requisito: 'Clase 1',
   },
+  {
+    to: '/aprendizaje/aws-desde-cero/clase-3',
+    numero: 3,
+    duracion: '45 min',
+    titulo: 'IaaS, PaaS y SaaS',
+    resumen: 'Qué podemos arrendar exactamente en la nube: infraestructura, plataforma o software, con la analogía de una pizzería.',
+    requisito: 'Clases 1 y 2',
+  },
 ];
 
 export default function CursoIndex() {

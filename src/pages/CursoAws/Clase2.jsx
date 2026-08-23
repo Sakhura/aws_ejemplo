@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import {
   Nota, Dialogo, ConceptBadge, StrikeChip, Flow, InfoBox, CompareCols,
   CapacityRow, QaItem, Reveal, Quiz, TrueFalseQuiz,
@@ -368,7 +369,9 @@ export default function Clase2() {
             <span className="tag tag-accent">PaaS</span>
             <span className="tag tag-accent">SaaS</span>
           </div>
-          <span className="tag tag-outline">Clase 3 · próximamente</span>
+          <Link to="/aprendizaje/aws-desde-cero/clase-3" className="btn btn-primary" style={{ marginTop: 'var(--space-2)' }}>
+            Ir a Clase 3: IaaS, PaaS y SaaS →
+          </Link>
         </div>
 
       </div>
