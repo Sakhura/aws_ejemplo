@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import {
   Nota, Dialogo, ConceptBadge, RoleGrid, Flow, InfoBox, CompareCols, Reveal, Quiz,
 } from './lessonComponents.jsx';
@@ -432,7 +433,9 @@ export default function Clase4() {
           <p>Y haría una pregunta:</p>
           <Dialogo>“Muy bonito todo… pero ¿dónde están físicamente esas máquinas?”</Dialogo>
           <p>Porque la nube no vive en una nube. ☁️😄 Está funcionando sobre infraestructura real. Y esa infraestructura está distribuida en enormes instalaciones alrededor del mundo.</p>
-          <span className="tag tag-outline">Clase 5 · próximamente</span>
+          <Link to="/aprendizaje/aws-desde-cero/clase-5" className="btn btn-primary" style={{ marginTop: 'var(--space-2)' }}>
+            Ir a Clase 5: Centros de datos, disponibilidad y continuidad →
+          </Link>
         </div>
 
       </div>

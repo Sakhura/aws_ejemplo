@@ -33,6 +33,14 @@ const CLASES = [
     resumen: 'La diferencia entre guardar un archivo y organizar información consultable, antes de conocer Amazon S3 y Amazon RDS.',
     requisito: 'Clases 1, 2 y 3',
   },
+  {
+    to: '/aprendizaje/aws-desde-cero/clase-5',
+    numero: 5,
+    duracion: '45 min',
+    titulo: 'Centros de datos, disponibilidad y continuidad',
+    resumen: 'Por qué no conviene depender de un único servidor ni de un único lugar: redundancia, disponibilidad y la analogía de los huevos.',
+    requisito: 'Clases 1 a 4',
+  },
 ];
 
 export default function CursoIndex() {

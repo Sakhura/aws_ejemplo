@@ -10,6 +10,7 @@ import Clase1 from './pages/CursoAws/Clase1.jsx';
 import Clase2 from './pages/CursoAws/Clase2.jsx';
 import Clase3 from './pages/CursoAws/Clase3.jsx';
 import Clase4 from './pages/CursoAws/Clase4.jsx';
+import Clase5 from './pages/CursoAws/Clase5.jsx';
 import Laboratorios from './pages/Laboratorios.jsx';
 import Errores from './pages/Errores.jsx';
 import Glosario from './pages/Glosario.jsx';
@@ -30,6 +31,7 @@ export default function App() {
           <Route path="aprendizaje/aws-desde-cero/clase-2" element={<Clase2 />} />
           <Route path="aprendizaje/aws-desde-cero/clase-3" element={<Clase3 />} />
           <Route path="aprendizaje/aws-desde-cero/clase-4" element={<Clase4 />} />
+          <Route path="aprendizaje/aws-desde-cero/clase-5" element={<Clase5 />} />
           <Route path="aprendizaje/laboratorios" element={<Laboratorios />} />
           <Route path="aprendizaje/errores" element={<Errores />} />
           <Route path="aprendizaje/glosario" element={<Glosario />} />
