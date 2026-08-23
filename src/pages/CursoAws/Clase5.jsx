@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import {
-  Nota, Dialogo, ConceptBadge, StrikeChip, RoleGrid, Flow, CompareCols,
+  Icon, Nota, Dialogo, ConceptBadge, StrikeChip, RoleGrid, Flow, CompareCols,
   QaItem, Reveal, Quiz, TrueFalseQuiz,
 } from './lessonComponents.jsx';
 
@@ -71,7 +71,7 @@ export default function Clase5() {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', paddingBottom: 'var(--space-8)' }}>
       <div className="breadcrumb">Aprendizaje › AWS desde cero › Módulo 0 · Clase 5</div>
-      <div className="lesson-eyebrow">☁️ AWS desde Cero</div>
+      <div className="lesson-eyebrow"><Icon name="cloud" /> AWS desde Cero</div>
       <h2 style={{ margin: '0 0 4px' }}>Módulo 0 · Clase 5: Centros de datos, disponibilidad y continuidad</h2>
       <p className="lesson-subtitle">
         Por qué no conviene que un servicio importante dependa de un único servidor ni de un único lugar.
@@ -88,7 +88,7 @@ export default function Clase5() {
       <div className="lesson-body">
 
         <section className="lesson-section">
-          <h3>🎯 1. Objetivo de aprendizaje</h3>
+          <h3>1. Objetivo de aprendizaje</h3>
           <Nota><p>Al finalizar la clase, el estudiante podrá:</p></Nota>
           <ul className="plain-list">
             <li>Explicar qué es un centro de datos.</li>
@@ -103,25 +103,25 @@ export default function Clase5() {
         </section>
 
         <section className="lesson-section">
-          <h3>🧠 2. Activación de conocimientos previos</h3>
+          <h3>2. Activación de conocimientos previos</h3>
           <Nota><p>Comenzaría mostrando este esquema:</p></Nota>
           <Flow steps={[
-            { emoji: '👩', label: 'Usuario' },
-            { emoji: '🌐', label: 'Internet' },
-            { emoji: '☁️', label: 'Cloud' },
+            { icon: 'user', label: 'Usuario' },
+            { icon: 'globe', label: 'Internet' },
+            { icon: 'cloud', label: 'Cloud' },
           ]} />
           <p>Y preguntaría:</p>
           <Dialogo>¿Dónde está físicamente ese "Cloud"?</Dialogo>
           <p>Luego iría revelando:</p>
           <Flow steps={[
-            { emoji: '☁️', label: 'Cloud' },
-            { emoji: '🏢', label: 'Centros de datos', caption: '🖥️ Servidores · 💾 Almacenamiento · 🌐 Redes · 🔌 Energía · ❄️ Refrigeración' },
+            { icon: 'cloud', label: 'Cloud' },
+            { icon: 'building', label: 'Centros de datos', caption: '🖥️ Servidores · 💾 Almacenamiento · 🌐 Redes · 🔌 Energía · ❄️ Refrigeración' },
           ]} />
           <Nota><p>La nube no elimina la infraestructura. La nube cambia quién la administra y cómo nosotros accedemos a ella.</p></Nota>
         </section>
 
         <section className="lesson-section">
-          <h3>🏢 3. ¿Qué es un centro de datos?</h3>
+          <h3>3. ¿Qué es un centro de datos?</h3>
           <Nota><p>Un centro de datos es una instalación diseñada para albergar infraestructura tecnológica.</p></Nota>
           <p>Dentro podemos encontrar: 🖥️ servidores, 💾 sistemas de almacenamiento, 🌐 equipos de red, 🔌 sistemas eléctricos, ❄️ refrigeración, 🔐 controles de seguridad física.</p>
           <p>Explicación sencilla:</p>
@@ -129,14 +129,14 @@ export default function Clase5() {
         </section>
 
         <section className="lesson-section">
-          <h3>🏨 4. Analogía del hotel tecnológico</h3>
+          <h3>4. Analogía del hotel tecnológico</h3>
           <Nota><p>Imaginemos un enorme hotel. Pero en vez de habitaciones para personas, tiene espacios para: 🖥️ servidores.</p></Nota>
           <p>Cada servidor necesita: ⚡ electricidad, ❄️ temperatura adecuada, 🌐 conexión, 🔐 seguridad, 🔧 mantenimiento.</p>
           <p>El centro de datos proporciona esas condiciones.</p>
         </section>
 
         <section className="lesson-section">
-          <h3>🔌 5. ¿Por qué necesitan tanta infraestructura?</h3>
+          <h3>5. ¿Por qué necesitan tanta infraestructura?</h3>
           <Nota><p>Un servidor no funciona por arte de magia. Necesita energía. Pero:</p></Nota>
           <Dialogo>¿Qué pasa si se corta la luz?</Dialogo>
           <p>Por eso los centros de datos pueden contar con sistemas de respaldo eléctrico. También necesitan refrigeración porque muchos equipos funcionando juntos generan calor.</p>
@@ -144,55 +144,55 @@ export default function Clase5() {
         </section>
 
         <section className="lesson-section">
-          <h3>💥 6. El problema del único lugar</h3>
+          <h3>6. El problema del único lugar</h3>
           <Nota><p>Supongamos que nuestra empresa tiene toda su plataforma en un único edificio.</p></Nota>
           <Flow steps={[
-            { emoji: '👩', label: 'Usuarios' },
-            { emoji: '🌐', label: 'Internet' },
-            { emoji: '🏢', label: 'CENTRO DE DATOS', caption: '🖥️ Aplicación · 📦 Archivos · 🗄️ Base de datos' },
+            { icon: 'user', label: 'Usuarios' },
+            { icon: 'globe', label: 'Internet' },
+            { icon: 'building', label: 'CENTRO DE DATOS', caption: '🖥️ Aplicación · 📦 Archivos · 🗄️ Base de datos' },
           ]} />
           <p>Todo funciona bien. Hasta que ocurre un problema. Puede ser: 🔌 corte eléctrico, 🌐 falla de conexión, 🔥 incidente físico, 🔧 falla técnica.</p>
           <p>Si todo depende de ese lugar:</p>
           <Flow steps={[
-            { emoji: '🏢', label: 'Centro de datos', caption: '❌' },
-            { emoji: '💥', label: 'Servicio no disponible' },
+            { icon: 'building', label: 'Centro de datos', caption: '❌' },
+            { icon: 'zap', label: 'Servicio no disponible' },
           ]} />
         </section>
 
         <section className="lesson-section">
-          <h3>🥚 7. La analogía de los huevos</h3>
+          <h3>7. La analogía de los huevos</h3>
           <Nota><p>Aquí usaría la frase:</p></Nota>
           <Dialogo>"No pongamos todos los huevos en la misma canasta."</Dialogo>
           <CompareCols cols={[
-            { emoji: '🧺', title: 'Una sola canasta', items: ['🥚🥚🥚🥚🥚🥚', 'Si la canasta se cae 💥: pierdo todos.'] },
+            { icon: 'briefcase', title: 'Una sola canasta', items: ['🥚🥚🥚🥚🥚🥚', 'Si la canasta se cae 💥: pierdo todos.'] },
             { emoji: '🧺🧺', title: 'Canastas distribuidas', items: ['🥚🥚🥚 · 🥚🥚🥚', 'Un problema en una canasta no necesariamente afecta todo.'] },
           ]} />
           <Nota><p>En tecnología ocurre algo parecido.</p></Nota>
         </section>
 
         <section className="lesson-section">
-          <h3>🔁 8. Introducción a redundancia</h3>
+          <h3>8. Introducción a redundancia</h3>
           <Nota><p>Redundancia significa tener componentes adicionales que pueden ayudar si otro componente falla.</p></Nota>
           <CompareCols cols={[
-            { emoji: '❌', title: 'Sin redundancia', items: ['Servicio → 🖥️ Servidor único', 'Si falla: servicio afectado.'] },
-            { emoji: '✅', title: 'Con redundancia', items: ['Servicio → 🖥️ A y 🖥️ B', 'Si A falla, B sigue: el servicio continúa.'] },
+            { icon: 'x-circle', title: 'Sin redundancia', items: ['Servicio → 🖥️ Servidor único', 'Si falla: servicio afectado.'] },
+            { icon: 'check-circle', title: 'Con redundancia', items: ['Servicio → 🖥️ A y 🖥️ B', 'Si A falla, B sigue: el servicio continúa.'] },
           ]} />
           <Nota><p>Para este nivel basta con: redundancia = tener respaldo para evitar depender de un único componente.</p></Nota>
         </section>
 
         <section className="lesson-section">
-          <h3>✅ 9. ¿Qué significa disponibilidad?</h3>
+          <h3>9. ¿Qué significa disponibilidad?</h3>
           <Nota><p>La disponibilidad responde a una pregunta muy sencilla:</p></Nota>
           <Dialogo>¿El servicio está funcionando cuando el usuario lo necesita?</Dialogo>
           <p>Por ejemplo, entramos a una tienda online.</p>
           <p><strong>Caso A</strong> — La página abre.</p>
-          <ConceptBadge>✅ Disponible</ConceptBadge>
+          <ConceptBadge>Disponible</ConceptBadge>
           <p><strong>Caso B</strong> — Aparece "Servicio no disponible."</p>
-          <ConceptBadge variant="danger">❌ No disponible</ConceptBadge>
+          <ConceptBadge variant="danger">No disponible</ConceptBadge>
         </section>
 
         <section className="lesson-section">
-          <h3>🏦 10. ¿Todos los sistemas necesitan la misma disponibilidad?</h3>
+          <h3>10. ¿Todos los sistemas necesitan la misma disponibilidad?</h3>
           <Nota><p>No.</p></Nota>
           <ul className="plain-list">
             <li>Blog personal — si está fuera de servicio cinco minutos: 😐 puede ser molesto.</li>
@@ -203,31 +203,31 @@ export default function Clase5() {
         </section>
 
         <section className="lesson-section">
-          <h3>📱 11. Ejemplo cotidiano</h3>
+          <h3>11. Ejemplo cotidiano</h3>
           <Nota><p>Supongamos que usamos una aplicación de mensajería. Normalmente esperamos que funcione: 🌅 mañana, 🌞 tarde, 🌙 noche.</p></Nota>
           <p>No pensamos "espero que el servidor no esté en mantenimiento." Esperamos simplemente que funcione. Esa expectativa está relacionada con disponibilidad.</p>
         </section>
 
         <section className="lesson-section">
-          <h3>🛒 12. Caso CloudStore</h3>
+          <h3>12. Caso CloudStore</h3>
           <Nota><p>Volvamos a nuestra tienda ficticia. CloudStore tiene: 🖥️ aplicación, 📦 fotografías, 🗄️ productos, 👥 clientes.</p></Nota>
           <p>Durante Cyber Monday recibe miles de visitas. Ahora imagina: el único servidor falla.</p>
           <Flow steps={[
-            { emoji: '👥', label: 'Usuarios (miles)' },
-            { emoji: '🖥️', label: 'Servidor', caption: '❌' },
-            { emoji: '💥', label: 'TIENDA CAÍDA' },
+            { icon: 'users', label: 'Usuarios (miles)' },
+            { icon: 'server', label: 'Servidor', caption: '❌' },
+            { icon: 'zap', label: 'TIENDA CAÍDA' },
           ]} />
           <p>Se pierden ventas.</p>
         </section>
 
         <section className="lesson-section">
-          <h3>🔄 13. Diseñemos una alternativa</h3>
+          <h3>13. Diseñemos una alternativa</h3>
           <Nota><p>Podemos imaginar varios recursos trabajando para evitar depender de uno solo.</p></Nota>
           <Flow steps={[
-            { emoji: '👥', label: 'Usuarios' },
-            { emoji: '🌐', label: 'Internet' },
-            { emoji: '🖥️', label: 'Servidor A + Servidor B' },
-            { emoji: '🗄️', label: 'Datos' },
+            { icon: 'users', label: 'Usuarios' },
+            { icon: 'globe', label: 'Internet' },
+            { icon: 'server', label: 'Servidor A + Servidor B' },
+            { icon: 'database', label: 'Datos' },
           ]} />
           <Nota>
             <p>No necesitamos todavía enseñar balanceadores de carga, replicación o clustering. Solo queremos que entiendan: podemos diseñar sistemas para que una falla no derribe todo el servicio.</p>
@@ -235,7 +235,7 @@ export default function Clase5() {
         </section>
 
         <section className="lesson-section">
-          <h3>🌍 14. ¿Y si el problema afecta un edificio completo?</h3>
+          <h3>14. ¿Y si el problema afecta un edificio completo?</h3>
           <Nota><p>Excelente pregunta para la clase:</p></Nota>
           <Dialogo>"¿Qué pasa si tenemos 10 servidores, pero todos están dentro del mismo edificio?"</Dialogo>
           <p>Seguimos teniendo un problema. Si el edificio completo queda afectado, todos los servidores podrían verse comprometidos al mismo tiempo.</p>
@@ -243,48 +243,48 @@ export default function Clase5() {
         </section>
 
         <section className="lesson-section">
-          <h3>🌎 15. Aquí comienza a aparecer AWS</h3>
+          <h3>15. Aquí comienza a aparecer AWS</h3>
           <Nota><p>AWS organiza su infraestructura global utilizando conceptos como Regiones y Zonas de disponibilidad. Pero en esta clase solo los mencionaría superficialmente.</p></Nota>
           <p>Por ahora: AWS tiene infraestructura distribuida geográficamente para permitir diseñar servicios más resistentes y disponibles. La explicación formal queda para el módulo dedicado a AWS.</p>
         </section>
 
         <section className="lesson-section">
-          <h3>🏙️ 16. Analogía para Región y Zona</h3>
+          <h3>16. Analogía para Región y Zona</h3>
           <Nota><p>Podemos anticiparlo así: imagina un país con distintas ciudades.</p></Nota>
           <CompareCols cols={[
-            { emoji: '🌎', title: 'Región', items: ['Una zona geográfica general.', 'Dentro de ella puede haber varias ubicaciones independientes.'] },
-            { emoji: '🏢', title: 'Zona de disponibilidad', items: ['Una ubicación física separada de otras dentro de esa región.'] },
+            { icon: 'map-pin', title: 'Región', items: ['Una zona geográfica general.', 'Dentro de ella puede haber varias ubicaciones independientes.'] },
+            { icon: 'building', title: 'Zona de disponibilidad', items: ['Una ubicación física separada de otras dentro de esa región.'] },
           ]} />
           <Nota><p>Más adelante veremos exactamente cómo AWS utiliza estos conceptos.</p></Nota>
         </section>
 
         <section className="lesson-section">
-          <h3>🧠 17. Idea que deben retener</h3>
+          <h3>17. Idea que deben retener</h3>
           <Flow steps={[
-            { emoji: '🏢', label: 'UN SOLO LUGAR', caption: 'Mayor dependencia' },
-            { emoji: '⚠️', label: 'Si falla, podemos tener problemas' },
+            { icon: 'building', label: 'UN SOLO LUGAR', caption: 'Mayor dependencia' },
+            { icon: 'alert-triangle', label: 'Si falla, podemos tener problemas' },
           ]} />
           <Flow steps={[
-            { emoji: '🌍', label: 'VARIAS UBICACIONES', caption: 'Podemos distribuir recursos' },
-            { emoji: '✅', label: 'Mayor capacidad de resistir fallas' },
+            { icon: 'map-pin', label: 'VARIAS UBICACIONES', caption: 'Podemos distribuir recursos' },
+            { icon: 'check-circle', label: 'Mayor capacidad de resistir fallas' },
           ]} />
           <p>No significa que sea imposible tener una caída. Significa que podemos reducir el riesgo de que una sola falla afecte todo.</p>
         </section>
 
         <section className="lesson-section">
-          <h3>🎮 18. Actividad: ¿qué harías tú?</h3>
+          <h3>18. Actividad: ¿qué harías tú?</h3>
           <Nota><p>Presentamos una plataforma educativa. La institución tiene: 👩‍🎓 20.000 estudiantes. Todos entran a revisar notas. Tenemos dos propuestas.</p></Nota>
           <CompareCols cols={[
-            { emoji: '🖥️', title: 'Propuesta A', items: ['Un único servidor.'] },
+            { icon: 'server', title: 'Propuesta A', items: ['Un único servidor.'] },
             { emoji: '🖥️🖥️', title: 'Propuesta B', items: ['Varios recursos preparados para continuar operando.'] },
           ]} />
           <QaItem question="¿Cuál ofrece menos dependencia de un único servidor?" answer="Propuesta B." />
         </section>
 
         <section className="lesson-section">
-          <h3>🧩 19. Actividad grupal</h3>
+          <h3>19. Actividad grupal</h3>
           <Nota><p>Caso:</p></Nota>
-          <ConceptBadge>🏥 Clínica SaludCloud</ConceptBadge>
+          <ConceptBadge>Clínica SaludCloud</ConceptBadge>
           <p>La clínica utiliza un sistema online para: 📅 reservar horas, 👩‍⚕️ consultar profesionales, 📄 revisar información, 💳 realizar pagos.</p>
           <p>El sistema depende de: un único servidor, una única conexión, una única ubicación.</p>
           <p>Preguntas:</p>
@@ -304,7 +304,7 @@ export default function Clase5() {
         </section>
 
         <section className="lesson-section">
-          <h3>⚠️ 20. Diferencia importante</h3>
+          <h3>20. Diferencia importante</h3>
           <Nota><p>No enseñaría:</p></Nota>
           <StrikeChip>❌ "Redundancia significa que nunca habrá fallas."</StrikeChip>
           <p>Eso es falso.</p>
@@ -314,19 +314,19 @@ export default function Clase5() {
         </section>
 
         <section className="lesson-section">
-          <h3>🧪 21. Verdadero o falso</h3>
+          <h3>21. Verdadero o falso</h3>
           <TrueFalseQuiz statements={TF_STATEMENTS} />
         </section>
 
         <section className="lesson-section">
-          <h3>📝 22. Mini evaluación</h3>
+          <h3>22. Mini evaluación</h3>
           <Quiz questions={QUIZ_QUESTIONS} />
         </section>
 
         <section className="lesson-section">
-          <h3>🏆 23. Reto de la clase</h3>
+          <h3>23. Reto de la clase</h3>
           <Nota><p>Presentaría este escenario:</p></Nota>
-          <ConceptBadge>🎟️ TicketFest</ConceptBadge>
+          <ConceptBadge>TicketFest</ConceptBadge>
           <p>Una empresa vende entradas online para conciertos. A las 10:00 se abre la venta para un artista muy popular. En cinco minutos entran: 👥 100.000 personas.</p>
           <p>Toda la plataforma depende de: 🖥️ un servidor, ubicado en: 🏢 un único lugar.</p>
           <Dialogo>¿Qué problemas observas y qué cambiarías para mejorar la disponibilidad?</Dialogo>
@@ -338,10 +338,10 @@ export default function Clase5() {
         </section>
 
         <section className="lesson-section">
-          <h3>🎯 24. Reto extra</h3>
+          <h3>24. Reto extra</h3>
           <Dialogo>¿Qué tiene más riesgo?</Dialogo>
           <CompareCols cols={[
-            { emoji: '🖥️', title: 'Opción A', items: ['Todo depende de un servidor.'] },
+            { icon: 'server', title: 'Opción A', items: ['Todo depende de un servidor.'] },
             { emoji: '🖥️🖥️', title: 'Opción B', items: ['Dos servidores, pero ambos están en el mismo edificio.'] },
             { emoji: '🏢🏢', title: 'Opción C', items: ['Recursos distribuidos entre dos edificios distintos.'] },
           ]} />
@@ -349,7 +349,7 @@ export default function Clase5() {
         </section>
 
         <section className="lesson-section">
-          <h3>📌 25. Resumen de bolsillo</h3>
+          <h3>25. Resumen de bolsillo</h3>
           <table className="table lesson-summary-table">
             <thead><tr><th>Concepto</th><th>Explicación sencilla</th></tr></thead>
             <tbody>
@@ -364,24 +364,24 @@ export default function Clase5() {
         </section>
 
         <section className="lesson-section">
-          <h3>🧠 26. Nuestro mapa del curso crece</h3>
+          <h3>26. Nuestro mapa del curso crece</h3>
           <RoleGrid roles={[
-            { emoji: '🖥️', label: 'Servidores', desc: '' },
-            { emoji: '📦', label: 'Archivos', desc: '' },
-            { emoji: '🗄️', label: 'Datos', desc: '' },
+            { icon: 'server', label: 'Servidores', desc: '' },
+            { icon: 'package', label: 'Archivos', desc: '' },
+            { icon: 'database', label: 'Datos', desc: '' },
           ]} />
           <Flow steps={[
-            { emoji: '🏢', label: 'Centros de datos' },
+            { icon: 'building', label: 'Centros de datos' },
           ]} />
           <RoleGrid roles={[
-            { emoji: '🔁', label: 'Redundancia', desc: '' },
-            { emoji: '✅', label: 'Disponibilidad', desc: '' },
+            { icon: 'refresh', label: 'Redundancia', desc: '' },
+            { icon: 'check-circle', label: 'Disponibilidad', desc: '' },
           ]} />
           <p>Ahora Cloud empieza a tener una estructura mucho más concreta.</p>
         </section>
 
         <section className="lesson-section">
-          <h3>🎟️ 27. Ticket de salida</h3>
+          <h3>27. Ticket de salida</h3>
           <Nota><p>Cada estudiante responde en máximo dos líneas:</p></Nota>
           <Dialogo>¿Por qué una empresa importante podría preferir distribuir sus servicios en lugar de depender de un único servidor y una sola ubicación?</Dialogo>
           <Reveal label="Ver respuesta esperada">
@@ -390,15 +390,15 @@ export default function Clase5() {
         </section>
 
         <div className="bridge-callout">
-          <div className="lesson-eyebrow">🔗 Puente hacia la Clase 6</div>
+          <div className="lesson-eyebrow"><Icon name="arrow-right" /> Puente hacia la Clase 6</div>
           <Nota><p>Cerraría mostrando todo lo que hemos aprendido:</p></Nota>
           <Flow steps={[
-            { emoji: '👩', label: 'Usuario' },
-            { emoji: '🌐', label: 'Internet' },
-            { emoji: '☁️', label: 'Cloud', caption: '🖥️ Procesamiento · 📦 Almacenamiento · 🗄️ Base de datos' },
-            { emoji: '🏢', label: 'Centros de datos' },
-            { emoji: '🔁', label: 'Redundancia' },
-            { emoji: '✅', label: 'Disponibilidad' },
+            { icon: 'user', label: 'Usuario' },
+            { icon: 'globe', label: 'Internet' },
+            { icon: 'cloud', label: 'Cloud', caption: '🖥️ Procesamiento · 📦 Almacenamiento · 🗄️ Base de datos' },
+            { icon: 'building', label: 'Centros de datos' },
+            { icon: 'refresh', label: 'Redundancia' },
+            { icon: 'check-circle', label: 'Disponibilidad' },
           ]} />
           <p>Y preguntaría:</p>
           <Dialogo>"¿Podemos contar ahora la historia completa desde que una persona abre una página hasta que recibe la información?"</Dialogo>

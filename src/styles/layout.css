@@ -239,8 +239,17 @@
 .checklist-item-name { font-size: 13.5px; }
 .checklist-item-meta { font-size: 11.5px; color: color-mix(in srgb, var(--color-text) 55%, transparent); }
 
+/* — icon system (line icons, replaces emoji glyphs) — */
+.icon { width: 1em; height: 1em; display: inline-block; vertical-align: -0.15em; flex: none; }
+.icon-dot { width: 0.55em; height: 0.55em; vertical-align: 0; }
+.icon-dot-success { color: var(--color-accent-300); }
+.icon-dot-danger { color: var(--color-danger-title); }
+.icon-dot-warning { color: var(--color-warning-icon); }
+.icon-dot-muted { color: color-mix(in srgb, var(--color-text) 40%, transparent); }
+
 /* — lesson / course content (Aprendizaje › AWS desde cero) — */
-.lesson-eyebrow { font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-accent); margin-bottom: 4px; }
+.lesson-eyebrow { display: flex; align-items: center; gap: 6px; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-accent); margin-bottom: 4px; }
+.lesson-eyebrow .icon { width: 12px; height: 12px; }
 .lesson-subtitle { font-size: 15px; color: color-mix(in srgb, var(--color-text) 80%, transparent); margin: 2px 0 var(--space-6); max-width: 68ch; }
 
 .lesson-meta { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: var(--space-4); margin-bottom: var(--space-8); max-width: 1080px; }
@@ -266,7 +275,8 @@
 
 .dialogo { margin: var(--space-3) 0; padding: var(--space-3) var(--space-4); border-left: 3px solid var(--color-accent-600); font-style: italic; font-size: 14px; color: color-mix(in srgb, var(--color-text) 85%, transparent); background: color-mix(in srgb, var(--color-text) 3%, transparent); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; }
 
-.concept-badge { display: inline-flex; align-items: center; gap: 8px; padding: var(--space-3) var(--space-6); border-radius: var(--radius-lg); background: color-mix(in srgb, var(--color-accent) 16%, var(--color-surface)); box-shadow: inset 0 0 0 1px var(--color-accent); font-family: var(--font-heading); font-weight: 500; font-size: 16px; color: var(--color-accent-100); margin: var(--space-3) 0; }
+.concept-badge { display: inline-flex; align-items: center; gap: 10px; padding: var(--space-3) var(--space-6); border-radius: var(--radius-lg); background: color-mix(in srgb, var(--color-accent) 16%, var(--color-surface)); box-shadow: inset 0 0 0 1px var(--color-accent); font-family: var(--font-heading); font-weight: 500; font-size: 16px; color: var(--color-accent-100); margin: var(--space-3) 0; }
+.concept-badge .icon { width: 20px; height: 20px; flex: none; }
 .concept-badge.is-danger { background: color-mix(in srgb, var(--color-danger-border) 18%, var(--color-surface)); box-shadow: inset 0 0 0 1px var(--color-danger-border); color: var(--color-danger-title); }
 .concept-badge.is-warning { background: color-mix(in srgb, var(--color-warning-base) 18%, var(--color-surface)); box-shadow: inset 0 0 0 1px var(--color-warning-base); color: var(--color-warning-icon); }
 
@@ -281,7 +291,12 @@
 
 .capacity-row { display: flex; align-items: center; gap: var(--space-3); padding: var(--space-2) 0; font-size: 13.5px; }
 .capacity-row-label { min-width: 160px; color: color-mix(in srgb, var(--color-text) 70%, transparent); }
-.capacity-row-icons { font-size: 18px; letter-spacing: 2px; }
+.capacity-bar { flex: 1; max-width: 220px; height: 8px; border-radius: 999px; background: var(--color-neutral-900); box-shadow: inset 0 0 0 1px var(--color-divider); overflow: hidden; }
+.capacity-bar-fill { display: block; height: 100%; background: var(--color-accent); border-radius: inherit; }
+.capacity-row-pct { font-variant-numeric: tabular-nums; color: var(--color-accent-200); font-weight: 500; }
+.capacity-row-segments { display: flex; gap: 3px; }
+.capacity-seg { width: 10px; height: 8px; border-radius: 2px; background: var(--color-neutral-900); box-shadow: inset 0 0 0 1px var(--color-divider); }
+.capacity-seg.is-on { background: var(--color-accent); box-shadow: none; }
 
 .strike-chip { display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; border-radius: var(--radius-sm); background: color-mix(in srgb, var(--color-danger-border) 14%, transparent); color: var(--color-danger-title); font-size: 13px; text-decoration: line-through; margin: var(--space-2) 0; }
 
@@ -299,17 +314,20 @@
 
 .role-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: var(--space-3); margin: var(--space-4) 0; }
 .role-chip { padding: var(--space-3); border-radius: var(--radius-md); background: var(--color-surface); box-shadow: var(--shadow-sm); text-align: center; }
-.role-chip-emoji { font-size: 22px; display: block; margin-bottom: 4px; }
+.role-chip-icon { display: flex; align-items: center; justify-content: center; height: 26px; margin-bottom: 4px; font-size: 20px; color: var(--color-accent-300); }
+.role-chip-icon .icon { width: 22px; height: 22px; }
 .role-chip-label { font-family: var(--font-heading); font-weight: 500; font-size: 13px; }
 .role-chip-desc { font-size: 11.5px; color: color-mix(in srgb, var(--color-text) 60%, transparent); }
 
 .flow { display: flex; flex-direction: column; align-items: stretch; margin: var(--space-4) 0; max-width: 420px; }
 .flow-step { display: flex; align-items: flex-start; gap: var(--space-3); padding: var(--space-3) var(--space-4); border-radius: var(--radius-md); background: var(--color-surface); box-shadow: var(--shadow-sm); }
-.flow-step-badge { flex: none; width: 26px; height: 26px; border-radius: 50%; display: grid; place-items: center; font-size: 15px; background: var(--color-neutral-900); }
+.flow-step-badge { flex: none; width: 26px; height: 26px; border-radius: 50%; display: grid; place-items: center; font-size: 15px; color: var(--color-accent-300); background: var(--color-neutral-900); }
+.flow-step-badge .icon { width: 15px; height: 15px; }
 .flow-step-badge.is-numeral { font-size: 12px; font-weight: 600; color: var(--color-accent); box-shadow: inset 0 0 0 1px var(--color-accent); }
 .flow-step-label { font-size: 13.5px; font-weight: 500; }
 .flow-step-caption { font-size: 12px; font-style: italic; color: color-mix(in srgb, var(--color-text) 65%, transparent); margin-top: 2px; }
-.flow-arrow { align-self: center; color: var(--color-accent); font-size: 16px; line-height: 1; padding: 4px 0; }
+.flow-arrow { align-self: center; color: var(--color-accent); line-height: 1; padding: 4px 0; }
+.flow-arrow-icon { width: 14px; height: 14px; transform: rotate(90deg); }
 
 .qa-item { padding: var(--space-3) var(--space-4); border-radius: var(--radius-md); background: var(--color-surface); box-shadow: var(--shadow-sm); margin-bottom: var(--space-3); }
 .qa-question { font-size: 13.5px; font-weight: 500; margin-bottom: 6px; }

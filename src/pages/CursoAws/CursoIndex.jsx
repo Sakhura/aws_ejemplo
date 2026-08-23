@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { Icon } from './lessonComponents.jsx';
 
 const MODULO_0 = [
   {
@@ -180,7 +181,7 @@ export default function CursoIndex() {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', paddingBottom: 'var(--space-8)' }}>
       <div className="breadcrumb">Aprendizaje › AWS desde cero</div>
-      <div className="lesson-eyebrow">☁️ AWS desde Cero</div>
+      <div className="lesson-eyebrow"><Icon name="cloud" /> AWS desde Cero</div>
       <h2 style={{ margin: '0 0 4px' }}>Fundamentos antes de tocar la consola</h2>
       <p className="view-intro">
         Una serie de clases teórico-prácticas pensadas para personas sin conocimientos técnicos: qué ocurre realmente detrás de una página web, por qué existe la nube, y cómo AWS organiza el acceso a sus recursos.

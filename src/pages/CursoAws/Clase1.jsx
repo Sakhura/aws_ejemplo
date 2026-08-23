@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Nota, Dialogo, ConceptBadge, RoleGrid, Flow, QaItem, Reveal, Quiz } from './lessonComponents.jsx';
+import { Icon, Nota, Dialogo, ConceptBadge, RoleGrid, Flow, QaItem, Reveal, Quiz } from './lessonComponents.jsx';
 
 const QUIZ_QUESTIONS = [
   {
@@ -51,7 +51,7 @@ export default function Clase1() {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', paddingBottom: 'var(--space-8)' }}>
       <div className="breadcrumb">Aprendizaje › AWS desde cero › Módulo 0 · Clase 1</div>
-      <div className="lesson-eyebrow">☁️ AWS desde Cero</div>
+      <div className="lesson-eyebrow"><Icon name="cloud" /> AWS desde Cero</div>
       <h2 style={{ margin: '0 0 4px' }}>Módulo 0 · Clase 1: ¿Qué pasa cuando entramos a una página web?</h2>
       <p className="lesson-subtitle">
         Clase teórico-práctica de introducción absoluta, pensada para personas sin conocimientos técnicos: qué ocurre, paso a paso, desde que escribimos una dirección hasta que vemos una página en pantalla.
@@ -68,7 +68,7 @@ export default function Clase1() {
       <div className="lesson-body">
 
         <section className="lesson-section">
-          <h3>🎯 1. Objetivo de la clase</h3>
+          <h3>1. Objetivo de la clase</h3>
           <Nota>
             <p>Al finalizar la clase, el estudiante debería ser capaz de explicar con sus propias palabras:</p>
           </Nota>
@@ -77,7 +77,7 @@ export default function Clase1() {
         </section>
 
         <section className="lesson-section">
-          <h3>🌎 2. Comencemos con algo cotidiano</h3>
+          <h3>2. Comencemos con algo cotidiano</h3>
           <Nota><p>Yo iniciaría la clase preguntando:</p></Nota>
           <Dialogo>“Cuando escribimos www.google.com en nuestro navegador, ¿dónde creen que está Google?”</Dialogo>
           <p>Deja que respondan. Probablemente aparecerán respuestas como:</p>
@@ -92,17 +92,17 @@ export default function Clase1() {
             <p>Una página web no vive mágicamente dentro de Internet. Su información está almacenada y procesada en computadores preparados para entregar información a otros dispositivos.</p>
           </Nota>
           <p>A esos computadores los llamamos:</p>
-          <ConceptBadge>🖥️ SERVIDORES</ConceptBadge>
+          <ConceptBadge>SERVIDORES</ConceptBadge>
         </section>
 
         <section className="lesson-section">
-          <h3>🍔 3. La analogía del restaurante</h3>
+          <h3>3. La analogía del restaurante</h3>
           <Nota><p>Esta será nuestra analogía principal durante la clase.</p></Nota>
           <p>Imaginemos que entramos a un restaurante.</p>
           <RoleGrid roles={[
-            { emoji: '👩', label: 'Cliente', desc: 'nosotros' },
-            { emoji: '📋', label: 'Carta', desc: 'navegador' },
-            { emoji: '🧑‍🍳', label: 'Cocina', desc: 'servidor' },
+            { icon: 'user', label: 'Cliente', desc: 'nosotros' },
+            { icon: 'clipboard-list', label: 'Carta', desc: 'navegador' },
+            { icon: 'user', label: 'Cocina', desc: 'servidor' },
             { emoji: '🍔', label: 'Comida', desc: 'información solicitada' },
           ]} />
           <p>Cuando queremos una hamburguesa:</p>
@@ -117,18 +117,18 @@ export default function Clase1() {
         </section>
 
         <section className="lesson-section">
-          <h3>🌐 4. Ahora llevemos el restaurante a Internet</h3>
+          <h3>4. Ahora llevemos el restaurante a Internet</h3>
           <p>Cuando escribimos una dirección en el navegador:</p>
           <p className="mono" style={{ fontSize: 14 }}>www.ejemplo.com</p>
           <p>podemos simplificar el proceso así:</p>
           <Flow steps={[
-            { emoji: '👩', label: 'Usuario' },
-            { emoji: '🌐', label: 'Navegador' },
-            { emoji: '📡', label: 'Internet' },
-            { emoji: '🖥️', label: 'Servidor' },
-            { emoji: '📡', label: 'Internet' },
-            { emoji: '🌐', label: 'Navegador' },
-            { emoji: '👩', label: 'Usuario', caption: 've la página' },
+            { icon: 'user', label: 'Usuario' },
+            { icon: 'globe', label: 'Navegador' },
+            { icon: 'radio', label: 'Internet' },
+            { icon: 'server', label: 'Servidor' },
+            { icon: 'radio', label: 'Internet' },
+            { icon: 'globe', label: 'Navegador' },
+            { icon: 'user', label: 'Usuario', caption: 've la página' },
           ]} />
           <Nota>
             <p>Aquí introduciría solo dos palabras técnicas:</p>
@@ -140,22 +140,22 @@ export default function Clase1() {
         </section>
 
         <section className="lesson-section">
-          <h3>💬 5. Hagamos un ejemplo</h3>
+          <h3>5. Hagamos un ejemplo</h3>
           <Nota>
             <p>Supongamos que una estudiante entra a una plataforma educativa para revisar sus notas. Escribe la dirección en Chrome.</p>
           </Nota>
           <Flow steps={[
-            { n: 1, emoji: '🌐', label: 'El navegador solicita:', caption: '“Quiero entrar a la plataforma.”' },
-            { n: 2, emoji: '📡', label: 'La solicitud viaja por Internet.' },
-            { n: 3, emoji: '🖥️', label: 'El servidor recibe la solicitud.' },
-            { n: 4, emoji: '🗄️', label: 'El sistema busca la información necesaria.' },
-            { n: 5, emoji: '🖥️', label: 'El servidor responde.' },
-            { n: 6, emoji: '🌐', label: 'Chrome recibe la información y muestra la página.' },
+            { n: 1, icon: 'globe', label: 'El navegador solicita:', caption: '“Quiero entrar a la plataforma.”' },
+            { n: 2, icon: 'radio', label: 'La solicitud viaja por Internet.' },
+            { n: 3, icon: 'server', label: 'El servidor recibe la solicitud.' },
+            { n: 4, icon: 'database', label: 'El sistema busca la información necesaria.' },
+            { n: 5, icon: 'server', label: 'El servidor responde.' },
+            { n: 6, icon: 'globe', label: 'Chrome recibe la información y muestra la página.' },
           ]} />
         </section>
 
         <section className="lesson-section">
-          <h3>🧠 6. Primera idea que deben llevarse</h3>
+          <h3>6. Primera idea que deben llevarse</h3>
           <Nota>
             <p>Internet permite que diferentes dispositivos se comuniquen entre sí.</p>
             <p>Y: un servidor es un computador que entrega información o servicios a otros dispositivos.</p>
@@ -164,7 +164,7 @@ export default function Clase1() {
         </section>
 
         <section className="lesson-section">
-          <h3>📍 7. Pero ¿cómo encuentra Internet al servidor?</h3>
+          <h3>7. Pero ¿cómo encuentra Internet al servidor?</h3>
           <Nota><p>Aquí podemos introducir suavemente la dirección IP. Haz esta pregunta:</p></Nota>
           <Dialogo>“Si quiero enviar una encomienda, ¿qué información necesito?”</Dialogo>
           <p>Probablemente responderán:</p>
@@ -174,11 +174,11 @@ export default function Clase1() {
           <Nota>
             <p>No explicaría todavía IPv4, IPv6, IP pública, IP privada, máscaras ni subnetting. Solo necesitamos que recuerden:</p>
           </Nota>
-          <ConceptBadge>📍 IP = dirección</ConceptBadge>
+          <ConceptBadge>IP = dirección</ConceptBadge>
         </section>
 
         <section className="lesson-section">
-          <h3>🤔 8. Entonces, ¿por qué escribimos google.com y no números?</h3>
+          <h3>8. Entonces, ¿por qué escribimos google.com y no números?</h3>
           <Nota><p>Aquí aparece otro concepto muy sencillo. Sería horrible tener que recordar:</p></Nota>
           <Dialogo>“Para entrar a mi página favorita tengo que escribir 142.xxx.xxx.xxx…”</Dialogo>
           <p>Los seres humanos recordamos nombres mucho mejor. Por eso utilizamos nombres como:</p>
@@ -190,7 +190,7 @@ export default function Clase1() {
           <Nota>
             <p>Existe un sistema llamado DNS que ayuda a relacionar esos nombres con las direcciones que necesitan los computadores. La analogía:</p>
           </Nota>
-          <ConceptBadge>📱 DNS = contactos del teléfono</ConceptBadge>
+          <ConceptBadge>DNS = contactos del teléfono</ConceptBadge>
           <p>Nosotros buscamos:</p>
           <Dialogo>“Mamá”</Dialogo>
           <p>El teléfono sabe qué número marcar. En Internet buscamos:</p>
@@ -199,23 +199,23 @@ export default function Clase1() {
         </section>
 
         <section className="lesson-section">
-          <h3>🗺️ 9. Nuestro primer mapa completo</h3>
+          <h3>9. Nuestro primer mapa completo</h3>
           <Nota><p>Ahora podemos ampliar nuestro esquema:</p></Nota>
           <Flow steps={[
-            { emoji: '👩', label: 'USUARIO' },
-            { emoji: '🌐', label: 'NAVEGADOR' },
-            { emoji: '📖', label: 'DNS', caption: 'Busca la dirección' },
-            { emoji: '📡', label: 'INTERNET' },
-            { emoji: '🖥️', label: 'SERVIDOR', caption: 'Recibe la solicitud' },
-            { emoji: '⚙️', label: 'PROCESA' },
-            { emoji: '📤', label: 'RESPONDE' },
-            { emoji: '🌐', label: 'NAVEGADOR' },
-            { emoji: '👩', label: 'USUARIO', caption: 've la página' },
+            { icon: 'user', label: 'USUARIO' },
+            { icon: 'globe', label: 'NAVEGADOR' },
+            { icon: 'book-open', label: 'DNS', caption: 'Busca la dirección' },
+            { icon: 'radio', label: 'INTERNET' },
+            { icon: 'server', label: 'SERVIDOR', caption: 'Recibe la solicitud' },
+            { icon: 'settings', label: 'PROCESA' },
+            { icon: 'upload', label: 'RESPONDE' },
+            { icon: 'globe', label: 'NAVEGADOR' },
+            { icon: 'user', label: 'USUARIO', caption: 've la página' },
           ]} />
         </section>
 
         <section className="lesson-section">
-          <h3>🎬 10. Hagamos que ellos sean Internet</h3>
+          <h3>10. Hagamos que ellos sean Internet</h3>
           <Nota>
             <p>Para un público no técnico, una actividad física puede fijar mucho mejor los conceptos que diez diapositivas.</p>
           </Nota>
@@ -239,7 +239,7 @@ export default function Clase1() {
         </section>
 
         <section className="lesson-section">
-          <h3>🧩 11. Actividad práctica — Caso: Banco en línea</h3>
+          <h3>11. Actividad práctica — Caso: Banco en línea</h3>
           <p>Presenta esta situación:</p>
           <Dialogo>Carolina abre su notebook, entra al navegador y visita el sitio web de su banco para consultar su saldo.</Dialogo>
           <p>Los estudiantes deben identificar (haz la pregunta primero y deja que respondan antes de mostrar la respuesta):</p>
@@ -251,11 +251,11 @@ export default function Clase1() {
         </section>
 
         <section className="lesson-section">
-          <h3>⚠️ 12. Error conceptual importante</h3>
+          <h3>12. Error conceptual importante</h3>
           <Nota><p>Preguntaría:</p></Nota>
           <Dialogo>“Entonces Internet y la nube son lo mismo, ¿verdadero o falso?”</Dialogo>
           <p>Respuesta:</p>
-          <ConceptBadge variant="danger">❌ FALSO</ConceptBadge>
+          <ConceptBadge variant="danger">FALSO</ConceptBadge>
           <Nota>
             <p>Internet permite la comunicación entre dispositivos y redes. La nube utiliza Internet para permitirnos acceder a recursos informáticos remotos, como almacenamiento, servidores, bases de datos y aplicaciones.</p>
           </Nota>
@@ -263,12 +263,12 @@ export default function Clase1() {
         </section>
 
         <section className="lesson-section">
-          <h3>📝 13. Mini evaluación</h3>
+          <h3>13. Mini evaluación</h3>
           <Quiz questions={QUIZ_QUESTIONS} />
         </section>
 
         <section className="lesson-section">
-          <h3>🎯 14. Desafío final</h3>
+          <h3>14. Desafío final</h3>
           <Nota>
             <p>En lugar de pedir una definición memorizada, cerraría con esta pregunta:</p>
           </Nota>
@@ -281,7 +281,7 @@ export default function Clase1() {
         </section>
 
         <section className="lesson-section">
-          <h3>📌 15. Resumen para el estudiante</h3>
+          <h3>15. Resumen para el estudiante</h3>
           <Nota><p>Solo deben salir de esta clase recordando cinco conceptos:</p></Nota>
           <table className="table lesson-summary-table">
             <thead><tr><th>Concepto</th><th>Explicación sencilla</th></tr></thead>
@@ -304,7 +304,7 @@ export default function Clase1() {
         </section>
 
         <div className="bridge-callout">
-          <div className="lesson-eyebrow">🔗 Puente hacia la Clase 2</div>
+          <div className="lesson-eyebrow"><Icon name="arrow-right" /> Puente hacia la Clase 2</div>
           <Nota><p>Cerraría mostrando una sola pregunta en pantalla:</p></Nota>
           <Dialogo>🖥️ “Si necesitamos servidores para que todo esto funcione… ¿tenemos que comprar nuestros propios servidores?”</Dialogo>
           <p>Que discutan un minuto. Y entonces:</p>

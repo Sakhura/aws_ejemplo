@@ -1,5 +1,5 @@
 import {
-  Nota, Dialogo, ConceptBadge, RoleGrid, Flow, InfoBox, CompareCols, QaItem, Reveal, Quiz,
+  Icon, Nota, Dialogo, ConceptBadge, RoleGrid, Flow, InfoBox, CompareCols, QaItem, Reveal, Quiz,
 } from './lessonComponents.jsx';
 
 const POLICY_LECTURA = `{
@@ -39,7 +39,7 @@ export default function Modulo2Clase6() {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', paddingBottom: 'var(--space-8)' }}>
       <div className="breadcrumb">Aprendizaje › AWS desde cero › Módulo 2 · Clase 6</div>
-      <div className="lesson-eyebrow">🏆 AWS desde Cero</div>
+      <div className="lesson-eyebrow"><Icon name="cloud" /> AWS desde Cero</div>
       <h2 style={{ margin: '0 0 4px' }}>Módulo 2 · Clase 6: Laboratorio y desafío final de IAM</h2>
       <p className="lesson-subtitle">
         Clase de cierre del módulo, casi sin teoría nueva: resolvemos el caso completo de NovaCloud aplicando todo lo aprendido en las cinco clases anteriores.
@@ -56,7 +56,7 @@ export default function Modulo2Clase6() {
       <div className="lesson-body">
 
         <section className="lesson-section">
-          <h3>🎯 1. Objetivo de aprendizaje</h3>
+          <h3>1. Objetivo de aprendizaje</h3>
           <Nota><p>Al finalizar la clase, el estudiante podrá:</p></Nota>
           <ul className="plain-list">
             <li>identificar identidades y necesidades de acceso;</li>
@@ -74,41 +74,41 @@ export default function Modulo2Clase6() {
         </section>
 
         <section className="lesson-section">
-          <h3>🧠 2. Sin teoría nueva</h3>
+          <h3>2. Sin teoría nueva</h3>
           <Nota><p>Yo empezaría diciéndoles:</p></Nota>
           <Dialogo>"Hoy no aprenderemos conceptos nuevos. Hoy vamos a comprobar si sabemos usar los que ya tenemos."</Dialogo>
           <p>En la pizarra dejamos únicamente:</p>
           <RoleGrid roles={[
-            { emoji: '👤', label: 'Usuario', desc: '' },
-            { emoji: '👥', label: 'Grupo', desc: '' },
-            { emoji: '🎭', label: 'Rol', desc: '' },
-            { emoji: '📜', label: 'Política', desc: '' },
-            { emoji: '📱', label: 'MFA', desc: '' },
-            { emoji: '🎯', label: 'Mínimo privilegio', desc: '' },
-            { emoji: '🔑', label: 'Credenciales', desc: '' },
-            { emoji: '👑', label: 'Root', desc: '' },
+            { icon: 'user', label: 'Usuario', desc: '' },
+            { icon: 'users', label: 'Grupo', desc: '' },
+            { icon: 'users', label: 'Rol', desc: '' },
+            { icon: 'file-text', label: 'Política', desc: '' },
+            { icon: 'smartphone', label: 'MFA', desc: '' },
+            { icon: 'target', label: 'Mínimo privilegio', desc: '' },
+            { icon: 'key', label: 'Credenciales', desc: '' },
+            { icon: 'crown', label: 'Root', desc: '' },
           ]} />
           <p>Todo el resto de la clase se construye con estas piezas.</p>
         </section>
 
         <section className="lesson-section">
-          <h3>🏢 3. Empresa del desafío: NovaCloud</h3>
+          <h3>3. Empresa del desafío: NovaCloud</h3>
           <Nota><p>Presentamos una empresa ficticia:</p></Nota>
-          <ConceptBadge>🏢 NovaCloud</ConceptBadge>
+          <ConceptBadge>NovaCloud</ConceptBadge>
           <p>Tiene una aplicación de comercio electrónico en AWS. Trabajan seis personas:</p>
           <RoleGrid roles={[
-            { emoji: '👩', label: 'Camila', desc: 'Marketing' },
-            { emoji: '👨', label: 'Pedro', desc: 'Infraestructura' },
-            { emoji: '👩', label: 'Daniela', desc: 'Desarrollo' },
-            { emoji: '👨', label: 'Andrés', desc: 'Finanzas' },
-            { emoji: '👩', label: 'Carolina', desc: 'Auditoría' },
-            { emoji: '👨', label: 'Luis', desc: 'Soporte' },
+            { icon: 'user', label: 'Camila', desc: 'Marketing' },
+            { icon: 'user', label: 'Pedro', desc: 'Infraestructura' },
+            { icon: 'user', label: 'Daniela', desc: 'Desarrollo' },
+            { icon: 'user', label: 'Andrés', desc: 'Finanzas' },
+            { icon: 'user', label: 'Carolina', desc: 'Auditoría' },
+            { icon: 'user', label: 'Luis', desc: 'Soporte' },
           ]} />
           <p>Además existen: 🖥️ una aplicación ejecutándose en EC2, 📦 imágenes almacenadas en S3, 🗄️ una base de datos, 💰 información de costos.</p>
         </section>
 
         <section className="lesson-section">
-          <h3>🎮 4. Primera misión: organizar a las personas</h3>
+          <h3>4. Primera misión: organizar a las personas</h3>
           <Dialogo>¿Crearíamos una sola cuenta para todos?</Dialogo>
           <p>❌ No. Ahora deben agrupar a los trabajadores. Una propuesta razonable:</p>
           <table className="table lesson-summary-table">
@@ -126,7 +126,7 @@ export default function Modulo2Clase6() {
         </section>
 
         <section className="lesson-section">
-          <h3>🔐 5. Segunda misión: definir necesidades</h3>
+          <h3>5. Segunda misión: definir necesidades</h3>
           <p>Les entregamos esta tabla incompleta:</p>
           <table className="table lesson-summary-table">
             <thead><tr><th>Persona</th><th>Necesita</th><th>No necesita</th></tr></thead>
@@ -143,12 +143,12 @@ export default function Modulo2Clase6() {
         </section>
 
         <section className="lesson-section">
-          <h3>🎯 6. El principio que manda</h3>
+          <h3>6. El principio que manda</h3>
           <QaItem question="¿Qué principio debemos aplicar antes de entregar permisos?" answer="Mínimo privilegio: solo los permisos necesarios para la tarea." />
         </section>
 
         <section className="lesson-section">
-          <h3>📜 7. Tercera misión: política para Marketing</h3>
+          <h3>7. Tercera misión: política para Marketing</h3>
           <p>Camila necesita: ✅ visualizar imágenes, ✅ subir imágenes. ❌ no necesita eliminarlas.</p>
           <p>Pedimos construir una política humana:</p>
           <ConceptBadge>EFFECT: Allow — ACTIONS: Ver imágenes, Subir imágenes — RESOURCE: Imágenes de productos</ConceptBadge>
@@ -156,7 +156,7 @@ export default function Modulo2Clase6() {
         </section>
 
         <section className="lesson-section">
-          <h3>🔍 8. Ahora leemos una política</h3>
+          <h3>8. Ahora leemos una política</h3>
           <pre className="codeblock">{POLICY_LECTURA}</pre>
           <QaItem question="1. ¿Permite o deniega?" answer="Allow." />
           <QaItem question="2. ¿Qué acción aparece?" answer="GetObject." />
@@ -165,23 +165,23 @@ export default function Modulo2Clase6() {
         </section>
 
         <section className="lesson-section">
-          <h3>🚨 9. Política peligrosa</h3>
+          <h3>9. Política peligrosa</h3>
           <pre className="codeblock">{POLICY_PELIGROSA}</pre>
           <QaItem question="¿Le darían esto a Camila?" answer="❌ No, porque tiene permisos muchísimo más amplios de los necesarios. Viola mínimo privilegio." />
         </section>
 
         <section className="lesson-section">
-          <h3>🧩 10. Cuarta misión: EC2 necesita S3</h3>
+          <h3>10. Cuarta misión: EC2 necesita S3</h3>
           <p>La aplicación en EC2 necesita leer imágenes desde S3. Tenemos dos propuestas.</p>
           <CompareCols cols={[
-            { emoji: '🔑', title: 'Opción A', items: ['EC2 → Access Key guardada en código → S3'] },
-            { emoji: '🎭', title: 'Opción B', items: ['EC2 → Rol IAM → Leer imágenes → S3'] },
+            { icon: 'key', title: 'Opción A', items: ['EC2 → Access Key guardada en código → S3'] },
+            { icon: 'users', title: 'Opción B', items: ['EC2 → Rol IAM → Leer imágenes → S3'] },
           ]} />
           <QaItem question="¿Cuál elegirían?" answer="✅ B." />
         </section>
 
         <section className="lesson-section">
-          <h3>🎭 11. ¿Por qué rol?</h3>
+          <h3>11. ¿Por qué rol?</h3>
           <Nota><p>Porque:</p></Nota>
           <ul className="plain-list">
             <li>evita guardar credenciales permanentes en el código;</li>
@@ -192,7 +192,7 @@ export default function Modulo2Clase6() {
         </section>
 
         <section className="lesson-section">
-          <h3>🤝 12. Quinta misión: confianza</h3>
+          <h3>12. Quinta misión: confianza</h3>
           <QaItem
             question="¿Qué debe decidir un rol antes de entregar acceso?"
             answer="Dos cosas: 🤝 ¿Quién puede asumirlo? y 📜 ¿Qué puede hacer?"
@@ -201,24 +201,24 @@ export default function Modulo2Clase6() {
         </section>
 
         <section className="lesson-section">
-          <h3>📱 13. Sexta misión: proteger identidades humanas</h3>
+          <h3>13. Sexta misión: proteger identidades humanas</h3>
           <QaItem question="¿Qué medida recomendaríamos para las identidades humanas importantes?" answer="MFA." />
           <Flow steps={[
-            { emoji: '🔑', label: 'Contraseña' },
-            { emoji: '📱', label: 'Segundo factor' },
+            { icon: 'key', label: 'Contraseña' },
+            { icon: 'smartphone', label: 'Segundo factor' },
           ]} />
         </section>
 
         <section className="lesson-section">
-          <h3>👑 14. Séptima misión: aparece root</h3>
+          <h3>14. Séptima misión: aparece root</h3>
           <Nota><p>El gerente dice:</p></Nota>
           <Dialogo>"Para no complicarnos, usemos root entre todos."</Dialogo>
-          <ConceptBadge variant="danger">❌ No</ConceptBadge>
+          <ConceptBadge variant="danger">No</ConceptBadge>
           <Nota><p>Root debe protegerse especialmente y reservarse para tareas que realmente lo requieren. No se comparte. No se usa como cuenta cotidiana.</p></Nota>
         </section>
 
         <section className="lesson-section">
-          <h3>🎣 15. Octava misión: phishing</h3>
+          <h3>15. Octava misión: phishing</h3>
           <Nota><p>Camila recibe un correo:</p></Nota>
           <Dialogo>"Su cuenta AWS será suspendida. Ingrese su contraseña y código MFA aquí."</Dialogo>
           <QaItem question="¿Qué riesgo existe?" answer="🎣 Phishing." />
@@ -226,22 +226,22 @@ export default function Modulo2Clase6() {
         </section>
 
         <section className="lesson-section">
-          <h3>💥 16. Novena misión: Access Key filtrada</h3>
+          <h3>16. Novena misión: Access Key filtrada</h3>
           <Nota><p>Daniela encuentra esto en GitHub público:</p></Nota>
           <pre className="codeblock">{ACCESS_KEY_LEAK}</pre>
           <QaItem question="¿La borramos del repositorio y seguimos trabajando?" answer="❌ No. Debemos considerarla potencialmente comprometida." />
           <p>Procedimiento conceptual:</p>
           <Flow steps={[
-            { emoji: '🚨', label: 'Detectar' },
-            { emoji: '🔒', label: 'Revocar/deshabilitar' },
-            { emoji: '🔍', label: 'Revisar actividad' },
-            { emoji: '🛠️', label: 'Corregir causa' },
-            { emoji: '🔑', label: 'Reemplazar solo si es necesario' },
+            { icon: 'bell', label: 'Detectar' },
+            { icon: 'lock', label: 'Revocar/deshabilitar' },
+            { icon: 'search', label: 'Revisar actividad' },
+            { icon: 'settings', label: 'Corregir causa' },
+            { icon: 'key', label: 'Reemplazar solo si es necesario' },
           ]} />
         </section>
 
         <section className="lesson-section">
-          <h3>🧠 17. Desafío central</h3>
+          <h3>17. Desafío central</h3>
           <Nota><p>Ahora entregamos a los grupos el escenario completo.</p></Nota>
           <ConceptBadge>Caso: NovaCloud</ConceptBadge>
           <p>La empresa necesita:</p>
@@ -264,7 +264,7 @@ export default function Modulo2Clase6() {
         </section>
 
         <section className="lesson-section">
-          <h3>🧩 18. Plantilla del estudiante</h3>
+          <h3>18. Plantilla del estudiante</h3>
           <Nota><p>Les entregaría:</p></Nota>
           <InfoBox items={[
             'PERSONA / SERVICIO: _____________________',
@@ -277,7 +277,7 @@ export default function Modulo2Clase6() {
         </section>
 
         <section className="lesson-section">
-          <h3>✅ 19. Solución esperada</h3>
+          <h3>19. Solución esperada</h3>
           <Reveal label="Ver una posible solución">
             <InfoBox title="👩 Camila" items={['Grupo: Marketing', 'Permisos: ver/subir imágenes', 'MFA: sí', 'No necesita: administrar servidores']} />
             <InfoBox title="👨 Pedro" items={['Grupo: Infraestructura', 'Permisos: administrar recursos necesarios', 'MFA: sí', 'No necesita: acceso financiero salvo necesidad']} />
@@ -288,7 +288,7 @@ export default function Modulo2Clase6() {
         </section>
 
         <section className="lesson-section">
-          <h3>😈 20. El gerente vuelve</h3>
+          <h3>20. El gerente vuelve</h3>
           <Nota><p>El gerente propone:</p></Nota>
           <Dialogo>"Administrador para todos. Así nunca tendrán problemas de permisos."</Dialogo>
           <Nota>
@@ -297,7 +297,7 @@ export default function Modulo2Clase6() {
         </section>
 
         <section className="lesson-section">
-          <h3>🔍 21. Detecta las 8 malas prácticas</h3>
+          <h3>21. Detecta las 8 malas prácticas</h3>
           <Nota><p>Mostramos:</p></Nota>
           <ol className="plain-list">
             <li>Root se usa todos los días.</li>
@@ -313,7 +313,7 @@ export default function Modulo2Clase6() {
         </section>
 
         <section className="lesson-section">
-          <h3>🛠️ 22. Corrección</h3>
+          <h3>22. Corrección</h3>
           <table className="table lesson-summary-table">
             <thead><tr><th>Mala práctica</th><th>Mejora</th></tr></thead>
             <tbody>
@@ -330,7 +330,7 @@ export default function Modulo2Clase6() {
         </section>
 
         <section className="lesson-section">
-          <h3>🎮 23. Juego rápido: decide en 5 segundos</h3>
+          <h3>23. Juego rápido: decide en 5 segundos</h3>
           <Nota><p>Lees un caso y deben responder.</p></Nota>
           <QaItem question="Caso 1 — Persona que trabaja diariamente." answer="👤 Usuario / identidad humana apropiada." />
           <QaItem question="Caso 2 — 20 personas de Marketing." answer="👥 Grupo." />
@@ -341,12 +341,12 @@ export default function Modulo2Clase6() {
         </section>
 
         <section className="lesson-section">
-          <h3>📝 24. Evaluación final</h3>
+          <h3>24. Evaluación final</h3>
           <Quiz questions={QUIZ_QUESTIONS} />
         </section>
 
         <section className="lesson-section">
-          <h3>🏆 25. Reto final del Módulo 2</h3>
+          <h3>25. Reto final del Módulo 2</h3>
           <Nota><p>La pregunta final será:</p></Nota>
           <Dialogo>"Diseña el acceso AWS de una pequeña empresa sin utilizar la palabra 'administrador' como solución." 😈</Dialogo>
           <p>Deben incluir:</p>
@@ -361,7 +361,7 @@ export default function Modulo2Clase6() {
         </section>
 
         <section className="lesson-section">
-          <h3>📊 26. Rúbrica</h3>
+          <h3>26. Rúbrica</h3>
           <table className="table lesson-summary-table">
             <thead><tr><th>Nivel</th><th>Resultado</th></tr></thead>
             <tbody>
@@ -373,7 +373,7 @@ export default function Modulo2Clase6() {
         </section>
 
         <section className="lesson-section">
-          <h3>🧠 27. Pregunta oral definitiva</h3>
+          <h3>27. Pregunta oral definitiva</h3>
           <Nota><p>Preguntaría:</p></Nota>
           <Dialogo>"¿Por qué no damos acceso administrador a todo el mundo?"</Dialogo>
           <Reveal label="Ver una buena respuesta">
@@ -383,24 +383,24 @@ export default function Modulo2Clase6() {
         </section>
 
         <section className="lesson-section">
-          <h3>📌 28. Mapa final del Módulo 2</h3>
+          <h3>28. Mapa final del Módulo 2</h3>
           <RoleGrid roles={[
-            { emoji: '👤', label: 'Usuarios', desc: '' },
-            { emoji: '👥', label: 'Grupos', desc: '' },
-            { emoji: '🎭', label: 'Roles', desc: '' },
+            { icon: 'user', label: 'Usuarios', desc: '' },
+            { icon: 'users', label: 'Grupos', desc: '' },
+            { icon: 'users', label: 'Roles', desc: '' },
           ]} />
           <Flow steps={[
-            { emoji: '📜', label: 'Políticas' },
-            { emoji: '🎯', label: 'Mínimo privilegio' },
+            { icon: 'file-text', label: 'Políticas' },
+            { icon: 'target', label: 'Mínimo privilegio' },
           ]} />
           <RoleGrid roles={[
-            { emoji: '📱', label: 'MFA', desc: '' },
-            { emoji: '🔑', label: 'Credenciales', desc: '' },
+            { icon: 'smartphone', label: 'MFA', desc: '' },
+            { icon: 'key', label: 'Credenciales', desc: '' },
           ]} />
         </section>
 
         <section className="lesson-section">
-          <h3>🎟️ 29. Ticket de salida</h3>
+          <h3>29. Ticket de salida</h3>
           <Nota><p>Cada estudiante completa:</p></Nota>
           <Dialogo>"Antes de entregar acceso en AWS, primero preguntaría ________, después ________ y finalmente ________."</Dialogo>
           <Reveal label="Ver una respuesta ideal">
@@ -409,13 +409,13 @@ export default function Modulo2Clase6() {
         </section>
 
         <section className="lesson-section">
-          <h3>🏁 30. Cierre del Módulo 2</h3>
+          <h3>30. Cierre del Módulo 2</h3>
           <Nota><p>Al terminar este módulo, el estudiante debería poder mirar una situación como:</p></Nota>
           <Flow steps={[
-            { emoji: '👩', label: 'Persona' },
-            { emoji: '🔐', label: 'IAM' },
-            { emoji: '📜', label: 'Permiso' },
-            { emoji: '☁️', label: 'Recurso' },
+            { icon: 'user', label: 'Persona' },
+            { icon: 'lock', label: 'IAM' },
+            { icon: 'file-text', label: 'Permiso' },
+            { icon: 'cloud', label: 'Recurso' },
           ]} />
           <p>y preguntarse automáticamente:</p>
           <ul className="plain-list">
@@ -429,7 +429,7 @@ export default function Modulo2Clase6() {
         </section>
 
         <div className="bridge-callout">
-          <ConceptBadge>✅ Módulo 2 completado</ConceptBadge>
+          <ConceptBadge>Módulo 2 completado</ConceptBadge>
           <p style={{ marginTop: 'var(--space-3)' }}>El siguiente módulo ya puede cambiar bastante el ritmo.</p>
           <span className="tag tag-outline">Módulo 3 · próximamente</span>
         </div>

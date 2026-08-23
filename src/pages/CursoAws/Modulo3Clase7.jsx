@@ -1,5 +1,5 @@
 import {
-  Nota, Dialogo, ConceptBadge, RoleGrid, Flow, InfoBox, CompareCols, QaItem, Reveal, Quiz,
+  Icon, Nota, Dialogo, ConceptBadge, RoleGrid, Flow, InfoBox, CompareCols, QaItem, Reveal, Quiz,
 } from './lessonComponents.jsx';
 
 const QUIZ_QUESTIONS = [
@@ -19,7 +19,7 @@ export default function Modulo3Clase7() {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', paddingBottom: 'var(--space-8)' }}>
       <div className="breadcrumb">Aprendizaje › AWS desde cero › Módulo 3 · Clase 7</div>
-      <div className="lesson-eyebrow">🏆 AWS desde Cero</div>
+      <div className="lesson-eyebrow"><Icon name="cloud" /> AWS desde Cero</div>
       <h2 style={{ margin: '0 0 4px' }}>Módulo 3 · Clase 7: Laboratorio integrador, publica tu primera página web con Amazon EC2</h2>
       <p className="lesson-subtitle">
         Cierre práctico del módulo: conectamos AMI, tipo de instancia, Security Group, EBS, acceso, servidor web, monitoreo y costos en una sola solución.
@@ -36,7 +36,7 @@ export default function Modulo3Clase7() {
       <div className="lesson-body">
 
         <section className="lesson-section">
-          <h3>🎯 1. Objetivo de aprendizaje</h3>
+          <h3>1. Objetivo de aprendizaje</h3>
           <Nota><p>Al finalizar esta clase, el estudiante podrá:</p></Nota>
           <ul className="plain-list">
             <li>Planificar una instancia EC2 antes de crearla.</li>
@@ -59,54 +59,54 @@ export default function Modulo3Clase7() {
         </section>
 
         <section className="lesson-section">
-          <h3>🧠 2. Hoy no empezamos creando</h3>
+          <h3>2. Hoy no empezamos creando</h3>
           <Nota><p>Antes de entrar a AWS, presentamos la misión:</p></Nota>
-          <ConceptBadge>🌐 MISIÓN — Publicar una página web sencilla utilizando Amazon EC2</ConceptBadge>
+          <ConceptBadge>MISIÓN — Publicar una página web sencilla utilizando Amazon EC2</ConceptBadge>
           <Flow steps={[
-            { emoji: '👩', label: 'Usuario' },
-            { emoji: '🌐', label: 'Navegador' },
-            { emoji: '📡', label: 'Internet' },
-            { emoji: '🛡️', label: 'Security Group' },
-            { emoji: '🖥️', label: 'Amazon EC2' },
-            { emoji: '🌐', label: 'Servidor web' },
-            { emoji: '📄', label: 'index.html' },
+            { icon: 'user', label: 'Usuario' },
+            { icon: 'globe', label: 'Navegador' },
+            { icon: 'radio', label: 'Internet' },
+            { icon: 'shield', label: 'Security Group' },
+            { icon: 'server', label: 'Amazon EC2' },
+            { icon: 'globe', label: 'Servidor web' },
+            { icon: 'file-text', label: 'index.html' },
           ]} />
           <p>Ese dibujo resume prácticamente todo el módulo.</p>
         </section>
 
         <section className="lesson-section">
-          <h3>🧩 3. Antes de tocar AWS: diseñemos</h3>
+          <h3>3. Antes de tocar AWS: diseñemos</h3>
           <Dialogo>¿Qué necesitamos para realizar este laboratorio?</Dialogo>
           <RoleGrid roles={[
-            { emoji: '🖥️', label: 'Cómputo', desc: 'Amazon EC2' },
-            { emoji: '📀', label: 'Plantilla', desc: 'Una AMI Linux adecuada' },
-            { emoji: '⚙️', label: 'Capacidad', desc: 'Instancia pequeña suficiente para el laboratorio' },
-            { emoji: '💾', label: 'Almacenamiento', desc: 'Un volumen EBS básico' },
-            { emoji: '🔐', label: 'Seguridad', desc: 'Permitir solamente las conexiones necesarias' },
-            { emoji: '🌐', label: 'Aplicación', desc: 'Un servidor web' },
+            { icon: 'server', label: 'Cómputo', desc: 'Amazon EC2' },
+            { icon: 'disc', label: 'Plantilla', desc: 'Una AMI Linux adecuada' },
+            { icon: 'settings', label: 'Capacidad', desc: 'Instancia pequeña suficiente para el laboratorio' },
+            { icon: 'hard-drive', label: 'Almacenamiento', desc: 'Un volumen EBS básico' },
+            { icon: 'lock', label: 'Seguridad', desc: 'Permitir solamente las conexiones necesarias' },
+            { icon: 'globe', label: 'Aplicación', desc: 'Un servidor web' },
           ]} />
         </section>
 
         <section className="lesson-section">
-          <h3>📝 4. Nuestra ficha de arquitectura</h3>
+          <h3>4. Nuestra ficha de arquitectura</h3>
           <Nota><p>Antes de crear nada, cada estudiante completa: Proyecto (Mi primera web AWS), Región, AMI, Tipo de instancia, Sistema operativo, Puerto web, Acceso administrativo, Almacenamiento.</p></Nota>
           <p>Si no pueden completar esta hoja, todavía no deberían presionar Launch Instance.</p>
         </section>
 
         <section className="lesson-section">
-          <h3>🌎 5. Paso 1: comprobar la Región</h3>
+          <h3>5. Paso 1: comprobar la Región</h3>
           <Dialogo>¿En qué Región estamos trabajando?</Dialogo>
-          <Flow steps={[{ emoji: '☁️', label: 'AWS' }, { emoji: '🌎', label: 'Región' }, { emoji: '🏢', label: 'Availability Zone' }, { emoji: '🖥️', label: 'EC2' }]} />
+          <Flow steps={[{ icon: 'cloud', label: 'AWS' }, { icon: 'map-pin', label: 'Región' }, { icon: 'building', label: 'Availability Zone' }, { icon: 'server', label: 'EC2' }]} />
           <p>Todos los estudiantes deberían trabajar en la Región indicada para el laboratorio, salvo que exista una razón diferente.</p>
         </section>
 
         <section className="lesson-section">
-          <h3>🔎 6. Paso 2: entrar a Amazon EC2</h3>
+          <h3>6. Paso 2: entrar a Amazon EC2</h3>
           <p>Utilizamos el buscador de servicios, buscamos EC2, entramos al servicio y luego: <strong>Instances → Launch instance</strong>.</p>
         </section>
 
         <section className="lesson-section">
-          <h3>🏷️ 7. Paso 3: nombre y etiquetas</h3>
+          <h3>7. Paso 3: nombre y etiquetas</h3>
           <Nota><p>Usaremos un nombre claro, por ejemplo <code>web-aws-curso</code> o <code>ec2-web-clase7</code>. Evitaría <code>prueba</code> o <code>servidor1</code> si después tendremos muchos recursos.</p></Nota>
           <p>Podemos agregar etiquetas, por ejemplo:</p>
           <ConceptBadge>Curso = AWSDesdeCero · Modulo = EC2 · Ambiente = Laboratorio</ConceptBadge>
@@ -114,38 +114,38 @@ export default function Modulo3Clase7() {
         </section>
 
         <section className="lesson-section">
-          <h3>📀 8. Paso 4: elegir AMI</h3>
+          <h3>8. Paso 4: elegir AMI</h3>
           <Nota><p>Para este laboratorio utilizaremos una imagen Linux adecuada proporcionada por una fuente confiable, por ejemplo una opción oficial de Amazon Linux disponible en la consola.</p></Nota>
           <QaItem question="¿Qué estamos eligiendo?" answer="📀 La plantilla inicial de nuestra instancia." />
           <p>¿Por qué Linux? Porque nos permitirá instalar fácilmente un servidor web sencillo y practicar conceptos básicos. Pero la lección no es "EC2 siempre usa Linux" — EC2 permite distintos sistemas según las necesidades.</p>
         </section>
 
         <section className="lesson-section">
-          <h3>⚙️ 9. Paso 5: tipo de instancia</h3>
+          <h3>9. Paso 5: tipo de instancia</h3>
           <Nota><p>Seleccionamos un tipo pequeño apropiado para el laboratorio y revisamos: 🧠 vCPU; 🧮 memoria; 💰 condiciones de precio; 🏗️ compatibilidad.</p></Nota>
           <p>Recordamos: 🎯 Right sizing. No queremos una máquina gigantesca para entregar una página con dos líneas de texto.</p>
           <QaItem question="Un estudiante selecciona una instancia extremadamente grande. ¿Qué preguntamos?" answer="¿Qué necesidad concreta justifica esa capacidad? Si la respuesta es 'ninguna', cambiamos la elección. La infraestructura se justifica por necesidad, no por entusiasmo." />
         </section>
 
         <section className="lesson-section">
-          <h3>🔑 10. Paso 6: método de acceso</h3>
+          <h3>10. Paso 6: método de acceso</h3>
           <Nota><p>Según la configuración elegida para el laboratorio, podemos utilizar un método de conexión autorizado como EC2 Instance Connect (cuando esté disponible y configurado), SSH con key pair, o Session Manager si la infraestructura está preparada.</p></Nota>
           <p>Para nuestro público: necesitamos una forma segura de administrar la instancia.</p>
           <p>Si usamos Key Pair: recordamos 🔓 parte pública + 🔐 clave privada. La clave privada no se comparte, no se publica y no se sube a GitHub.</p>
         </section>
 
         <section className="lesson-section">
-          <h3>🌐 11. Paso 7: red</h3>
+          <h3>11. Paso 7: red</h3>
           <p>Revisamos: 🌐 VPC, 🏘️ Subnet, 🌍 Public IP. No profundizamos en VPC todavía, pero sabemos: nuestra instancia necesita conectividad apropiada para el objetivo del laboratorio.</p>
           <Dialogo>¿Necesitamos acceso desde Internet? Sí, porque queremos que un navegador pueda acceder a nuestra página. Pero esto no significa "abrimos todo".</Dialogo>
         </section>
 
         <section className="lesson-section">
-          <h3>🛡️ 12. Paso 8: Security Group</h3>
+          <h3>12. Paso 8: Security Group</h3>
           <Nota><p>Nuestro servidor tendrá dos necesidades diferentes:</p></Nota>
           <RoleGrid roles={[
-            { emoji: '🌐', label: 'Usuarios web', desc: 'Necesitan acceder a HTTP, puerto 80' },
-            { emoji: '👩', label: 'Administrador', desc: 'Acceso administrativo según el método utilizado, por ejemplo SSH puerto 22' },
+            { icon: 'globe', label: 'Usuarios web', desc: 'Necesitan acceder a HTTP, puerto 80' },
+            { icon: 'user', label: 'Administrador', desc: 'Acceso administrativo según el método utilizado, por ejemplo SSH puerto 22' },
           ]} />
           <p>Diseñemos primero las reglas:</p>
           <InfoBox title="Regla web" items={['Tipo: HTTP', 'Puerto: 80', 'Origen: público según objetivo']} />
@@ -154,70 +154,70 @@ export default function Modulo3Clase7() {
         </section>
 
         <section className="lesson-section">
-          <h3>🌎 13. ¿Por qué HTTP público y SSH restringido?</h3>
+          <h3>13. ¿Por qué HTTP público y SSH restringido?</h3>
           <p>Porque queremos que usuarios puedan visitar nuestra página:</p>
-          <Flow steps={[{ emoji: '🌎', label: 'Internet' }, { emoji: '🚪', label: 'Puerto 80' }, { emoji: '🖥️', label: 'EC2' }]} />
+          <Flow steps={[{ icon: 'map-pin', label: 'Internet' }, { icon: 'door', label: 'Puerto 80' }, { icon: 'server', label: 'EC2' }]} />
           <Nota><p>SSH es una vía administrativa. No queremos que cualquiera llegue por SSH si podemos restringirlo. Aplicamos: mínimo acceso necesario.</p></Nota>
         </section>
 
         <section className="lesson-section">
-          <h3>💾 14. Paso 9: almacenamiento</h3>
+          <h3>14. Paso 9: almacenamiento</h3>
           <p>Revisamos el almacenamiento EBS. Para una página sencilla, utilizamos únicamente la capacidad necesaria para el laboratorio.</p>
-          <Flow steps={[{ emoji: '🖥️', label: 'EC2 procesa' }, { emoji: '💾', label: 'EBS almacena' }]} />
+          <Flow steps={[{ icon: 'server', label: 'EC2 procesa' }, { icon: 'hard-drive', label: 'EBS almacena' }]} />
         </section>
 
         <section className="lesson-section">
-          <h3>🔍 15. Paso 10: revisar antes de lanzar</h3>
+          <h3>15. Paso 10: revisar antes de lanzar</h3>
           <InfoBox items={['Región correcta', 'Nombre claro', 'AMI apropiada', 'Tipo adecuado', 'Método de acceso correcto', 'Red revisada', 'Security Group revisado', 'Almacenamiento revisado', 'Precio revisado']} />
           <p>Ahora sí: 🚀 Launch instance.</p>
-          <Flow steps={[{ emoji: '⏳', label: 'Pending' }, { emoji: '🟢', label: 'Running' }]} />
+          <Flow steps={[{ icon: 'clock', label: 'Pending' }, { icon: 'dot-success', label: 'Running' }]} />
           <p>Cuando aparece Running, nuestro servidor virtual está ejecutándose. Pero todavía no tenemos una página.</p>
         </section>
 
         <section className="lesson-section">
-          <h3>🕵️ 16. Detective EC2</h3>
+          <h3>16. Detective EC2</h3>
           <Nota><p>Antes de conectarnos, los estudiantes identifican:</p></Nota>
           <InfoBox items={['Instance ID', 'Instance Type', 'AMI', 'Availability Zone', 'Public IPv4', 'Private IPv4', 'Security Group', 'EBS']} />
         </section>
 
         <section className="lesson-section">
-          <h3>🔌 17. Paso 11: conectarnos</h3>
+          <h3>17. Paso 11: conectarnos</h3>
           <Nota><p>Utilizamos el mecanismo configurado para el laboratorio. Una vez conectados veremos una terminal. Para muchos estudiantes será la primera vez que entren a un servidor remoto.</p></Nota>
           <Dialogo>No estamos trabajando directamente en nuestro computador. Estamos enviando instrucciones al servidor EC2.</Dialogo>
-          <Flow steps={[{ emoji: '👩', label: 'Mi computador' }, { emoji: '🌐', label: 'Internet / conexión autorizada' }, { emoji: '🖥️', label: 'EC2' }]} />
+          <Flow steps={[{ icon: 'user', label: 'Mi computador' }, { icon: 'globe', label: 'Internet / conexión autorizada' }, { icon: 'server', label: 'EC2' }]} />
         </section>
 
         <section className="lesson-section">
-          <h3>🐧 18. Primero reconocemos dónde estamos</h3>
+          <h3>18. Primero reconocemos dónde estamos</h3>
           <Nota><p>Podemos utilizar comandos básicos de Linux apropiados para observar:</p></Nota>
           <InfoBox items={['whoami — conocer el usuario actual', 'hostname — identificar el sistema']} />
           <p>El objetivo no es enseñar Linux completo. Solo demostrar: "estoy dentro del servidor".</p>
         </section>
 
         <section className="lesson-section">
-          <h3>📦 19. Necesitamos un servidor web</h3>
+          <h3>19. Necesitamos un servidor web</h3>
           <Nota><p>Una instancia Linux sola no necesariamente entrega páginas web. Necesitamos instalar software capaz de responder solicitudes HTTP.</p></Nota>
           <p>Para nuestro laboratorio utilizaremos <strong>Apache HTTP Server</strong> (en Amazon Linux suele identificarse como <code>httpd</code>).</p>
           <Nota><p>Analogía: tenemos el edificio (🏢 EC2), pero necesitamos alguien que atienda pedidos: 👨‍🍳 el servidor web. Cuando llega <code>GET /</code>, el servidor web busca la página correspondiente y responde.</p></Nota>
-          <Flow steps={[{ emoji: '🌐', label: 'Navegador' }, { emoji: '🚪', label: 'Puerto 80' }, { emoji: '🌐', label: 'Apache' }, { emoji: '📄', label: 'HTML' }]} />
+          <Flow steps={[{ icon: 'globe', label: 'Navegador' }, { icon: 'door', label: 'Puerto 80' }, { icon: 'globe', label: 'Apache' }, { icon: 'file-text', label: 'HTML' }]} />
         </section>
 
         <section className="lesson-section">
-          <h3>🛠️ 20. Instalar y arrancar Apache</h3>
+          <h3>20. Instalar y arrancar Apache</h3>
           <Nota><p>En una instancia Amazon Linux compatible, el docente puede utilizar el gestor de paquetes correspondiente. Ejemplo conceptual:</p></Nota>
           <InfoBox items={['sudo dnf update -y — actualizar información de paquetes', 'sudo dnf install httpd -y — instalar el servidor web', 'sudo systemctl start httpd — iniciar el servicio', 'sudo systemctl enable httpd — iniciarlo automáticamente en futuros arranques']} />
           <p>El comando exacto debe ajustarse a la distribución utilizada. No buscamos memorizar, buscamos comprender: <code>sudo</code> ejecuta con privilegios elevados, <code>dnf</code> gestiona paquetes, <code>install</code> instala, <code>-y</code> acepta confirmaciones automáticamente.</p>
         </section>
 
         <section className="lesson-section">
-          <h3>🔍 21. Verificar el estado</h3>
+          <h3>21. Verificar el estado</h3>
           <p><code>sudo systemctl status httpd</code> — buscamos algo equivalente a <strong>active (running)</strong>.</p>
-          <Flow steps={[{ emoji: '🖥️', label: 'EC2 Running' }, { emoji: '🌐', label: 'Apache Running' }]} />
+          <Flow steps={[{ icon: 'server', label: 'EC2 Running' }, { icon: 'globe', label: 'Apache Running' }]} />
           <Nota><p>Diferencia fundamental: EC2 Running no garantiza Apache Running. Son capas distintas.</p></Nota>
         </section>
 
         <section className="lesson-section">
-          <h3>📄 22. Crear nuestra página</h3>
+          <h3>22. Crear nuestra página</h3>
           <Nota><p>Necesitamos crear nuestro propio contenido. Habitualmente Apache utiliza un directorio como <code>/var/www/html/</code> para servir contenido web.</p></Nota>
           <p>Podemos crear una página sencilla con un comando como:</p>
           <InfoBox items={["echo '<h1>Mi primera web en AWS ☁️</h1><p>Servidor publicado utilizando Amazon EC2.</p>' | sudo tee /var/www/html/index.html"]} />
@@ -225,22 +225,22 @@ export default function Modulo3Clase7() {
         </section>
 
         <section className="lesson-section">
-          <h3>🎉 23. Probar desde el navegador</h3>
+          <h3>23. Probar desde el navegador</h3>
           <Nota><p>Buscamos la Public IPv4 de nuestra instancia. En el navegador: <code>http://PUBLIC-IP</code>. Cada estudiante utiliza la de su propia instancia.</p></Nota>
           <p>Si todo está correctamente configurado debería aparecer: <strong>Mi primera web en AWS ☁️</strong> 🎉</p>
           <Flow steps={[
-            { emoji: '👩', label: 'Estudiante' },
-            { emoji: '🌐', label: 'Navegador' },
-            { emoji: '📡', label: 'Internet' },
-            { emoji: '🛡️', label: 'Security Group · Puerto 80' },
-            { emoji: '🖥️', label: 'EC2' },
-            { emoji: '🌐', label: 'Apache' },
-            { emoji: '📄', label: 'index.html' },
+            { icon: 'user', label: 'Estudiante' },
+            { icon: 'globe', label: 'Navegador' },
+            { icon: 'radio', label: 'Internet' },
+            { icon: 'shield', label: 'Security Group · Puerto 80' },
+            { icon: 'server', label: 'EC2' },
+            { icon: 'globe', label: 'Apache' },
+            { icon: 'file-text', label: 'index.html' },
           ]} />
         </section>
 
         <section className="lesson-section">
-          <h3>🧠 24. Detengámonos aquí</h3>
+          <h3>24. Detengámonos aquí</h3>
           <Dialogo>¿Qué está ocurriendo cuando actualizamos el navegador?</Dialogo>
           <Reveal label="Ver respuesta esperada">
             <p>El navegador envía una solicitud a nuestra instancia, el Security Group permite HTTP, Apache recibe la solicitud y devuelve el archivo HTML.</p>
@@ -249,7 +249,7 @@ export default function Modulo3Clase7() {
         </section>
 
         <section className="lesson-section">
-          <h3>🚨 25. ¿Qué pasa si no funciona?</h3>
+          <h3>25. ¿Qué pasa si no funciona?</h3>
           <Nota><p>No abrimos todos los puertos y rezamos a los dioses del Wi-Fi. 😄 Seguimos un diagnóstico.</p></Nota>
           <Flow steps={[
             { label: '¿EC2 Running?' },
@@ -257,89 +257,89 @@ export default function Modulo3Clase7() {
             { label: '¿Puerto 80 permitido?' },
             { label: '¿Apache Running?' },
             { label: '¿index.html existe?' },
-            { emoji: '🌐', label: 'Página' },
+            { icon: 'globe', label: 'Página' },
           ]} />
           <p>Ese árbol vale más que memorizar botones. Diagnóstico paso a paso: EC2 (Stopped → la web no podrá responder normalmente), IP (¿Public IPv4 correcta?), Security Group (¿HTTP por puerto 80 permitido?), Apache (<code>sudo systemctl status httpd</code>, si está detenido <code>sudo systemctl start httpd</code>), archivo (<code>ls /var/www/html/</code>, esperamos ver <code>index.html</code>).</p>
         </section>
 
         <section className="lesson-section">
-          <h3>🛡️ 26. ¿Nuestra página usa HTTPS?</h3>
+          <h3>26. ¿Nuestra página usa HTTPS?</h3>
           <Nota><p>No necesariamente. Si estamos utilizando <code>http://</code>, estamos usando HTTP. Permitir 443 en el Security Group no transforma automáticamente nuestra aplicación en HTTPS.</p></Nota>
           <p>Necesitaríamos: 🔐 certificado; ⚙️ configuración; 🌐 servidor preparado. Eso se verá más adelante.</p>
         </section>
 
         <section className="lesson-section">
-          <h3>📊 27. Paso 17: revisar monitoreo</h3>
+          <h3>27. Paso 17: revisar monitoreo</h3>
           <Nota><p>Volvemos a EC2, seleccionamos la instancia y buscamos Monitoring. Observamos CPUUtilization. Ahora generemos un poco de actividad: 🔄 actualizamos la página varias veces.</p></Nota>
-          <Flow steps={[{ emoji: '👥', label: 'Solicitudes' }, { emoji: '🖥️', label: 'EC2' }, { emoji: '📊', label: 'Métricas' }]} />
+          <Flow steps={[{ icon: 'users', label: 'Solicitudes' }, { icon: 'server', label: 'EC2' }, { icon: 'bar-chart', label: 'Métricas' }]} />
           <QaItem question="¿CPU baja? ¿Eso significa que debemos eliminar la instancia?" answer="Probablemente sí, la CPU esté baja. Pero no, no debemos eliminarla. Significa que tenemos información para interpretar junto con el contexto." />
         </section>
 
         <section className="lesson-section">
-          <h3>💾 28. Paso 18: revisar EBS</h3>
+          <h3>28. Paso 18: revisar EBS</h3>
           <Nota><p>Buscamos el almacenamiento de la instancia. Identificamos: 💾 Volume ID; 📏 Size; 🔐 Encryption; 🗑️ Delete on termination.</p></Nota>
           <Dialogo>¿Dónde está guardado nuestro index.html? En almacenamiento utilizado por el sistema, normalmente sobre el volumen correspondiente.</Dialogo>
           <p>¿Necesitamos snapshot? Para una página de dos líneas probablemente no necesitamos conservar un respaldo permanente. No creamos recursos solamente porque aparece el botón.</p>
         </section>
 
         <section className="lesson-section">
-          <h3>💰 29. Paso 19: revisar costos</h3>
+          <h3>29. Paso 19: revisar costos</h3>
           <Dialogo>¿Qué recursos tenemos actualmente?</Dialogo>
           <p>Podrían existir: 🖥️ EC2; 💾 EBS; 🛡️ Security Group; 🔑 Key Pair; 🌐 recursos de red; y quizás otros según nuestra configuración.</p>
         </section>
 
         <section className="lesson-section">
-          <h3>🧹 30. La parte más importante: limpiar</h3>
+          <h3>30. La parte más importante: limpiar</h3>
           <Nota><p>Si esta instancia existe únicamente para el laboratorio y ya no será necesaria, la eliminamos de forma controlada. No simplemente cerramos el navegador.</p></Nota>
           <p>Paso 20: Terminate Instance. Verificamos "¿estoy eliminando la instancia correcta?" y después: Terminate.</p>
-          <Flow steps={[{ emoji: '🟢', label: 'Running' }, { emoji: '⚫', label: 'Shutting-down' }, { emoji: '❌', label: 'Terminated' }]} />
+          <Flow steps={[{ icon: 'dot-success', label: 'Running' }, { icon: 'dot-muted', label: 'Shutting-down' }, { icon: 'x-circle', label: 'Terminated' }]} />
           <Nota><p>En un entorno real no haríamos esto sin revisar información importante, respaldos, dependencias, volúmenes, aplicaciones y usuarios. Pero nuestro laboratorio es desechable por diseño. Esa es una diferencia enorme.</p></Nota>
         </section>
 
         <section className="lesson-section">
-          <h3>✅ 31. Checklist de limpieza</h3>
+          <h3>31. Checklist de limpieza</h3>
           <InfoBox items={['EC2 revisada', 'EC2 terminada si ya no se necesita', 'EBS revisado', 'Snapshots revisados', 'Security Group revisado', 'Key Pair revisado', 'Región correcta comprobada', 'Costos/recursos revisados']} />
           <p>Después de terminar EC2: revisamos Volumes (¿quedó algún volumen que ya no necesitamos?), Snapshots (¿lo necesitamos?), Key Pair (si fue exclusivo del laboratorio, evaluamos eliminarlo y gestionar de forma segura cualquier archivo local) y Security Group (si ya no tiene dependencias, podemos limpiarlo).</p>
           <Nota><p>Es mucho más fácil eliminar <code>web-aws-curso</code> que intentar decidir qué era <code>test2-final-nuevo</code>. 😄 Una buena nomenclatura también es una práctica operacional.</p></Nota>
         </section>
 
         <section className="lesson-section">
-          <h3>🎮 32. Actividad: reconstruye el flujo</h3>
+          <h3>32. Actividad: reconstruye el flujo</h3>
           <Nota><p>Entregamos estas piezas desordenadas: Apache, EC2, Navegador, Security Group, index.html, Internet, Puerto 80. Los estudiantes deben ordenarlas.</p></Nota>
           <Reveal label="Ver solución">
             <Flow steps={[
-              { emoji: '🌐', label: 'Navegador' },
-              { emoji: '📡', label: 'Internet' },
-              { emoji: '🛡️', label: 'Security Group' },
-              { emoji: '🚪', label: 'Puerto 80' },
-              { emoji: '🖥️', label: 'EC2' },
-              { emoji: '🌐', label: 'Apache' },
-              { emoji: '📄', label: 'index.html' },
+              { icon: 'globe', label: 'Navegador' },
+              { icon: 'radio', label: 'Internet' },
+              { icon: 'shield', label: 'Security Group' },
+              { icon: 'door', label: 'Puerto 80' },
+              { icon: 'server', label: 'EC2' },
+              { icon: 'globe', label: 'Apache' },
+              { icon: 'file-text', label: 'index.html' },
             ]} />
           </Reveal>
         </section>
 
         <section className="lesson-section">
-          <h3>🧪 33. Actividad: rompe la arquitectura</h3>
+          <h3>33. Actividad: rompe la arquitectura</h3>
           <QaItem question="Quitamos la regla HTTP (puerto 80). ¿Qué ocurre?" answer="La instancia puede seguir Running. Apache puede seguir Running. Pero el usuario externo podría no llegar al servicio por esa vía." />
           <QaItem question="Dejamos el puerto 80 abierto pero detenemos Apache. ¿Qué ocurre?" answer="El Security Group permite llegar al puerto, pero no tenemos el servicio web respondiendo." />
           <QaItem question="Apache Running, Security Group correcto, pero EC2 = Stopped. ¿Funciona?" answer="❌ No. Tenemos varias capas que deben colaborar." />
         </section>
 
         <section className="lesson-section">
-          <h3>🧠 34. La gran revelación</h3>
+          <h3>34. La gran revelación</h3>
           <Nota><p>Una aplicación Cloud no depende de una sola cosa.</p></Nota>
-          <ConceptBadge>🖥️ Cómputo + 🌐 Red + 🛡️ Seguridad + 💾 Almacenamiento + ⚙️ Software = 🌐 Servicio</ConceptBadge>
+          <ConceptBadge>Cómputo + 🌐 Red + 🛡️ Seguridad + 💾 Almacenamiento + ⚙️ Software = 🌐 Servicio</ConceptBadge>
           <p>Esta es una de las ideas más importantes de todo el curso.</p>
         </section>
 
         <section className="lesson-section">
-          <h3>📝 35. Mini evaluación</h3>
+          <h3>35. Mini evaluación</h3>
           <Quiz questions={QUIZ_QUESTIONS} />
         </section>
 
         <section className="lesson-section">
-          <h3>🏆 36. Reto final del Módulo 3: WebCloud</h3>
+          <h3>36. Reto final del Módulo 3: WebCloud</h3>
           <Nota><p>El estudiante recibe únicamente esta misión, sin la secuencia exacta:</p></Nota>
           <Dialogo>Publica una página que diga tu nombre y "Mi primera aplicación en Amazon EC2".</Dialogo>
           <p>Debe decidir: Región, AMI, tipo de instancia, método de acceso, Security Group, almacenamiento, servidor web, archivo HTML, prueba y limpieza.</p>
@@ -347,7 +347,7 @@ export default function Modulo3Clase7() {
         </section>
 
         <section className="lesson-section">
-          <h3>🧩 37. Evaluación del reto: seis preguntas</h3>
+          <h3>37. Evaluación del reto: seis preguntas</h3>
           <QaItem question="¿Por qué eligió esa AMI?" answer='No aceptamos solamente "porque decía Linux". Buscamos: "porque necesitaba un sistema Linux compatible con el laboratorio y el servidor web."' />
           <QaItem question="¿Por qué eligió ese tipo de instancia?" answer='"Porque la carga del laboratorio es pequeña y no requiere una instancia grande." Ahí evaluamos: 🎯 right sizing.' />
           <QaItem question="¿Qué regla de red necesita la página?" answer="HTTP por el puerto 80 para el origen correspondiente. El acceso administrativo debe limitarse según el método utilizado." />
@@ -357,7 +357,7 @@ export default function Modulo3Clase7() {
         </section>
 
         <section className="lesson-section">
-          <h3>🔥 38. Reto de diagnóstico</h3>
+          <h3>38. Reto de diagnóstico</h3>
           <QaItem question="EC2 Running, Apache Running, index.html existe, pero el Security Group no tiene HTTP 80. ¿Cuál es el problema probable?" answer="El tráfico web no está permitido por el Security Group." />
           <QaItem question="EC2 Running, HTTP 80 permitido, index.html existe, pero Apache Stopped. ¿Problema?" answer="El servidor web no está ejecutándose." />
           <QaItem question="EC2 Stopped, HTTP 80 permitido, Apache estaba configurado. ¿Problema?" answer="La instancia está detenida." />
@@ -365,7 +365,7 @@ export default function Modulo3Clase7() {
         </section>
 
         <section className="lesson-section">
-          <h3>🎮 39. Reto oral final</h3>
+          <h3>39. Reto oral final</h3>
           <Dialogo>Explícame cómo funciona tu página sin utilizar las palabras AWS, EC2, Security Group, Apache, HTTP, servidor, nube ni Internet. 😈</Dialogo>
           <Reveal label="Ver una buena respuesta">
             <Dialogo>"Mi navegador envía una solicitud hacia una máquina remota. Las reglas verifican que esa comunicación esté permitida, un programa recibe la solicitud, busca el archivo de la página y devuelve su contenido."</Dialogo>
@@ -374,7 +374,7 @@ export default function Modulo3Clase7() {
         </section>
 
         <section className="lesson-section">
-          <h3>📊 40. Rúbrica del laboratorio</h3>
+          <h3>40. Rúbrica del laboratorio</h3>
           <table className="table lesson-summary-table">
             <thead><tr><th>Nivel</th><th>Resultado</th></tr></thead>
             <tbody>
@@ -387,17 +387,17 @@ export default function Modulo3Clase7() {
         </section>
 
         <section className="lesson-section">
-          <h3>🧠 41. Mapa completo del Módulo 3</h3>
+          <h3>41. Mapa completo del Módulo 3</h3>
           <CompareCols cols={[
-            { emoji: '🖥️', title: 'EC2', items: ['📀 AMI', '⚙️ Tipo', '🌎 Región'] },
-            { emoji: '🛡️', title: 'Seguridad', items: ['Security Group', 'Conexiones permitidas'] },
-            { emoji: '💾', title: 'Almacenamiento', items: ['EBS', 'Snapshots'] },
+            { icon: 'server', title: 'EC2', items: ['📀 AMI', '⚙️ Tipo', '🌎 Región'] },
+            { icon: 'shield', title: 'Seguridad', items: ['Security Group', 'Conexiones permitidas'] },
+            { icon: 'hard-drive', title: 'Almacenamiento', items: ['EBS', 'Snapshots'] },
           ]} />
           <p>EC2 + Security Group + EBS + CloudWatch → 🌐 Aplicación funcionando.</p>
         </section>
 
         <section className="lesson-section">
-          <h3>📌 42. Lo que debe sobrevivir al módulo</h3>
+          <h3>42. Lo que debe sobrevivir al módulo</h3>
           <table className="table lesson-summary-table">
             <thead><tr><th>Concepto</th><th>Idea</th></tr></thead>
             <tbody>
@@ -419,7 +419,7 @@ export default function Modulo3Clase7() {
         </section>
 
         <section className="lesson-section">
-          <h3>🎟️ 43. Ticket de salida del Módulo 3</h3>
+          <h3>43. Ticket de salida del Módulo 3</h3>
           <Dialogo>Tu página está funcionando correctamente. ¿Eso significa que tu trabajo terminó?</Dialogo>
           <Reveal label="Ver respuesta esperada">
             <p>No. Todavía debemos monitorear, revisar costos, proteger el recurso, administrar sus datos y limpiar la infraestructura cuando deje de ser necesaria.</p>
@@ -427,28 +427,28 @@ export default function Modulo3Clase7() {
         </section>
 
         <section className="lesson-section">
-          <h3>🏁 44. Cierre del Módulo 3</h3>
+          <h3>44. Cierre del Módulo 3</h3>
           <Nota><p>El estudiante ya pasó de "EC2 es un servidor virtual" a poder comprender el recorrido completo:</p></Nota>
           <Flow steps={[
             { label: 'Necesidad' },
-            { emoji: '📀', label: 'Selecciono plantilla' },
-            { emoji: '⚙️', label: 'Selecciono capacidad' },
-            { emoji: '🖥️', label: 'Creo EC2' },
-            { emoji: '🛡️', label: 'Controlo acceso' },
-            { emoji: '💾', label: 'Administro almacenamiento' },
-            { emoji: '🌐', label: 'Ejecuto aplicación' },
-            { emoji: '📊', label: 'Monitoreo' },
-            { emoji: '💰', label: 'Reviso costos' },
-            { emoji: '🧹', label: 'Limpio' },
+            { icon: 'disc', label: 'Selecciono plantilla' },
+            { icon: 'settings', label: 'Selecciono capacidad' },
+            { icon: 'server', label: 'Creo EC2' },
+            { icon: 'shield', label: 'Controlo acceso' },
+            { icon: 'hard-drive', label: 'Administro almacenamiento' },
+            { icon: 'globe', label: 'Ejecuto aplicación' },
+            { icon: 'bar-chart', label: 'Monitoreo' },
+            { icon: 'dollar-sign', label: 'Reviso costos' },
+            { icon: 'trash', label: 'Limpio' },
           ]} />
           <p>Eso ya es una competencia práctica inicial, no una definición memorizada.</p>
         </section>
 
         <div className="bridge-callout">
-          <div className="lesson-eyebrow">🔗 Módulo 3 completado</div>
+          <div className="lesson-eyebrow"><Icon name="cloud" /> Módulo 3 completado</div>
           <Dialogo>✅ Módulo 3 completado</Dialogo>
           <p>El siguiente bloque lógico sería:</p>
-          <ConceptBadge>📦 Módulo 4: Amazon S3</ConceptBadge>
+          <ConceptBadge>Módulo 4: Amazon S3</ConceptBadge>
           <Nota>
             <p>Ahí dejaremos de pensar en "discos conectados a servidores" y aprenderemos almacenamiento de objetos, buckets, objetos, permisos, versionado, clases de almacenamiento, hosting estático y ciclo de vida, manteniendo exactamente el mismo formato clase por clase.</p>
           </Nota>

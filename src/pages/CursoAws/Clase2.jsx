@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import {
-  Nota, Dialogo, ConceptBadge, StrikeChip, Flow, InfoBox, CompareCols,
+  Icon, Nota, Dialogo, ConceptBadge, StrikeChip, Flow, InfoBox, CompareCols,
   CapacityRow, QaItem, Reveal, Quiz, TrueFalseQuiz,
 } from './lessonComponents.jsx';
 
@@ -64,7 +64,7 @@ export default function Clase2() {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', paddingBottom: 'var(--space-8)' }}>
       <div className="breadcrumb">Aprendizaje › AWS desde cero › Módulo 0 · Clase 2</div>
-      <div className="lesson-eyebrow">☁️ AWS desde Cero</div>
+      <div className="lesson-eyebrow"><Icon name="cloud" /> AWS desde Cero</div>
       <h2 style={{ margin: '0 0 4px' }}>Módulo 0 · Clase 2: ¿Qué es la nube y por qué existe?</h2>
       <p className="lesson-subtitle">
         Por qué las empresas dejaron de comprar todos sus propios servidores, y qué significa realmente "usar la nube".
@@ -81,7 +81,7 @@ export default function Clase2() {
       <div className="lesson-body">
 
         <section className="lesson-section">
-          <h3>🎯 1. Objetivo de la clase</h3>
+          <h3>1. Objetivo de la clase</h3>
           <Nota><p>Al finalizar, el estudiante debería ser capaz de explicar:</p></Nota>
           <Dialogo>“La nube permite utilizar recursos tecnológicos a través de Internet sin tener que comprar, instalar y mantener toda la infraestructura física nosotros mismos.”</Dialogo>
           <p>Además, deberá reconocer tres ideas:</p>
@@ -93,13 +93,13 @@ export default function Clase2() {
         </section>
 
         <section className="lesson-section">
-          <h3>🧠 2. Recordemos la Clase 1</h3>
+          <h3>2. Recordemos la Clase 1</h3>
           <Nota><p>Comenzaría dibujando esto:</p></Nota>
           <Flow steps={[
-            { emoji: '👩', label: 'USUARIO' },
-            { emoji: '🌐', label: 'INTERNET' },
-            { emoji: '🖥️', label: 'SERVIDOR' },
-            { emoji: '📤', label: 'RESPUESTA' },
+            { icon: 'user', label: 'USUARIO' },
+            { icon: 'globe', label: 'INTERNET' },
+            { icon: 'server', label: 'SERVIDOR' },
+            { icon: 'upload', label: 'RESPUESTA' },
           ]} />
           <p>Y preguntaría:</p>
           <Dialogo>¿Dónde está físicamente ese servidor?</Dialogo>
@@ -107,9 +107,9 @@ export default function Clase2() {
         </section>
 
         <section className="lesson-section">
-          <h3>🏢 3. Antes de la nube</h3>
+          <h3>3. Antes de la nube</h3>
           <Nota><p>Imaginemos que tenemos una empresa llamada:</p></Nota>
-          <ConceptBadge>🛍️ SabinaStore</ConceptBadge>
+          <ConceptBadge>SabinaStore</ConceptBadge>
           <p>Nuestra empresa quiere vender productos por Internet. Necesitamos una página web. Pero recordemos la clase anterior: una página necesita computadores que entreguen información a los usuarios.</p>
           <p>Por lo tanto necesitamos:</p>
           <ul className="plain-list">
@@ -124,7 +124,7 @@ export default function Clase2() {
         </section>
 
         <section className="lesson-section">
-          <h3>🏗️ 4. Primera alternativa: comprarlo nosotros</h3>
+          <h3>4. Primera alternativa: comprarlo nosotros</h3>
           <Nota><p>Tradicionalmente, una empresa podía comprar sus propios servidores.</p></Nota>
           <InfoBox title="🏢 SALA DE SERVIDORES" items={['🖥️🖥️🖥️🖥️ 🖥️🖥️🖥️🖥️', '❄️ Refrigeración', '🔌 Electricidad', '🌐 Internet', '🔐 Seguridad']} />
           <Nota><p>El problema no termina al comprar los servidores.</p></Nota>
@@ -142,47 +142,47 @@ export default function Clase2() {
         </section>
 
         <section className="lesson-section">
-          <h3>🛒 5. Aparece nuestro primer problema</h3>
+          <h3>5. Aparece nuestro primer problema</h3>
           <Nota><p>SabinaStore normalmente recibe:</p></Nota>
           <ConceptBadge>1.000 visitas diarias</ConceptBadge>
           <p>Compramos servidores capaces de atender:</p>
           <ConceptBadge>5.000 visitas</ConceptBadge>
           <p>Todo funciona perfectamente. Hasta que llega:</p>
-          <ConceptBadge variant="warning">🔥 CYBER MONDAY</ConceptBadge>
+          <ConceptBadge variant="warning">CYBER MONDAY</ConceptBadge>
           <p>Y aparecen:</p>
           <ConceptBadge variant="danger">30.000 visitantes 😱</ConceptBadge>
           <p>¿Qué hacemos? Nuestros servidores tienen una capacidad limitada.</p>
         </section>
 
         <section className="lesson-section">
-          <h3>💥 6. ¿Compramos más servidores?</h3>
+          <h3>6. ¿Compramos más servidores?</h3>
           <Nota><p>Podríamos hacerlo. Compramos suficientes servidores para soportar 30.000 usuarios. Problema solucionado.</p></Nota>
           <p>Pero Cyber Monday termina. Al día siguiente volvemos a 1.000 usuarios. Ahora tenemos una sala llena de servidores utilizando una pequeña parte de su capacidad.</p>
           <p>Es como comprar:</p>
-          <ConceptBadge>🚌 un bus para 50 personas</ConceptBadge>
+          <ConceptBadge>un bus para 50 personas</ConceptBadge>
           <p>para transportar normalmente:</p>
-          <ConceptBadge>👩👨 dos pasajeros</ConceptBadge>
+          <ConceptBadge>dos pasajeros</ConceptBadge>
           <p>Funciona. Pero económicamente no es muy brillante.</p>
         </section>
 
         <section className="lesson-section">
-          <h3>☁️ 7. Aquí aparece la nube</h3>
+          <h3>7. Aquí aparece la nube</h3>
           <Nota>
             <p>Ahora cambiemos el modelo. En lugar de comprar todos nuestros servidores, podemos utilizar infraestructura proporcionada por otra empresa. Esa empresa posee enormes instalaciones llenas de equipos. Nosotros podemos utilizar los recursos que necesitamos.</p>
           </Nota>
           <p>Y ahí llegamos al concepto:</p>
-          <ConceptBadge>☁️ CLOUD COMPUTING</ConceptBadge>
+          <ConceptBadge>CLOUD COMPUTING</ConceptBadge>
           <Nota>
             <p>En términos sencillos: Cloud Computing permite utilizar recursos tecnológicos a través de Internet sin tener que poseer toda la infraestructura física que los hace funcionar.</p>
           </Nota>
         </section>
 
         <section className="lesson-section">
-          <h3>🏨 8. La analogía del hotel</h3>
+          <h3>8. La analogía del hotel</h3>
           <Nota><p>Esta analogía funciona especialmente bien para explicar cloud.</p></Nota>
           <p>Imaginemos que viajamos durante tres días. Tenemos dos opciones.</p>
           <CompareCols cols={[
-            { emoji: '🏠', title: 'Opción A · Comprar una casa', items: ['💰 comprarla', '🧹 mantenerla', '🔧 repararla', '💡 pagar servicios', '🔐 preocuparnos de su seguridad'] },
+            { icon: 'home', title: 'Opción A · Comprar una casa', items: ['💰 comprarla', '🧹 mantenerla', '🔧 repararla', '💡 pagar servicios', '🔐 preocuparnos de su seguridad'] },
             { emoji: '🏨', title: 'Opción B · Arrendar una habitación', items: ['🏢 el hotel ya posee el edificio', '🔌 electricidad', '💧 agua', '🔐 seguridad', '🧹 mantenimiento'] },
           ]} />
           <p>Pero solamente estaremos allí 3 días: comprar una casa es absurdo. En el hotel simplemente utilizamos el servicio durante el tiempo necesario.</p>
@@ -192,11 +192,11 @@ export default function Clase2() {
         </section>
 
         <section className="lesson-section">
-          <h3>🏢 9. ¿Dónde están realmente esos computadores?</h3>
+          <h3>9. ¿Dónde están realmente esos computadores?</h3>
           <Nota><p>Aquí derribaría un mito:</p></Nota>
           <Dialogo>“La nube no está flotando en el cielo.” ☁️😄</Dialogo>
           <p>La nube sigue dependiendo de computadores físicos. Esos computadores están ubicados en instalaciones especializadas llamadas:</p>
-          <ConceptBadge>🏢 Centros de datos</ConceptBadge>
+          <ConceptBadge>Centros de datos</ConceptBadge>
           <p>Un centro de datos contiene infraestructura como:</p>
           <ul className="plain-list">
             <li>🖥️ servidores</li>
@@ -209,31 +209,31 @@ export default function Clase2() {
         </section>
 
         <section className="lesson-section">
-          <h3>☁️ 10. Entonces, ¿qué cambia con Cloud?</h3>
+          <h3>10. Entonces, ¿qué cambia con Cloud?</h3>
           <Nota><p>Principalmente cambia quién administra la infraestructura y cómo nosotros accedemos a ella.</p></Nota>
           <p style={{ fontWeight: 500 }}>Modelo tradicional</p>
           <Flow steps={[
-            { emoji: '🏢', label: 'NUESTRA EMPRESA', caption: 'Compra' },
-            { emoji: '🖥️', label: 'Servidores', caption: 'Mantiene' },
+            { icon: 'building', label: 'NUESTRA EMPRESA', caption: 'Compra' },
+            { icon: 'server', label: 'Servidores', caption: 'Mantiene' },
             { emoji: '🔧', label: 'Electricidad · Refrigeración · Seguridad física · Hardware' },
           ]} />
           <p style={{ fontWeight: 500, marginTop: 'var(--space-4)' }}>Modelo Cloud</p>
           <Flow steps={[
-            { emoji: '🏢', label: 'NUESTRA EMPRESA', caption: 'solicita recursos' },
-            { emoji: '☁️', label: 'PROVEEDOR CLOUD' },
-            { emoji: '🏢', label: 'CENTROS DE DATOS' },
-            { emoji: '🖥️', label: 'Servidores' },
+            { icon: 'building', label: 'NUESTRA EMPRESA', caption: 'solicita recursos' },
+            { icon: 'cloud', label: 'PROVEEDOR CLOUD' },
+            { icon: 'building', label: 'CENTROS DE DATOS' },
+            { icon: 'server', label: 'Servidores' },
           ]} />
           <p>No significa que desaparezca toda responsabilidad de la empresa. Significa que parte importante de la infraestructura física pasa a ser responsabilidad del proveedor.</p>
         </section>
 
         <section className="lesson-section">
-          <h3>📈 11. Una gran ventaja: crecer cuando necesitamos</h3>
+          <h3>11. Una gran ventaja: crecer cuando necesitamos</h3>
           <Nota><p>Volvamos a SabinaStore.</p></Nota>
           <p>Normalmente necesitamos capacidad para 👥 1.000 usuarios. Durante Cyber Monday necesitamos 👥👥👥 30.000 usuarios. Con Cloud podemos adaptar los recursos a las necesidades.</p>
-          <CapacityRow label="Día normal" icons="☁️ 🖥️" />
-          <CapacityRow label="Cyber Monday" icons="☁️ 🖥️🖥️🖥️🖥️🖥️" />
-          <CapacityRow label="Termina Cyber Monday" icons="☁️ 🖥️" />
+          <CapacityRow label="Día normal" filled={1} total={5} />
+          <CapacityRow label="Cyber Monday" filled={5} total={5} />
+          <CapacityRow label="Termina Cyber Monday" filled={1} total={5} />
           <Nota>
             <p>A esta capacidad de aumentar o disminuir recursos según la necesidad la iremos relacionando con conceptos como elasticidad y escalabilidad. Para esta clase basta con:</p>
           </Nota>
@@ -241,22 +241,22 @@ export default function Clase2() {
         </section>
 
         <section className="lesson-section">
-          <h3>💰 12. Segunda gran idea: pago por uso</h3>
+          <h3>12. Segunda gran idea: pago por uso</h3>
           <Nota><p>Otra característica importante del modelo cloud es que muchos servicios se cobran según los recursos utilizados.</p></Nota>
           <p>La analogía más sencilla:</p>
-          <ConceptBadge>💡 Electricidad</ConceptBadge>
+          <ConceptBadge>Electricidad</ConceptBadge>
           <p>No construimos una central eléctrica cada vez que queremos encender una lámpara. Utilizamos electricidad. Luego pagamos según las condiciones y el consumo del servicio.</p>
           <p>Cloud puede entenderse de forma parecida:</p>
           <Flow steps={[
-            { emoji: '❓', label: 'Necesito recursos' },
-            { emoji: '☁️', label: 'Los utilizo' },
-            { emoji: '📊', label: 'Se mide utilización' },
-            { emoji: '💳', label: 'Pago correspondiente' },
+            { icon: 'help-circle', label: 'Necesito recursos' },
+            { icon: 'cloud', label: 'Los utilizo' },
+            { icon: 'bar-chart', label: 'Se mide utilización' },
+            { icon: 'credit-card', label: 'Pago correspondiente' },
           ]} />
         </section>
 
         <section className="lesson-section">
-          <h3>⚠️ 13. Pero cuidado con esta idea</h3>
+          <h3>13. Pero cuidado con esta idea</h3>
           <Nota><p>No enseñaría:</p></Nota>
           <StrikeChip>❌ “Cloud siempre es más barato.”</StrikeChip>
           <p>Eso es incorrecto.</p>
@@ -268,7 +268,7 @@ export default function Clase2() {
         </section>
 
         <section className="lesson-section">
-          <h3>🌎 14. ¿Quién ofrece estos servicios?</h3>
+          <h3>14. ¿Quién ofrece estos servicios?</h3>
           <Nota><p>Existen diferentes proveedores de Cloud Computing. Entre los más conocidos encontramos:</p></Nota>
           <ul className="plain-list">
             <li>☁️ Amazon Web Services</li>
@@ -276,12 +276,12 @@ export default function Clase2() {
             <li>☁️ Google Cloud</li>
           </ul>
           <Nota><p>Nuestro curso estará centrado en:</p></Nota>
-          <ConceptBadge>☁️ Amazon Web Services (AWS)</ConceptBadge>
+          <ConceptBadge>Amazon Web Services (AWS)</ConceptBadge>
           <p>Pero todavía no necesitamos conocer sus servicios. Primero entendemos el problema. Después conoceremos las herramientas.</p>
         </section>
 
         <section className="lesson-section">
-          <h3>🎯 15. Comparación sencilla</h3>
+          <h3>15. Comparación sencilla</h3>
           <table className="table lesson-summary-table">
             <thead><tr><th>Infraestructura propia 🏢</th><th>Cloud ☁️</th></tr></thead>
             <tbody>
@@ -296,7 +296,7 @@ export default function Clase2() {
         </section>
 
         <section className="lesson-section">
-          <h3>🎲 16. Actividad de clase: ¿Comprar o usar Cloud?</h3>
+          <h3>16. Actividad de clase: ¿Comprar o usar Cloud?</h3>
           <Nota><p>Dividiría a los estudiantes en pequeños grupos y presentaría tres casos.</p></Nota>
 
           <p style={{ fontWeight: 500 }}>🏪 Caso A: pequeña tienda</p>
@@ -316,19 +316,19 @@ export default function Clase2() {
         </section>
 
         <section className="lesson-section">
-          <h3>🧠 17. Verdadero o falso</h3>
+          <h3>17. Verdadero o falso</h3>
           <Nota><p>Haría esta actividad rápidamente con toda la clase.</p></Nota>
           <TrueFalseQuiz statements={TF_STATEMENTS} />
           <p>La última afirmación es importante.</p>
         </section>
 
         <section className="lesson-section">
-          <h3>📝 18. Mini evaluación</h3>
+          <h3>18. Mini evaluación</h3>
           <Quiz questions={QUIZ_QUESTIONS} />
         </section>
 
         <section className="lesson-section">
-          <h3>🏆 19. Desafío final</h3>
+          <h3>19. Desafío final</h3>
           <Nota><p>Les plantearía:</p></Nota>
           <Dialogo>Tu jefe te dice: “¿Por qué vamos a usar la nube si podemos comprar un computador potente y dejarlo en la oficina?” Explícale en 30 segundos qué ventaja podría ofrecer Cloud.</Dialogo>
           <p>No buscamos que memoricen una definición. Buscamos que sean capaces de explicar ideas como:</p>
@@ -339,7 +339,7 @@ export default function Clase2() {
         </section>
 
         <section className="lesson-section">
-          <h3>📌 20. Lo que deben recordar</h3>
+          <h3>20. Lo que deben recordar</h3>
           <Nota><p>Reduciría toda la Clase 2 a estas cinco ideas:</p></Nota>
           <table className="table lesson-summary-table">
             <thead><tr><th>Concepto</th><th>Qué recordar</th></tr></thead>
@@ -352,11 +352,11 @@ export default function Clase2() {
             </tbody>
           </table>
           <p>Y una frase:</p>
-          <ConceptBadge>☁️ “La nube no elimina los servidores. Cambia la forma en que los utilizamos.”</ConceptBadge>
+          <ConceptBadge>“La nube no elimina los servidores. Cambia la forma en que los utilizamos.”</ConceptBadge>
         </section>
 
         <div className="bridge-callout">
-          <div className="lesson-eyebrow">🎬 Puente hacia la Clase 3</div>
+          <div className="lesson-eyebrow"><Icon name="arrow-right" /> Puente hacia la Clase 3</div>
           <Nota><p>Cerraría la clase con una pequeña provocación:</p></Nota>
           <Dialogo>“Ya sabemos que podemos arrendar infraestructura en lugar de comprarla. Pero… ¿qué podemos arrendar exactamente?”</Dialogo>
           <p>¿Un servidor? Sí. 🖥️</p>

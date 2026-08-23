@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import {
-  Nota, Dialogo, ConceptBadge, Flow, QaItem, Reveal, Quiz,
+  Icon, Nota, Dialogo, ConceptBadge, Flow, QaItem, Reveal, Quiz,
 } from './lessonComponents.jsx';
 
 const TARJETAS = [
@@ -63,7 +63,7 @@ export default function Clase3() {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', paddingBottom: 'var(--space-8)' }}>
       <div className="breadcrumb">Aprendizaje › AWS desde cero › Módulo 0 · Clase 3</div>
-      <div className="lesson-eyebrow">☁️ AWS desde Cero</div>
+      <div className="lesson-eyebrow"><Icon name="cloud" /> AWS desde Cero</div>
       <h2 style={{ margin: '0 0 4px' }}>Módulo 0 · Clase 3: IaaS, PaaS y SaaS</h2>
       <p className="lesson-subtitle">
         Qué podemos arrendar exactamente en la nube, con la analogía de una pizzería: cocinar nosotros, usar una cocina lista, o pedir la pizza hecha.
@@ -80,7 +80,7 @@ export default function Clase3() {
       <div className="lesson-body">
 
         <section className="lesson-section">
-          <h3>🎯 1. Objetivo de aprendizaje</h3>
+          <h3>1. Objetivo de aprendizaje</h3>
           <Nota><p>Al finalizar esta clase, el estudiante podrá:</p></Nota>
           <ul className="plain-list">
             <li>Explicar qué son IaaS, PaaS y SaaS.</li>
@@ -94,7 +94,7 @@ export default function Clase3() {
         </section>
 
         <section className="lesson-section">
-          <h3>🧠 2. Activación de conocimientos previos</h3>
+          <h3>2. Activación de conocimientos previos</h3>
           <Nota><p>Comenzaría preguntando:</p></Nota>
           <Dialogo>¿Qué aprendimos en la clase anterior sobre Cloud?</Dialogo>
           <p>Respuesta esperada:</p>
@@ -111,7 +111,7 @@ export default function Clase3() {
         </section>
 
         <section className="lesson-section">
-          <h3>🍕 3. La pizzería Cloud</h3>
+          <h3>3. La pizzería Cloud</h3>
           <Nota><p>No mostraría todavía las definiciones técnicas. Primero:</p></Nota>
           <Dialogo>“Hoy queremos comer pizza.”</Dialogo>
           <p>Tenemos tres posibilidades.</p>
@@ -121,22 +121,22 @@ export default function Clase3() {
           <p>La idea es:</p>
           <Dialogo>“Dame la infraestructura. Yo hago el resto.”</Dialogo>
           <p>Eso se parece a:</p>
-          <ConceptBadge>🖥️ IaaS</ConceptBadge>
+          <ConceptBadge>IaaS</ConceptBadge>
         </section>
 
         <section className="lesson-section">
-          <h3>🖥️ 4. IaaS</h3>
+          <h3>4. IaaS</h3>
           <Nota>
             <p>IaaS significa: Infrastructure as a Service. En español: Infraestructura como Servicio.</p>
           </Nota>
           <p>El proveedor nos proporciona recursos de infraestructura tecnológica. Por ejemplo: 🖥️ servidores virtuales, 💾 almacenamiento, 🌐 redes.</p>
           <p>Nosotros seguimos teniendo bastante control.</p>
           <p className="text-muted" style={{ fontSize: 12, marginBottom: 4 }}>Frase para recordar</p>
-          <ConceptBadge>🖥️ IaaS = "Dame infraestructura y yo configuro."</ConceptBadge>
+          <ConceptBadge>IaaS = "Dame infraestructura y yo configuro."</ConceptBadge>
         </section>
 
         <section className="lesson-section">
-          <h3>🏠 5. Otra analogía para IaaS</h3>
+          <h3>5. Otra analogía para IaaS</h3>
           <Nota><p>Imaginemos que arrendamos una casa vacía.</p></Nota>
           <p>El propietario proporciona: 🏠 casa, 🚪 puertas, 🪟 ventanas, 💡 instalaciones.</p>
           <p>Pero nosotros ponemos: 🛏️ muebles, 📺 televisión, 🖼️ decoración.</p>
@@ -145,7 +145,7 @@ export default function Clase3() {
         </section>
 
         <section className="lesson-section">
-          <h3>☁️ 6. Ejemplo en AWS</h3>
+          <h3>6. Ejemplo en AWS</h3>
           <Nota><p>Más adelante conoceremos: Amazon EC2. EC2 permite crear servidores virtuales.</p></Nota>
           <p>Por ahora solo necesitamos recordar:</p>
           <ConceptBadge>EC2 → servidor virtual → ejemplo relacionado con IaaS</ConceptBadge>
@@ -153,33 +153,33 @@ export default function Clase3() {
         </section>
 
         <section className="lesson-section">
-          <h3>🍕 7. Volvamos a nuestra pizza</h3>
+          <h3>7. Volvamos a nuestra pizza</h3>
           <Nota><p>Ahora queremos preparar nuestra receta, pero no queremos preocuparnos tanto por la cocina.</p></Nota>
           <p>Queremos que alguien nos diga:</p>
           <Dialogo>“La cocina está preparada. Trae tu receta y cocina.”</Dialogo>
           <p>Tenemos un entorno listo para trabajar. Esto nos lleva a:</p>
-          <ConceptBadge>⚙️ PaaS</ConceptBadge>
+          <ConceptBadge>PaaS</ConceptBadge>
         </section>
 
         <section className="lesson-section">
-          <h3>⚙️ 8. PaaS</h3>
+          <h3>8. PaaS</h3>
           <Nota>
             <p>PaaS significa: Platform as a Service. En español: Plataforma como Servicio.</p>
           </Nota>
           <p>El proveedor administra más componentes tecnológicos para que nosotros podamos concentrarnos principalmente en desarrollar o ejecutar nuestra aplicación.</p>
           <p className="text-muted" style={{ fontSize: 12, marginBottom: 4 }}>Frase para recordar</p>
-          <ConceptBadge>⚙️ PaaS = "Dame un entorno preparado para mi aplicación."</ConceptBadge>
+          <ConceptBadge>PaaS = "Dame un entorno preparado para mi aplicación."</ConceptBadge>
         </section>
 
         <section className="lesson-section">
-          <h3>👩‍💻 9. Ejemplo sencillo</h3>
+          <h3>9. Ejemplo sencillo</h3>
           <Nota><p>Imaginemos una programadora. Tiene una aplicación terminada.</p></Nota>
           <p>No quiere pasar horas preocupándose de: 🖥️ servidores, 🔧 infraestructura, ⚙️ determinadas configuraciones.</p>
           <p>Quiere principalmente: publicar su aplicación. Una solución PaaS puede facilitar ese trabajo.</p>
         </section>
 
         <section className="lesson-section">
-          <h3>☁️ 10. Ejemplo relacionado con AWS</h3>
+          <h3>10. Ejemplo relacionado con AWS</h3>
           <Nota><p>Un ejemplo pedagógico que conoceremos posteriormente es: AWS Elastic Beanstalk.</p></Nota>
           <p>Nos permite desplegar aplicaciones mientras AWS ayuda a gestionar distintos componentes de la infraestructura necesaria.</p>
           <p>Para esta clase:</p>
@@ -187,25 +187,25 @@ export default function Clase3() {
         </section>
 
         <section className="lesson-section">
-          <h3>🍕 11. Hoy no quiero cocinar</h3>
+          <h3>11. Hoy no quiero cocinar</h3>
           <Nota><p>Tercera situación. Llegamos cansados. No queremos: ❌ comprar ingredientes, ❌ cocinar, ❌ limpiar, ❌ usar el horno.</p></Nota>
           <p>Sacamos el teléfono 📱. Elegimos pizza. Pagamos. Y esperamos. 🛵🍕</p>
           <p>Queremos: el producto terminado. Aquí aparece:</p>
-          <ConceptBadge>📱 SaaS</ConceptBadge>
+          <ConceptBadge>SaaS</ConceptBadge>
         </section>
 
         <section className="lesson-section">
-          <h3>📱 12. SaaS</h3>
+          <h3>12. SaaS</h3>
           <Nota>
             <p>SaaS significa: Software as a Service. En español: Software como Servicio.</p>
           </Nota>
           <p>El proveedor administra la aplicación y la infraestructura necesaria. Nosotros simplemente utilizamos el software.</p>
           <p className="text-muted" style={{ fontSize: 12, marginBottom: 4 }}>Frase para recordar</p>
-          <ConceptBadge>📱 SaaS = "Dame la aplicación lista para usar."</ConceptBadge>
+          <ConceptBadge>SaaS = "Dame la aplicación lista para usar."</ConceptBadge>
         </section>
 
         <section className="lesson-section">
-          <h3>🌎 13. Probablemente ya utilizan SaaS</h3>
+          <h3>13. Probablemente ya utilizan SaaS</h3>
           <Nota><p>Podemos mostrar ejemplos cotidianos:</p></Nota>
           <ul className="plain-list">
             <li>Gmail — 📧 entramos y utilizamos correo.</li>
@@ -216,7 +216,7 @@ export default function Clase3() {
         </section>
 
         <section className="lesson-section">
-          <h3>🧠 14. Detengamos la clase aquí</h3>
+          <h3>14. Detengamos la clase aquí</h3>
           <Nota><p>Antes de seguir, preguntaría: ¿cuál es la diferencia entre los tres? Y mostraría solamente esto:</p></Nota>
           <ul className="plain-list">
             <li>🖥️ IaaS — dame infraestructura.</li>
@@ -226,13 +226,13 @@ export default function Clase3() {
         </section>
 
         <section className="lesson-section">
-          <h3>🎚️ 15. La escalera de responsabilidad</h3>
+          <h3>15. La escalera de responsabilidad</h3>
           <Nota><p>Esta imagen conceptual es más importante que memorizar las definiciones:</p></Nota>
           <p style={{ fontWeight: 500 }}>Más control nuestro · más responsabilidad</p>
           <Flow steps={[
-            { emoji: '🖥️', label: 'IaaS' },
-            { emoji: '⚙️', label: 'PaaS' },
-            { emoji: '📱', label: 'SaaS' },
+            { icon: 'server', label: 'IaaS' },
+            { icon: 'settings', label: 'PaaS' },
+            { icon: 'smartphone', label: 'SaaS' },
           ]} />
           <p style={{ fontWeight: 500 }}>Menos cosas administramos</p>
           <Nota>
@@ -241,23 +241,23 @@ export default function Clase3() {
         </section>
 
         <section className="lesson-section">
-          <h3>🏢 16. Llevémoslo a una empresa</h3>
+          <h3>16. Llevémoslo a una empresa</h3>
           <Nota><p>Tenemos una empresa ficticia:</p></Nota>
-          <ConceptBadge>🏢 CloudStore</ConceptBadge>
+          <ConceptBadge>CloudStore</ConceptBadge>
           <p>Necesitamos solucionar tres problemas.</p>
           <p style={{ fontWeight: 500 }}>Problema A</p>
           <p>Necesitamos correo electrónico para nuestros trabajadores. ¿Necesitamos construir nuestro propio sistema de correo? No necesariamente. Podemos utilizar una solución terminada.</p>
-          <ConceptBadge>📱 SaaS</ConceptBadge>
+          <ConceptBadge>SaaS</ConceptBadge>
           <p style={{ fontWeight: 500, marginTop: 'var(--space-4)' }}>Problema B</p>
           <p>Necesitamos un servidor virtual que nuestro equipo pueda configurar. Queremos mayor control.</p>
-          <ConceptBadge>🖥️ IaaS</ConceptBadge>
+          <ConceptBadge>IaaS</ConceptBadge>
           <p style={{ fontWeight: 500, marginTop: 'var(--space-4)' }}>Problema C</p>
           <p>Nuestros programadores hicieron una aplicación y necesitan un entorno para publicarla. Quieren concentrarse principalmente en su aplicación.</p>
-          <ConceptBadge>⚙️ PaaS</ConceptBadge>
+          <ConceptBadge>PaaS</ConceptBadge>
         </section>
 
         <section className="lesson-section">
-          <h3>🎮 17. Actividad: levanta tu tarjeta</h3>
+          <h3>17. Actividad: levanta tu tarjeta</h3>
           <Nota>
             <p>Entregaría tres tarjetas a cada estudiante (IaaS, PaaS, SaaS). Lees una situación y tienen aproximadamente cinco segundos para levantar una tarjeta.</p>
           </Nota>
@@ -265,7 +265,7 @@ export default function Clase3() {
         </section>
 
         <section className="lesson-section">
-          <h3>🤔 18. Ahora hagámoslo un poco más difícil</h3>
+          <h3>18. Ahora hagámoslo un poco más difícil</h3>
           <QaItem
             question="Una empresa necesita una aplicación para realizar videollamadas. No quiere desarrollar nada. ¿Qué elegiríamos?"
             answer="SaaS — porque quiere utilizar una aplicación terminada."
@@ -281,10 +281,10 @@ export default function Clase3() {
         </section>
 
         <section className="lesson-section">
-          <h3>⚠️ 19. Error frecuente</h3>
+          <h3>19. Error frecuente</h3>
           <Nota><p>Preguntaría:</p></Nota>
           <Dialogo>“¿Entonces SaaS siempre es la mejor alternativa porque hacemos menos trabajo?”</Dialogo>
-          <ConceptBadge variant="danger">❌ No</ConceptBadge>
+          <ConceptBadge variant="danger">No</ConceptBadge>
           <Nota>
             <p>No estoy de acuerdo porque menos administración también puede significar menos control sobre ciertos componentes. Esto es lo que haría en su lugar: elegir el modelo según las necesidades. El riesgo de elegir SaaS solamente porque parece más sencillo es terminar con una solución que no permita la personalización o control requerido.</p>
           </Nota>
@@ -292,9 +292,9 @@ export default function Clase3() {
         </section>
 
         <section className="lesson-section">
-          <h3>🧪 20. Actividad grupal</h3>
+          <h3>20. Actividad grupal</h3>
           <Nota><p>Divide la clase en grupos pequeños. Entrégales este caso:</p></Nota>
-          <ConceptBadge>🏫 Universidad Futuro</ConceptBadge>
+          <ConceptBadge>Universidad Futuro</ConceptBadge>
           <p>La universidad necesita:</p>
           <ul className="plain-list">
             <li>A. Correo electrónico para docentes.</li>
@@ -323,12 +323,12 @@ export default function Clase3() {
         </section>
 
         <section className="lesson-section">
-          <h3>📝 21. Mini evaluación</h3>
+          <h3>21. Mini evaluación</h3>
           <Quiz questions={QUIZ_QUESTIONS} />
         </section>
 
         <section className="lesson-section">
-          <h3>🏆 22. Reto de la clase</h3>
+          <h3>22. Reto de la clase</h3>
           <Nota><p>Aquí no les permitiría utilizar las palabras: Infraestructura, Plataforma, Software. 😈</p></Nota>
           <p>La instrucción sería:</p>
           <Dialogo>“Explícale IaaS, PaaS y SaaS a tu abuela, abuelo o a una persona que nunca haya estudiado informática.”</Dialogo>
@@ -344,7 +344,7 @@ export default function Clase3() {
         </section>
 
         <section className="lesson-section">
-          <h3>📌 23. Resumen de bolsillo</h3>
+          <h3>23. Resumen de bolsillo</h3>
           <table className="table lesson-summary-table" style={{ maxWidth: 720 }}>
             <thead><tr><th></th><th>IaaS 🖥️</th><th>PaaS ⚙️</th><th>SaaS 📱</th></tr></thead>
             <tbody>
@@ -358,7 +358,7 @@ export default function Clase3() {
         </section>
 
         <section className="lesson-section">
-          <h3>🎯 24. Ticket de salida</h3>
+          <h3>24. Ticket de salida</h3>
           <Nota><p>Antes de terminar, cada estudiante responde en una sola línea:</p></Nota>
           <Dialogo>Una empresa necesita Microsoft 365 para sus trabajadores. ¿IaaS, PaaS o SaaS? ¿Por qué?</Dialogo>
           <Reveal label="Ver respuesta esperada">
@@ -367,13 +367,13 @@ export default function Clase3() {
         </section>
 
         <div className="bridge-callout">
-          <div className="lesson-eyebrow">🔗 Puente hacia la Clase 4</div>
+          <div className="lesson-eyebrow"><Icon name="arrow-right" /> Puente hacia la Clase 4</div>
           <Nota><p>Cerraría proyectando una fotografía, un PDF y una ficha de estudiante. Y preguntaría:</p></Nota>
           <Dialogo>“¿Guardar una fotografía y guardar los datos de 10.000 estudiantes es lo mismo?”</Dialogo>
           <p>📸 Fotografía · 📄 PDF · 👩‍🎓 Nombre + RUT + carrera + notas</p>
           <p style={{ fontSize: 15, fontWeight: 500 }}>No exactamente.</p>
           <p>Ahí comienza la siguiente clase:</p>
-          <ConceptBadge>📦 Clase 4: Archivos, almacenamiento y bases de datos</ConceptBadge>
+          <ConceptBadge>Clase 4: Archivos, almacenamiento y bases de datos</ConceptBadge>
           <Nota>
             <p>Esta clase será especialmente importante antes de presentar servicios como Amazon S3 y Amazon RDS, porque primero entenderán qué problema resuelve cada tipo de almacenamiento y después aprenderán el nombre del servicio AWS.</p>
           </Nota>

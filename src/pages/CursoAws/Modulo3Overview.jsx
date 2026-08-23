@@ -1,14 +1,14 @@
 import { Link } from 'react-router-dom';
-import { Nota, Dialogo, ConceptBadge, Flow, InfoBox, CompareCols } from './lessonComponents.jsx';
+import { Icon, Nota, Dialogo, ConceptBadge, Flow, InfoBox, CompareCols } from './lessonComponents.jsx';
 
 const ROADMAP = [
-  { n: 1, emoji: '🖥️', tema: '¿Qué es Amazon EC2?', objetivo: 'Comprender qué es una instancia y para qué sirve' },
-  { n: 2, emoji: '🧩', tema: 'AMI, tipos de instancia y recursos', objetivo: 'Entender cómo elegimos el "computador" que necesitamos' },
-  { n: 3, emoji: '🚀', tema: 'Crear nuestra primera instancia EC2', objetivo: 'Lanzar una instancia paso a paso' },
-  { n: 4, emoji: '🔐', tema: 'Security Groups y acceso', objetivo: 'Entender las reglas que permiten o bloquean conexiones' },
-  { n: 5, emoji: '💾', tema: 'Almacenamiento en EC2', objetivo: 'Comprender EBS, volúmenes y persistencia de datos' },
-  { n: 6, emoji: '⚙️', tema: 'Estados, monitoreo, costos y buenas prácticas', objetivo: 'Administrar correctamente una instancia' },
-  { n: 7, emoji: '🏆', tema: 'Laboratorio integrador EC2', objetivo: 'Crear, proteger, probar y eliminar una solución completa' },
+  { n: 1, icon: 'server', tema: '¿Qué es Amazon EC2?', objetivo: 'Comprender qué es una instancia y para qué sirve' },
+  { n: 2, icon: 'puzzle', tema: 'AMI, tipos de instancia y recursos', objetivo: 'Entender cómo elegimos el "computador" que necesitamos' },
+  { n: 3, icon: 'rocket', tema: 'Crear nuestra primera instancia EC2', objetivo: 'Lanzar una instancia paso a paso' },
+  { n: 4, icon: 'lock', tema: 'Security Groups y acceso', objetivo: 'Entender las reglas que permiten o bloquean conexiones' },
+  { n: 5, icon: 'hard-drive', tema: 'Almacenamiento en EC2', objetivo: 'Comprender EBS, volúmenes y persistencia de datos' },
+  { n: 6, icon: 'settings', tema: 'Estados, monitoreo, costos y buenas prácticas', objetivo: 'Administrar correctamente una instancia' },
+  { n: 7, icon: 'trophy', tema: 'Laboratorio integrador EC2', objetivo: 'Crear, proteger, probar y eliminar una solución completa' },
 ];
 
 const CONCEPTOS = [
@@ -25,7 +25,7 @@ export default function Modulo3Overview() {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', paddingBottom: 'var(--space-8)' }}>
       <div className="breadcrumb">Aprendizaje › AWS desde cero › Módulo 3</div>
-      <div className="lesson-eyebrow">🖥️ Módulo 3: Amazon EC2</div>
+      <div className="lesson-eyebrow"><Icon name="cloud" /> Módulo 3: Amazon EC2</div>
       <h2 style={{ margin: '0 0 4px' }}>Hoja de ruta del módulo</h2>
       <p className="lesson-subtitle">
         Siete clases de 45 minutos, de "¿qué es EC2?" hasta publicar tu primera página web desde un servidor que creaste tú mismo en AWS. Las clases individuales todavía no están publicadas.
@@ -34,7 +34,7 @@ export default function Modulo3Overview() {
       <div className="lesson-body">
 
         <section className="lesson-section">
-          <h3>🗺️ Las 7 clases</h3>
+          <h3>Las 7 clases</h3>
           <Nota><p>Lo estructuraría en 7 clases de 45 minutos.</p></Nota>
           <table className="table lesson-summary-table" style={{ maxWidth: 900 }}>
             <thead><tr><th>Clase</th><th>Tema</th><th>Objetivo</th></tr></thead>
@@ -47,7 +47,7 @@ export default function Modulo3Overview() {
         </section>
 
         <section className="lesson-section">
-          <h3>🔄 La progresión</h3>
+          <h3>La progresión</h3>
           <Flow steps={[
             { n: 1, label: '¿Qué es EC2?' },
             { n: 2, label: '¿Qué servidor necesito?' },
@@ -60,11 +60,11 @@ export default function Modulo3Overview() {
         </section>
 
         <section className="lesson-section">
-          <h3>🎯 Objetivo general del módulo</h3>
+          <h3>Objetivo general del módulo</h3>
           <Nota><p>Al finalizar el Módulo 3, el estudiante debería poder explicar y realizar un flujo como este:</p></Nota>
           <Flow steps={[
-            { emoji: '☁️', label: 'AWS' },
-            { emoji: '🖥️', label: 'EC2' },
+            { icon: 'cloud', label: 'AWS' },
+            { icon: 'server', label: 'EC2' },
           ]} />
           <InfoBox items={['Elegir sistema', 'Elegir capacidad', 'Crear instancia', 'Configurar acceso', 'Conectarse', 'Almacenar datos', 'Revisar estado', 'Detener o eliminar']} />
           <Nota><p>Y, sobre todo, entender que:</p></Nota>
@@ -75,7 +75,7 @@ export default function Modulo3Overview() {
         </section>
 
         <section className="lesson-section">
-          <h3>🧠 Conceptos que aparecerán</h3>
+          <h3>Conceptos que aparecerán</h3>
           <Nota><p>Durante las siete clases introduciríamos progresivamente:</p></Nota>
           <div className="glossary-grid">
             {CONCEPTOS.map((c) => (
@@ -88,11 +88,11 @@ export default function Modulo3Overview() {
         </section>
 
         <section className="lesson-section">
-          <h3>🧑‍🏫 Cambio de metodología</h3>
+          <h3>Cambio de metodología</h3>
           <Nota><p>Desde este módulo reduciría la proporción de teoría.</p></Nota>
           <CompareCols cols={[
-            { emoji: '📖', title: 'Clases anteriores', items: ['60% explicación', '25% actividad', '15% evaluación'] },
-            { emoji: '🧪', title: 'Desde EC2', items: ['30% explicación', '50% práctica', '20% reto/evaluación'] },
+            { icon: 'book-open', title: 'Clases anteriores', items: ['60% explicación', '25% actividad', '15% evaluación'] },
+            { icon: 'flask', title: 'Desde EC2', items: ['30% explicación', '50% práctica', '20% reto/evaluación'] },
           ]} />
           <Nota>
             <p>Porque aquí ya no basta decir "una instancia es un servidor virtual." Ahora deben ser capaces de entrar a AWS y reconocer qué están haciendo.</p>
@@ -100,7 +100,7 @@ export default function Modulo3Overview() {
         </section>
 
         <section className="lesson-section">
-          <h3>🧪 Filosofía de los laboratorios</h3>
+          <h3>Filosofía de los laboratorios</h3>
           <Nota><p>Cada laboratorio seguirá exactamente este patrón:</p></Nota>
           <Flow steps={[
             { n: 1, label: '¿Qué queremos lograr?' },
@@ -117,9 +117,9 @@ export default function Modulo3Overview() {
         </section>
 
         <section className="lesson-section">
-          <h3>🏆 Proyecto final del módulo</h3>
+          <h3>Proyecto final del módulo</h3>
           <Nota><p>En la Clase 7 plantearía:</p></Nota>
-          <ConceptBadge>🌐 "Publica tu primera página desde EC2"</ConceptBadge>
+          <ConceptBadge>"Publica tu primera página desde EC2"</ConceptBadge>
           <p>El estudiante tendría que:</p>
           <ol className="plain-list">
             <li>Elegir una imagen de sistema.</li>
@@ -135,12 +135,12 @@ export default function Modulo3Overview() {
           </ol>
           <p>El resultado:</p>
           <Flow steps={[
-            { emoji: '👩', label: 'Usuario' },
-            { emoji: '🌐', label: 'Navegador' },
-            { emoji: '📡', label: 'Internet' },
-            { emoji: '🔐', label: 'Security Group' },
-            { emoji: '🖥️', label: 'EC2' },
-            { emoji: '🌐', label: 'Mi primera página' },
+            { icon: 'user', label: 'Usuario' },
+            { icon: 'globe', label: 'Navegador' },
+            { icon: 'radio', label: 'Internet' },
+            { icon: 'lock', label: 'Security Group' },
+            { icon: 'server', label: 'EC2' },
+            { icon: 'globe', label: 'Mi primera página' },
           ]} />
           <Nota>
             <p>Ahí conectaríamos elegantemente con el Módulo 0, porque el estudiante finalmente verá funcionando aquella historia inicial de: navegador → Internet → servidor → respuesta.</p>
@@ -149,7 +149,7 @@ export default function Modulo3Overview() {
         </section>
 
         <div className="bridge-callout">
-          <div className="lesson-eyebrow">🔗 Siguiente paso</div>
+          <div className="lesson-eyebrow"><Icon name="cloud" /> Siguiente paso</div>
           <p>El siguiente paso es desarrollar <strong>Módulo 3 · Clase 1: "¿Qué es Amazon EC2 y para qué sirve?"</strong>, todavía muy sencilla, preparando el terreno para que en la Clase 3 lancemos la primera instancia.</p>
           <Link to="/aprendizaje/aws-desde-cero/modulo-3/clase-1" className="btn btn-primary" style={{ marginTop: 'var(--space-2)' }}>
             Ir a Clase 1: ¿Qué es Amazon EC2 y para qué sirve? →

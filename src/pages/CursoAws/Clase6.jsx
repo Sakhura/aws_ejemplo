@@ -1,5 +1,5 @@
 import {
-  Nota, Dialogo, ConceptBadge, StrikeChip, RoleGrid, Flow, CompareCols, QaItem, Reveal, Quiz,
+  Icon, Nota, Dialogo, ConceptBadge, StrikeChip, RoleGrid, Flow, CompareCols, QaItem, Reveal, Quiz,
 } from './lessonComponents.jsx';
 
 const QUIZ_QUESTIONS = [
@@ -27,7 +27,7 @@ export default function Clase6() {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', paddingBottom: 'var(--space-8)' }}>
       <div className="breadcrumb">Aprendizaje › AWS desde cero › Módulo 0 · Clase 6</div>
-      <div className="lesson-eyebrow">☁️ AWS desde Cero</div>
+      <div className="lesson-eyebrow"><Icon name="cloud" /> AWS desde Cero</div>
       <h2 style={{ margin: '0 0 4px' }}>Módulo 0 · Clase 6: Cómo se conecta todo</h2>
       <p className="lesson-subtitle">
         Clase de integración y evaluación del módulo: reconstruimos el recorrido completo, desde que Martina abre el navegador hasta que recibe su respuesta.
@@ -44,7 +44,7 @@ export default function Clase6() {
       <div className="lesson-body">
 
         <section className="lesson-section">
-          <h3>🎯 1. Objetivo de aprendizaje</h3>
+          <h3>1. Objetivo de aprendizaje</h3>
           <Nota><p>Al finalizar esta clase, el estudiante debería ser capaz de:</p></Nota>
           <ul className="plain-list">
             <li>Relacionar usuario, navegador, Internet y servidor.</li>
@@ -60,15 +60,15 @@ export default function Clase6() {
         </section>
 
         <section className="lesson-section">
-          <h3>🧠 2. Comencemos sin mostrar ninguna respuesta</h3>
+          <h3>2. Comencemos sin mostrar ninguna respuesta</h3>
           <Nota><p>Yo proyectaría solamente esta imagen conceptual:</p></Nota>
           <Flow steps={[
-            { emoji: '👩', label: 'Usuario' },
-            { emoji: '🌐', label: 'Navegador' },
+            { icon: 'user', label: 'Usuario' },
+            { icon: 'globe', label: 'Navegador' },
             { n: '?', label: '???' },
-            { emoji: '☁️', label: 'Cloud' },
+            { icon: 'cloud', label: 'Cloud' },
             { n: '?', label: '???' },
-            { emoji: '📤', label: 'Respuesta' },
+            { icon: 'upload', label: 'Respuesta' },
           ]} />
           <p>Y preguntaría:</p>
           <Dialogo>"¿Podemos completar este recorrido con lo que hemos aprendido?"</Dialogo>
@@ -76,7 +76,7 @@ export default function Clase6() {
         </section>
 
         <section className="lesson-section">
-          <h3>🌐 3. Paso 1: aparece el usuario</h3>
+          <h3>3. Paso 1: aparece el usuario</h3>
           <Nota><p>Todo comienza con una persona que quiere hacer algo.</p></Nota>
           <p>Por ejemplo: 👩 Martina quiere comprar un libro online. Abre 🌐 Chrome y escribe: www.libreria.cl</p>
           <Nota><p>Aquí tenemos nuestro primer concepto:</p></Nota>
@@ -85,16 +85,16 @@ export default function Clase6() {
         </section>
 
         <section className="lesson-section">
-          <h3>📖 4. Paso 2: necesitamos encontrar el destino</h3>
+          <h3>4. Paso 2: necesitamos encontrar el destino</h3>
           <Nota><p>Martina conoce www.libreria.cl. Pero los sistemas necesitan localizar dónde está el servicio.</p></Nota>
           <p>Aquí recordamos:</p>
-          <ConceptBadge>📖 DNS</ConceptBadge>
+          <ConceptBadge>DNS</ConceptBadge>
           <Nota><p>Para nuestro nivel: DNS ayuda a relacionar nombres fáciles de recordar con las direcciones utilizadas por los sistemas.</p></Nota>
           <p>Analogía: 📱 contactos del teléfono. Nosotros buscamos "Mamá" y el teléfono encuentra el número correspondiente.</p>
         </section>
 
         <section className="lesson-section">
-          <h3>📍 5. ¿Qué aparece junto con DNS?</h3>
+          <h3>5. ¿Qué aparece junto con DNS?</h3>
           <Nota><p>La dirección IP.</p></Nota>
           <p>Nuestra versión simple:</p>
           <Dialogo>IP = una dirección que ayuda a identificar un dispositivo o recurso dentro de una red.</Dialogo>
@@ -102,31 +102,31 @@ export default function Clase6() {
         </section>
 
         <section className="lesson-section">
-          <h3>📡 6. Paso 3: la solicitud viaja</h3>
+          <h3>6. Paso 3: la solicitud viaja</h3>
           <Nota><p>La solicitud debe llegar desde Martina hasta el sistema de la tienda. Entonces aparece:</p></Nota>
-          <ConceptBadge>🌐 Internet</ConceptBadge>
+          <ConceptBadge>Internet</ConceptBadge>
           <Nota><p>Internet permite que redes y dispositivos se comuniquen.</p></Nota>
           <p>Nuestro recorrido comienza a verse así:</p>
           <Flow steps={[
-            { emoji: '👩', label: 'Martina' },
-            { emoji: '🌐', label: 'Navegador' },
-            { emoji: '📖', label: 'DNS' },
-            { emoji: '📍', label: 'Dirección' },
-            { emoji: '📡', label: 'Internet' },
+            { icon: 'user', label: 'Martina' },
+            { icon: 'globe', label: 'Navegador' },
+            { icon: 'book-open', label: 'DNS' },
+            { icon: 'map-pin', label: 'Dirección' },
+            { icon: 'radio', label: 'Internet' },
           ]} />
         </section>
 
         <section className="lesson-section">
-          <h3>🖥️ 7. Paso 4: alguien debe responder</h3>
+          <h3>7. Paso 4: alguien debe responder</h3>
           <Nota><p>La tienda necesita sistemas capaces de recibir la solicitud. Aquí aparece:</p></Nota>
-          <ConceptBadge>🖥️ Servidor</ConceptBadge>
+          <ConceptBadge>Servidor</ConceptBadge>
           <p>Martina dice conceptualmente:</p>
           <Dialogo>"Quiero ver el libro Fundamentos de Cloud."</Dialogo>
           <p>El servidor recibe esa solicitud. Ahora necesita preparar una respuesta.</p>
         </section>
 
         <section className="lesson-section">
-          <h3>🧩 8. Pero el servidor no trabaja solo</h3>
+          <h3>8. Pero el servidor no trabaja solo</h3>
           <Nota><p>Aquí conectamos la Clase 4. Para mostrar el producto, podríamos necesitar:</p></Nota>
           <ul className="plain-list">
             <li>📸 fotografía del libro</li>
@@ -139,17 +139,17 @@ export default function Clase6() {
         </section>
 
         <section className="lesson-section">
-          <h3>📦 9. Recuperemos el almacenamiento</h3>
+          <h3>9. Recuperemos el almacenamiento</h3>
           <Nota><p>Las fotografías y otros archivos pueden estar en:</p></Nota>
-          <ConceptBadge>📦 Almacenamiento</ConceptBadge>
+          <ConceptBadge>Almacenamiento</ConceptBadge>
           <p>Por ejemplo: libro.jpg, portada.jpg, video.mp4.</p>
           <Nota><p>Más adelante AWS nos mostrará servicios específicos para esto. Por ahora: almacenamiento = guardar objetos o archivos.</p></Nota>
         </section>
 
         <section className="lesson-section">
-          <h3>🗄️ 10. Recuperemos la base de datos</h3>
+          <h3>10. Recuperemos la base de datos</h3>
           <Nota><p>Datos como nombre del producto, precio, stock, categoría, identificador, pueden estar organizados en:</p></Nota>
-          <ConceptBadge>🗄️ Base de datos</ConceptBadge>
+          <ConceptBadge>Base de datos</ConceptBadge>
           <table className="table lesson-summary-table">
             <thead><tr><th>Producto</th><th>Precio</th><th>Stock</th></tr></thead>
             <tbody><tr><td>Libro Cloud</td><td>$29.990</td><td>14</td></tr></tbody>
@@ -159,12 +159,12 @@ export default function Clase6() {
         </section>
 
         <section className="lesson-section">
-          <h3>☁️ 11. ¿Dónde entra Cloud?</h3>
+          <h3>11. ¿Dónde entra Cloud?</h3>
           <Nota><p>Todo lo anterior podría ejecutarse usando infraestructura Cloud.</p></Nota>
           <RoleGrid roles={[
-            { emoji: '🖥️', label: 'Procesamiento', desc: '' },
-            { emoji: '📦', label: 'Archivos', desc: '' },
-            { emoji: '🗄️', label: 'Datos', desc: '' },
+            { icon: 'server', label: 'Procesamiento', desc: '' },
+            { icon: 'package', label: 'Archivos', desc: '' },
+            { icon: 'database', label: 'Datos', desc: '' },
           ]} />
           <Nota>
             <p>Cloud no significa que los computadores desaparecieron. Significa que utilizamos recursos tecnológicos administrados sobre infraestructura de un proveedor.</p>
@@ -172,38 +172,38 @@ export default function Clase6() {
         </section>
 
         <section className="lesson-section">
-          <h3>🏢 12. ¿Dónde están físicamente esos recursos?</h3>
+          <h3>12. ¿Dónde están físicamente esos recursos?</h3>
           <Nota><p>Detrás de Cloud existen:</p></Nota>
-          <ConceptBadge>🏢 Centros de datos</ConceptBadge>
+          <ConceptBadge>Centros de datos</ConceptBadge>
           <p>Que contienen: 🖥️ servidores, 💾 almacenamiento, 🌐 redes, 🔌 sistemas eléctricos, ❄️ refrigeración, 🔐 seguridad física.</p>
           <p>Así que podemos extender nuestro mapa:</p>
           <Flow steps={[
-            { emoji: '☁️', label: 'Cloud' },
-            { emoji: '🏢', label: 'Centros de datos', caption: '🖥️ · 💾 · 🌐' },
+            { icon: 'cloud', label: 'Cloud' },
+            { icon: 'building', label: 'Centros de datos', caption: '🖥️ · 💾 · 🌐' },
           ]} />
         </section>
 
         <section className="lesson-section">
-          <h3>🔁 13. ¿Qué pasa si algo falla?</h3>
+          <h3>13. ¿Qué pasa si algo falla?</h3>
           <Nota><p>Una tienda importante no debería depender idealmente de un único componente.</p></Nota>
           <Flow steps={[
-            { emoji: '🖥️', label: 'Servidor único', caption: '❌' },
-            { emoji: '💥', label: 'Servicio no disponible' },
+            { icon: 'server', label: 'Servidor único', caption: '❌' },
+            { icon: 'zap', label: 'Servicio no disponible' },
           ]} />
         </section>
 
         <section className="lesson-section">
-          <h3>🔁 14. Aquí aparece la redundancia</h3>
+          <h3>14. Aquí aparece la redundancia</h3>
           <Nota><p>Podemos diseñar sistemas con recursos adicionales.</p></Nota>
           <CompareCols cols={[
-            { emoji: '🖥️', title: 'Servidor A', items: ['❌ Si presenta problemas...'] },
-            { emoji: '🖥️', title: 'Servidor B', items: ['✅ ...otro puede ayudar a mantener el servicio.'] },
+            { icon: 'server', title: 'Servidor A', items: ['❌ Si presenta problemas...'] },
+            { icon: 'server', title: 'Servidor B', items: ['✅ ...otro puede ayudar a mantener el servicio.'] },
           ]} />
           <Nota><p>Para nuestro nivel: redundancia = evitar depender de una sola pieza.</p></Nota>
         </section>
 
         <section className="lesson-section">
-          <h3>✅ 15. Y eso nos lleva a disponibilidad</h3>
+          <h3>15. Y eso nos lleva a disponibilidad</h3>
           <Nota><p>Disponibilidad significa:</p></Nota>
           <Dialogo>Que el servicio esté funcionando cuando el usuario lo necesita.</Dialogo>
           <p>Martina no quiere conocer la arquitectura. Ella quiere: 📚 ver el libro, 💳 comprar, ✅ terminar.</p>
@@ -211,25 +211,25 @@ export default function Clase6() {
         </section>
 
         <section className="lesson-section">
-          <h3>🔄 16. Ahora hagamos el viaje completo</h3>
+          <h3>16. Ahora hagamos el viaje completo</h3>
           <Flow steps={[
-            { emoji: '👩', label: 'USUARIO' },
-            { emoji: '🌐', label: 'NAVEGADOR' },
-            { emoji: '📖', label: 'DNS' },
-            { emoji: '📍', label: 'DIRECCIÓN' },
-            { emoji: '📡', label: 'INTERNET' },
-            { emoji: '☁️', label: 'SERVICIO CLOUD', caption: '🖥️ Procesamiento · 📦 Almacenamiento · 🗄️ Base de datos' },
-            { emoji: '🏢', label: 'CENTRO DE DATOS' },
-            { emoji: '🔁', label: 'RECURSOS DE RESPALDO' },
-            { emoji: '📤', label: 'RESPUESTA' },
-            { emoji: '🌐', label: 'NAVEGADOR' },
-            { emoji: '👩', label: 'USUARIO' },
+            { icon: 'user', label: 'USUARIO' },
+            { icon: 'globe', label: 'NAVEGADOR' },
+            { icon: 'book-open', label: 'DNS' },
+            { icon: 'map-pin', label: 'DIRECCIÓN' },
+            { icon: 'radio', label: 'INTERNET' },
+            { icon: 'cloud', label: 'SERVICIO CLOUD', caption: '🖥️ Procesamiento · 📦 Almacenamiento · 🗄️ Base de datos' },
+            { icon: 'building', label: 'CENTRO DE DATOS' },
+            { icon: 'refresh', label: 'RECURSOS DE RESPALDO' },
+            { icon: 'upload', label: 'RESPUESTA' },
+            { icon: 'globe', label: 'NAVEGADOR' },
+            { icon: 'user', label: 'USUARIO' },
           ]} />
           <Nota><p>Ese mapa resume prácticamente todo el Módulo 0.</p></Nota>
         </section>
 
         <section className="lesson-section">
-          <h3>🍕 17. ¿Y dónde quedaron IaaS, PaaS y SaaS?</h3>
+          <h3>17. ¿Y dónde quedaron IaaS, PaaS y SaaS?</h3>
           <Nota><p>No han desaparecido. Describen qué nivel de servicio queremos consumir.</p></Nota>
           <ul className="plain-list">
             <li>🖥️ IaaS — "Quiero infraestructura."</li>
@@ -239,7 +239,7 @@ export default function Clase6() {
         </section>
 
         <section className="lesson-section">
-          <h3>🧠 18. Unamos las seis clases</h3>
+          <h3>18. Unamos las seis clases</h3>
           <table className="table lesson-summary-table">
             <thead><tr><th>Clase</th><th>Pregunta principal</th><th>Concepto</th></tr></thead>
             <tbody>
@@ -254,41 +254,41 @@ export default function Clase6() {
         </section>
 
         <section className="lesson-section">
-          <h3>🎭 19. Actividad principal: "Somos la nube"</h3>
+          <h3>19. Actividad principal: "Somos la nube"</h3>
           <Nota><p>Esta sería la actividad estrella del módulo. Seleccionamos estudiantes para representar:</p></Nota>
           <RoleGrid roles={[
-            { emoji: '👩', label: 'Usuario', desc: '' },
-            { emoji: '🌐', label: 'Navegador', desc: '' },
-            { emoji: '📖', label: 'DNS', desc: '' },
-            { emoji: '📡', label: 'Internet', desc: '' },
-            { emoji: '🖥️', label: 'Servidor', desc: '' },
-            { emoji: '📦', label: 'Almacenamiento', desc: '' },
-            { emoji: '🗄️', label: 'Base de datos', desc: '' },
-            { emoji: '🔁', label: 'Servidor de respaldo', desc: '' },
+            { icon: 'user', label: 'Usuario', desc: '' },
+            { icon: 'globe', label: 'Navegador', desc: '' },
+            { icon: 'book-open', label: 'DNS', desc: '' },
+            { icon: 'radio', label: 'Internet', desc: '' },
+            { icon: 'server', label: 'Servidor', desc: '' },
+            { icon: 'package', label: 'Almacenamiento', desc: '' },
+            { icon: 'database', label: 'Base de datos', desc: '' },
+            { icon: 'refresh', label: 'Servidor de respaldo', desc: '' },
           ]} />
         </section>
 
         <section className="lesson-section">
-          <h3>🎬 20. Escenario</h3>
+          <h3>20. Escenario</h3>
           <Nota><p>El usuario dice:</p></Nota>
           <Dialogo>"Quiero ver una zapatilla roja que cuesta menos de $50.000."</Dialogo>
           <p>El flujo sería:</p>
           <Flow steps={[
-            { emoji: '👩', label: 'Usuario', caption: 'Hace la solicitud.' },
-            { emoji: '🌐', label: 'Navegador', caption: 'Recibe la petición.' },
-            { emoji: '📖', label: 'DNS', caption: 'Ayuda a localizar el servicio.' },
-            { emoji: '📡', label: 'Internet', caption: 'Transporta la solicitud.' },
-            { emoji: '🖥️', label: 'Servidor', caption: 'Recibe el pedido.' },
-            { emoji: '🗄️', label: 'Base de datos', caption: 'Busca: Zapatilla roja · Precio: $45.000 · Stock: 8' },
-            { emoji: '📦', label: 'Almacenamiento', caption: 'Entrega: zapatilla-roja.jpg' },
-            { emoji: '🖥️', label: 'Servidor', caption: 'Construye la respuesta.' },
-            { emoji: '🌐', label: 'Navegador', caption: 'La muestra.' },
-            { emoji: '👩', label: 'Usuario', caption: 'Ve: 👟 Zapatilla roja · 💰 $45.000 · 📦 8 unidades' },
+            { icon: 'user', label: 'Usuario', caption: 'Hace la solicitud.' },
+            { icon: 'globe', label: 'Navegador', caption: 'Recibe la petición.' },
+            { icon: 'book-open', label: 'DNS', caption: 'Ayuda a localizar el servicio.' },
+            { icon: 'radio', label: 'Internet', caption: 'Transporta la solicitud.' },
+            { icon: 'server', label: 'Servidor', caption: 'Recibe el pedido.' },
+            { icon: 'database', label: 'Base de datos', caption: 'Busca: Zapatilla roja · Precio: $45.000 · Stock: 8' },
+            { icon: 'package', label: 'Almacenamiento', caption: 'Entrega: zapatilla-roja.jpg' },
+            { icon: 'server', label: 'Servidor', caption: 'Construye la respuesta.' },
+            { icon: 'globe', label: 'Navegador', caption: 'La muestra.' },
+            { icon: 'user', label: 'Usuario', caption: 'Ve: 👟 Zapatilla roja · 💰 $45.000 · 📦 8 unidades' },
           ]} />
         </section>
 
         <section className="lesson-section">
-          <h3>💥 21. Agreguemos una falla</h3>
+          <h3>21. Agreguemos una falla</h3>
           <Nota><p>Ahora repetimos la actividad, pero la docente dice:</p></Nota>
           <Dialogo>"¡El servidor A falló!"</Dialogo>
           <p>El estudiante-servidor A se sienta. 😄</p>
@@ -297,15 +297,15 @@ export default function Clase6() {
         </section>
 
         <section className="lesson-section">
-          <h3>🏆 22. Reto final del Módulo 0</h3>
+          <h3>22. Reto final del Módulo 0</h3>
           <Nota><p>Presentamos este caso:</p></Nota>
-          <ConceptBadge>🎮 MegaGame</ConceptBadge>
+          <ConceptBadge>MegaGame</ConceptBadge>
           <p>Una empresa tiene un videojuego online. Un jugador: 1. abre el juego, 2. inicia sesión, 3. selecciona su personaje, 4. ve su avatar, 5. consulta sus puntos, 6. comienza una partida.</p>
           <p>El sistema utiliza: 📸 imágenes, 👤 datos de jugadores, 🏆 puntajes, 🖥️ servidores, ☁️ Cloud, 🌐 Internet.</p>
         </section>
 
         <section className="lesson-section">
-          <h3>❓ 23. Preguntas del reto</h3>
+          <h3>23. Preguntas del reto</h3>
           <Nota><p>Los estudiantes deben responder con sus propias palabras:</p></Nota>
           <QaItem question="1. ¿Qué permite que el dispositivo del jugador se comunique con el sistema?" answer="🌐 Internet." />
           <QaItem question="2. ¿Qué componente podría procesar las solicitudes?" answer="🖥️ Servidor." />
@@ -316,12 +316,12 @@ export default function Clase6() {
         </section>
 
         <section className="lesson-section">
-          <h3>📝 25. Evaluación final</h3>
+          <h3>25. Evaluación final</h3>
           <Quiz questions={QUIZ_QUESTIONS} />
         </section>
 
         <section className="lesson-section">
-          <h3>🎲 26. Juego final: encuentra el error</h3>
+          <h3>26. Juego final: encuentra el error</h3>
           <Nota><p>Ahora mostramos frases incorrectas. Los estudiantes deben corregirlas.</p></Nota>
           {FRASES_ERROR.map((f, i) => (
             <div key={f.frase} style={{ marginBottom: 'var(--space-4)' }}>
@@ -335,25 +335,25 @@ export default function Clase6() {
         </section>
 
         <section className="lesson-section">
-          <h3>🧩 27. Actividad final: dibuja tu propia arquitectura</h3>
+          <h3>27. Actividad final: dibuja tu propia arquitectura</h3>
           <Nota><p>Les daría este caso:</p></Nota>
           <Dialogo>Una universidad quiere una plataforma donde estudiantes puedan iniciar sesión, ver sus notas, descargar materiales y revisar videos.</Dialogo>
           <p>Deben dibujar solamente usando estos símbolos: 👩 Usuario, 🌐 Internet, 🖥️ Servidor, 📦 Almacenamiento, 🗄️ Base de datos, ☁️ Cloud, 🏢 Centro de datos.</p>
           <Nota><p>No existe una única representación perfecta.</p></Nota>
           <Reveal label="Ver una representación posible">
             <Flow steps={[
-              { emoji: '👩', label: 'Estudiante' },
-              { emoji: '🌐', label: 'Internet' },
-              { emoji: '☁️', label: 'Cloud' },
-              { emoji: '🖥️', label: 'Aplicación' },
-              { emoji: '📦', label: 'Almacenamiento', caption: 'PDF · Videos' },
-              { emoji: '🗄️', label: 'Base de datos', caption: 'Notas · Alumnos' },
+              { icon: 'user', label: 'Estudiante' },
+              { icon: 'globe', label: 'Internet' },
+              { icon: 'cloud', label: 'Cloud' },
+              { icon: 'server', label: 'Aplicación' },
+              { icon: 'package', label: 'Almacenamiento', caption: 'PDF · Videos' },
+              { icon: 'database', label: 'Base de datos', caption: 'Notas · Alumnos' },
             ]} />
           </Reveal>
         </section>
 
         <section className="lesson-section">
-          <h3>🗣️ 28. Evaluación oral</h3>
+          <h3>28. Evaluación oral</h3>
           <Nota><p>Para comprobar comprensión real, elegiría estudiantes al azar y les pediría:</p></Nota>
           <Dialogo>"Explícame Cloud sin usar la palabra nube."</Dialogo>
           <Reveal label="Ver una respuesta válida">
@@ -362,7 +362,7 @@ export default function Clase6() {
         </section>
 
         <section className="lesson-section">
-          <h3>🧠 29. Segunda evaluación oral</h3>
+          <h3>29. Segunda evaluación oral</h3>
           <Dialogo>"¿Qué ocurre aproximadamente cuando entro a una tienda online?"</Dialogo>
           <Reveal label="Ver respuesta esperada">
             <Dialogo>"Mi navegador envía una solicitud por Internet. El sistema la procesa, puede consultar una base de datos y buscar archivos almacenados, y luego envía una respuesta que aparece en mi navegador."</Dialogo>
@@ -371,7 +371,7 @@ export default function Clase6() {
         </section>
 
         <section className="lesson-section">
-          <h3>📊 30. Escala de logro</h3>
+          <h3>30. Escala de logro</h3>
           <Nota><p>Puedes evaluar el módulo con esta rúbrica sencilla:</p></Nota>
           <table className="table lesson-summary-table">
             <thead><tr><th>Nivel</th><th>Descripción</th></tr></thead>
@@ -385,14 +385,14 @@ export default function Clase6() {
         </section>
 
         <section className="lesson-section">
-          <h3>🎟️ 31. Ticket de salida final</h3>
+          <h3>31. Ticket de salida final</h3>
           <Nota><p>La última pregunta del Módulo 0 sería:</p></Nota>
           <Dialogo>"Antes de este módulo, ¿qué pensabas que era la nube y cómo la explicarías ahora?"</Dialogo>
           <p className="text-muted" style={{ fontSize: 12.5 }}>Esta pregunta además permite observar cuánto cambió la comprensión conceptual del estudiante.</p>
         </section>
 
         <section className="lesson-section">
-          <h3>📌 32. Las 10 ideas que deben sobrevivir</h3>
+          <h3>32. Las 10 ideas que deben sobrevivir</h3>
           <ol className="plain-list">
             <li>🌐 Internet permite comunicación.</li>
             <li>💻 Un cliente solicita.</li>
@@ -408,16 +408,16 @@ export default function Clase6() {
         </section>
 
         <section className="lesson-section">
-          <h3>🏁 33. Cierre del Módulo 0</h3>
+          <h3>33. Cierre del Módulo 0</h3>
           <Nota><p>Yo terminaría proyectando:</p></Nota>
-          <ConceptBadge>🎉 Ya sabemos qué problema resuelve Cloud. Ahora podemos aprender AWS.</ConceptBadge>
+          <ConceptBadge>Ya sabemos qué problema resuelve Cloud. Ahora podemos aprender AWS.</ConceptBadge>
           <Nota><p>El estudiante todavía no necesita saber: ❌ crear EC2, ❌ configurar S3, ❌ escribir políticas IAM, ❌ crear una VPC, ❌ utilizar CLI.</p></Nota>
           <p>Pero ahora, cuando escuche <strong>EC2</strong>, podrá pensar "Servidor." Cuando escuche <strong>S3</strong>, "Almacenamiento." Cuando escuche <strong>RDS</strong>, "Base de datos."</p>
           <p>Y cuando hablemos de Regiones y Zonas de Disponibilidad, ya comprenderá que estamos intentando organizar infraestructura real para mantener servicios funcionando.</p>
         </section>
 
         <div className="bridge-callout">
-          <div className="lesson-eyebrow">🚪 Fin del Módulo 0</div>
+          <div className="lesson-eyebrow"><Icon name="cloud" /> Fin del Módulo 0</div>
           <Nota>
             <p>El paso siguiente ya debería ser Módulo 1: Conociendo AWS, comenzando con una Clase 1 titulada "¿Qué es AWS y qué servicios nos ofrece?", donde por primera vez AWS deja de ser un nombre mencionado de pasada y se convierte en el protagonista del curso.</p>
           </Nota>
