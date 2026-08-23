@@ -127,6 +127,14 @@ const MODULO_3 = [
     resumen: 'Laboratorio guiado paso a paso: nombre, AMI, tipo de instancia, key pair, red, Security Group y almacenamiento, hasta ver Running.',
     requisito: 'Módulo 3 · Clases 1 y 2',
   },
+  {
+    to: '/aprendizaje/aws-desde-cero/modulo-3/clase-4',
+    numero: 4,
+    duracion: '45 min',
+    titulo: 'Security Groups, puertos y control del tráfico',
+    resumen: 'Quién puede llegar hasta nuestra instancia y por qué puerta: inbound, outbound, puertos 22/80/443 y 0.0.0.0/0 sin recetas mágicas.',
+    requisito: 'Módulo 3 · Clases 1 a 3',
+  },
 ];
 
 function ClassGrid({ classes }) {

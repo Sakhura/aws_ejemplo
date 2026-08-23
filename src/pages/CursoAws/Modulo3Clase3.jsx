@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import {
   Nota, Dialogo, ConceptBadge, StrikeChip, RoleGrid, Flow, InfoBox, CompareCols, QaItem, Reveal, Quiz,
 } from './lessonComponents.jsx';
@@ -609,7 +610,9 @@ export default function Modulo3Clase3() {
           <Nota>
             <p>En esa clase mantendremos el mismo nivel de desarrollo, pero introduciremos puertos 22, 80 y 443, inbound/outbound, protocolos, IP, 0.0.0.0/0 y CIDR con analogías simples antes de tocar las reglas reales de nuestra instancia.</p>
           </Nota>
-          <span className="tag tag-outline">Módulo 3 · Clase 4 · próximamente</span>
+          <Link to="/aprendizaje/aws-desde-cero/modulo-3/clase-4" className="btn btn-primary" style={{ marginTop: 'var(--space-2)' }}>
+            Ir a Clase 4: Security Groups, puertos y control del tráfico →
+          </Link>
         </div>
 
       </div>
