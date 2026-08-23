@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import {
   Nota, Dialogo, ConceptBadge, RoleGrid, Flow, InfoBox, CompareCols, QaItem, Reveal, Quiz,
 } from './lessonComponents.jsx';
@@ -605,7 +606,9 @@ export default function Modulo3Clase6() {
           <Nota>
             <p>Esa clase debe ser prácticamente un proyecto guiado completo: crear EC2, revisar AMI y tamaño, configurar acceso, Security Group, conectarse a Linux, instalar un servidor web, modificar el HTML, acceder desde navegador, revisar CloudWatch y finalmente limpiar los recursos.</p>
           </Nota>
-          <span className="tag tag-outline">Módulo 3 · Clase 7 · próximamente</span>
+          <Link to="/aprendizaje/aws-desde-cero/modulo-3/clase-7" className="btn btn-primary" style={{ marginTop: 'var(--space-2)' }}>
+            Ir a Clase 7: Laboratorio integrador — publica tu primera página web con Amazon EC2 →
+          </Link>
         </div>
 
       </div>

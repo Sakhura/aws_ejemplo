@@ -151,6 +151,14 @@ const MODULO_3 = [
     resumen: 'Crear un recurso es solo el comienzo: estados de instancia, CloudWatch, CPUUtilization, modelos de compra y la disciplina de limpieza.',
     requisito: 'Módulo 3 · Clases 1 a 5',
   },
+  {
+    to: '/aprendizaje/aws-desde-cero/modulo-3/clase-7',
+    numero: 7,
+    duracion: '45-60 min',
+    titulo: 'Laboratorio integrador: publica tu primera página web con Amazon EC2',
+    resumen: 'Cierre práctico del módulo: AMI, Security Group, EBS, acceso, Apache y monitoreo se conectan en una sola solución, hasta ver la página en el navegador.',
+    requisito: 'Módulo 3 · Clases 1 a 6',
+  },
 ];
 
 function ClassGrid({ classes }) {
