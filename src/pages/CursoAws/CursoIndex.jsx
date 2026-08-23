@@ -135,6 +135,14 @@ const MODULO_3 = [
     resumen: 'Quién puede llegar hasta nuestra instancia y por qué puerta: inbound, outbound, puertos 22/80/443 y 0.0.0.0/0 sin recetas mágicas.',
     requisito: 'Módulo 3 · Clases 1 a 3',
   },
+  {
+    to: '/aprendizaje/aws-desde-cero/modulo-3/clase-5',
+    numero: 5,
+    duracion: '45 min',
+    titulo: 'Amazon EBS, volúmenes y snapshots',
+    resumen: 'EC2 procesa; EBS guarda. Qué persiste al detener una instancia, Delete on termination, y por qué un snapshot no es "otro disco".',
+    requisito: 'Módulo 3 · Clases 1 a 4',
+  },
 ];
 
 function ClassGrid({ classes }) {

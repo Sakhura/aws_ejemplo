@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import {
   Nota, Dialogo, ConceptBadge, RoleGrid, Flow, InfoBox, CompareCols, QaItem, Reveal, Quiz,
 } from './lessonComponents.jsx';
@@ -538,7 +539,9 @@ export default function Modulo3Clase4() {
           <Nota>
             <p>En esa clase separaremos definitivamente cómputo de almacenamiento, veremos qué persiste cuando EC2 se detiene, qué ocurre al terminar una instancia y por qué un snapshot no es simplemente "otro disco".</p>
           </Nota>
-          <span className="tag tag-outline">Módulo 3 · Clase 5 · próximamente</span>
+          <Link to="/aprendizaje/aws-desde-cero/modulo-3/clase-5" className="btn btn-primary" style={{ marginTop: 'var(--space-2)' }}>
+            Ir a Clase 5: Amazon EBS, volúmenes y snapshots →
+          </Link>
         </div>
 
       </div>
