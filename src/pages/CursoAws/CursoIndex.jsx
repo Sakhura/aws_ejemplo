@@ -339,6 +339,17 @@ const MODULO_6 = [
   },
 ];
 
+const MODULO_7 = [
+  {
+    to: '/aprendizaje/aws-desde-cero/modulo-7/clase-1',
+    numero: 1,
+    duracion: '45 min',
+    titulo: '¿Qué es Elastic Load Balancing? De una sola caja a múltiples servidores',
+    resumen: 'Punto único de falla, escalado vertical vs. horizontal, y el Load Balancer como coordinador que reparte solicitudes entre servidores.',
+    requisito: 'Módulos 0 a 6',
+  },
+];
+
 function ClassGrid({ classes }) {
   return (
     <div className="course-grid">
@@ -402,6 +413,15 @@ export default function CursoIndex() {
         De archivos sueltos a información relacionada: tablas, Amazon RDS, motores, seguridad de red, backups y alta disponibilidad.
       </p>
       <ClassGrid classes={MODULO_6} />
+
+      <h3 style={{ margin: 'var(--space-8) 0 4px' }}>Módulo 7 · Elastic Load Balancing y Auto Scaling</h3>
+      <p className="view-intro" style={{ marginBottom: 'var(--space-4)' }}>
+        Qué ocurre cuando una sola EC2 ya no alcanza o deja de funcionar: distribuir tráfico entre servidores y ajustar cuántos tenemos disponibles.
+      </p>
+      <Link to="/aprendizaje/aws-desde-cero/modulo-7" className="btn btn-ghost" style={{ marginBottom: 'var(--space-4)', display: 'inline-block' }}>
+        Ver la hoja de ruta completa del módulo (8 clases planificadas) →
+      </Link>
+      <ClassGrid classes={MODULO_7} />
     </div>
   );
 }
