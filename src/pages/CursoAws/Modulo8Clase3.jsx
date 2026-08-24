@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import {
   Icon, Nota, Dialogo, ConceptBadge, RoleGrid, Flow, InfoBox, QaItem, Reveal, Quiz, TrueFalseQuiz,
 } from './lessonComponents.jsx';
@@ -263,7 +264,9 @@ export default function Modulo8Clase3() {
           <p>Perfecto. CloudWatch detectó el problema. ¿Pero quién se entera? Si nadie está mirando la consola, la alarma puede permanecer ahí tranquilamente mientras el equipo sigue tomando café sin saber nada.</p>
           <Flow steps={[{ icon: 'dot-danger', label: 'ALARM' }, { icon: 'bell', label: 'Notificación' }, { icon: 'user', label: 'Persona/Equipo' }]} />
           <ConceptBadge icon="bell">Módulo 8 · Clase 4 — CloudWatch Alarms + Amazon SNS: cómo avisar automáticamente cuando algo importante ocurre</ConceptBadge>
-          <span className="tag tag-outline">Módulo 8 · Clase 4 · próximamente</span>
+          <Link to="/aprendizaje/aws-desde-cero/modulo-8/clase-4" className="btn btn-primary" style={{ marginTop: 'var(--space-2)' }}>
+            Ir a Clase 4: Alarms + SNS →
+          </Link>
         </div>
 
       </div>

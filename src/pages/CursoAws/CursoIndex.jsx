@@ -431,6 +431,14 @@ const MODULO_8 = [
     resumen: 'Threshold, Evaluation Periods y Datapoints to Alarm (alarmas "M de N"), los estados OK/ALARM/INSUFFICIENT_DATA, y por qué no alarmamos por un único pico.',
     requisito: 'Módulo 8 · Clases 1 y 2',
   },
+  {
+    to: '/aprendizaje/aws-desde-cero/modulo-8/clase-4',
+    numero: 4,
+    duracion: '45 min',
+    titulo: 'CloudWatch Alarms + Amazon SNS, cómo avisar automáticamente cuando algo importante ocurre',
+    resumen: 'Topic, Subscription y Subscriber: cómo conectar una alarma con un correo real, confirmar la suscripción, y evitar la fatiga de alertas.',
+    requisito: 'Módulo 8 · Clases 1 a 3',
+  },
 ];
 
 function ClassGrid({ classes }) {
