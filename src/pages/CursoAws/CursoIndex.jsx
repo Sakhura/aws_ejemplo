@@ -348,6 +348,22 @@ const MODULO_7 = [
     resumen: 'Punto único de falla, escalado vertical vs. horizontal, y el Load Balancer como coordinador que reparte solicitudes entre servidores.',
     requisito: 'Módulos 0 a 6',
   },
+  {
+    to: '/aprendizaje/aws-desde-cero/modulo-7/clase-2',
+    numero: 2,
+    duracion: '45 min',
+    titulo: 'Application Load Balancer, Listeners y Target Groups',
+    resumen: 'El Listener recibe, la regla decide y el Target Group define hacia dónde enviamos la solicitud. Laboratorio guiado: creamos un ALB real.',
+    requisito: 'Módulo 7 · Clase 1',
+  },
+  {
+    to: '/aprendizaje/aws-desde-cero/modulo-7/clase-3',
+    numero: 3,
+    duracion: '45 min',
+    titulo: 'Health Checks, cómo detectar servidores saludables antes de enviarles usuarios',
+    resumen: 'Running no es lo mismo que Healthy: Path, Interval, Timeout, Healthy/Unhealthy Threshold, y por qué el ALB nunca repara la aplicación.',
+    requisito: 'Módulo 7 · Clases 1 y 2',
+  },
 ];
 
 function ClassGrid({ classes }) {
