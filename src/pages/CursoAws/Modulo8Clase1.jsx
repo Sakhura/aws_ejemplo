@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import {
   Icon, Nota, Dialogo, ConceptBadge, RoleGrid, Flow, QaItem, Reveal, Quiz, TrueFalseQuiz,
 } from './lessonComponents.jsx';
@@ -306,7 +307,9 @@ export default function Modulo8Clase1() {
           </table>
           <p>"¿La CPU estuvo realmente al 100% durante estos cinco minutos?" Depende de cómo decidamos resumir esos datos: podemos mirar Average, Maximum, Minimum o Sum y obtener lecturas diferentes. Además debemos decidir: ¿1 minuto? ¿5 minutos? ¿15 minutos?</p>
           <ConceptBadge icon="bar-chart">Módulo 8 · Clase 2 — Métricas, estadísticas y períodos: cómo interpretar correctamente los gráficos de CloudWatch</ConceptBadge>
-          <span className="tag tag-outline">Módulo 8 · Clase 2 · próximamente</span>
+          <Link to="/aprendizaje/aws-desde-cero/modulo-8/clase-2" className="btn btn-primary" style={{ marginTop: 'var(--space-2)' }}>
+            Ir a Clase 2: Métricas, estadísticas y períodos →
+          </Link>
         </div>
 
       </div>

@@ -415,6 +415,22 @@ const MODULO_8 = [
     resumen: 'Metric, Data Point, Namespace y Dimension, más métricas comunes de EC2, ALB y RDS, para dejar de adivinar y empezar a observar.',
     requisito: 'Módulos 0 a 7',
   },
+  {
+    to: '/aprendizaje/aws-desde-cero/modulo-8/clase-2',
+    numero: 2,
+    duracion: '45 min',
+    titulo: 'Métricas, estadísticas y períodos, cómo interpretar correctamente los gráficos de CloudWatch',
+    resumen: 'Average, Maximum, Minimum, Sum y SampleCount con los mismos datos cuentan historias distintas, y el período determina cuánto detalle vemos.',
+    requisito: 'Módulo 8 · Clase 1',
+  },
+  {
+    to: '/aprendizaje/aws-desde-cero/modulo-8/clase-3',
+    numero: 3,
+    duracion: '45 min',
+    titulo: 'CloudWatch Alarms, cómo detectar automáticamente que una métrica entró en una condición preocupante',
+    resumen: 'Threshold, Evaluation Periods y Datapoints to Alarm (alarmas "M de N"), los estados OK/ALARM/INSUFFICIENT_DATA, y por qué no alarmamos por un único pico.',
+    requisito: 'Módulo 8 · Clases 1 y 2',
+  },
 ];
 
 function ClassGrid({ classes }) {
