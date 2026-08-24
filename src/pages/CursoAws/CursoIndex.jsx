@@ -272,6 +272,73 @@ const MODULO_5 = [
   },
 ];
 
+const MODULO_6 = [
+  {
+    to: '/aprendizaje/aws-desde-cero/modulo-6/clase-1',
+    numero: 1,
+    duracion: '45 min',
+    titulo: '¿Qué es una base de datos? De una lista de clientes a información relacionada',
+    resumen: 'Cero AWS todavía: tablas, columnas, registros e IDs con clientes, productos y pedidos, antes de tocar RDS.',
+    requisito: 'Ninguno técnico específico',
+  },
+  {
+    to: '/aprendizaje/aws-desde-cero/modulo-6/clase-2',
+    numero: 2,
+    duracion: '45 min',
+    titulo: 'Amazon RDS, cuando AWS administra gran parte del trabajo pesado',
+    resumen: 'Servicio administrado vs. instalar MySQL en EC2: qué sigue siendo tuyo (datos, tablas, accesos) y qué administra AWS.',
+    requisito: 'Módulo 6 · Clase 1',
+  },
+  {
+    to: '/aprendizaje/aws-desde-cero/modulo-6/clase-3',
+    numero: 3,
+    duracion: '45 min',
+    titulo: 'Motores, DB Instances y almacenamiento, elegir el tamaño correcto sin pagar de más',
+    resumen: 'Tres decisiones distintas: motor, capacidad de cómputo y storage (gp3 vs. Provisioned IOPS), con right sizing como hilo conductor.',
+    requisito: 'Módulo 6 · Clases 1 y 2',
+  },
+  {
+    to: '/aprendizaje/aws-desde-cero/modulo-6/clase-4',
+    numero: 4,
+    duracion: '45 min',
+    titulo: 'RDS dentro de una VPC, subnets privadas, Security Groups y acceso seguro',
+    resumen: 'DB Subnet Group, Public access = No, SG-RDS con origen SG-App, y por qué el endpoint DNS reemplaza a la IP interna.',
+    requisito: 'Módulo 6 · Clases 1 a 3 + Módulo 5',
+  },
+  {
+    to: '/aprendizaje/aws-desde-cero/modulo-6/clase-5',
+    numero: 5,
+    duracion: '45 min',
+    titulo: 'Backups, snapshots y Point-in-Time Recovery, cómo volver atrás cuando algo sale mal',
+    resumen: 'Automated Backup vs. Manual Snapshot, retención, PITR y por qué restaurar siempre crea una base nueva.',
+    requisito: 'Módulo 6 · Clases 1 a 4',
+  },
+  {
+    to: '/aprendizaje/aws-desde-cero/modulo-6/clase-6',
+    numero: 6,
+    duracion: '45 min',
+    titulo: 'Multi-AZ y Failover, disponibilidad no es lo mismo que backup',
+    resumen: 'Primary/Standby, replicación síncrona, failover automático, y por qué Multi-AZ no reemplaza a los backups.',
+    requisito: 'Módulo 6 · Clases 1 a 5',
+  },
+  {
+    to: '/aprendizaje/aws-desde-cero/modulo-6/clase-7',
+    numero: 7,
+    duracion: '45 min',
+    titulo: 'Amazon Aurora y DynamoDB, cuando una sola tecnología no alcanza',
+    resumen: 'Aurora como relacional nativo de AWS, DynamoDB como NoSQL por claves, y la idea de Polyglot Persistence.',
+    requisito: 'Módulo 6 · Clases 1 a 6',
+  },
+  {
+    to: '/aprendizaje/aws-desde-cero/modulo-6/clase-8',
+    numero: 8,
+    duracion: '60 min',
+    titulo: 'Laboratorio integrador: diseña, protege y recupera la base de datos de CloudShop',
+    resumen: 'Cierre práctico del módulo: clasificar datos, crear una RDS privada, configurar backups, simular un incidente y recuperarlo, y diagnosticar 10 escenarios rotos.',
+    requisito: 'Módulo 6 · Clases 1 a 7',
+  },
+];
+
 function ClassGrid({ classes }) {
   return (
     <div className="course-grid">
@@ -329,6 +396,12 @@ export default function CursoIndex() {
         Cómo se comunican los recursos que ya sabemos crear: redes, direcciones IP, VPC, subnets, rutas y gateways.
       </p>
       <ClassGrid classes={MODULO_5} />
+
+      <h3 style={{ margin: 'var(--space-8) 0 4px' }}>Módulo 6 · Bases de datos en AWS</h3>
+      <p className="view-intro" style={{ marginBottom: 'var(--space-4)' }}>
+        De archivos sueltos a información relacionada: tablas, Amazon RDS, motores, seguridad de red, backups y alta disponibilidad.
+      </p>
+      <ClassGrid classes={MODULO_6} />
     </div>
   );
 }

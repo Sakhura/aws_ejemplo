@@ -41,6 +41,15 @@ import Modulo5Clase5 from './pages/CursoAws/Modulo5Clase5.jsx';
 import Modulo5Clase6 from './pages/CursoAws/Modulo5Clase6.jsx';
 import Modulo5Clase7 from './pages/CursoAws/Modulo5Clase7.jsx';
 import Modulo5Clase8 from './pages/CursoAws/Modulo5Clase8.jsx';
+import Modulo6Overview from './pages/CursoAws/Modulo6Overview.jsx';
+import Modulo6Clase1 from './pages/CursoAws/Modulo6Clase1.jsx';
+import Modulo6Clase2 from './pages/CursoAws/Modulo6Clase2.jsx';
+import Modulo6Clase3 from './pages/CursoAws/Modulo6Clase3.jsx';
+import Modulo6Clase4 from './pages/CursoAws/Modulo6Clase4.jsx';
+import Modulo6Clase5 from './pages/CursoAws/Modulo6Clase5.jsx';
+import Modulo6Clase6 from './pages/CursoAws/Modulo6Clase6.jsx';
+import Modulo6Clase7 from './pages/CursoAws/Modulo6Clase7.jsx';
+import Modulo6Clase8 from './pages/CursoAws/Modulo6Clase8.jsx';
 import Laboratorios from './pages/Laboratorios.jsx';
 import Errores from './pages/Errores.jsx';
 import Glosario from './pages/Glosario.jsx';
@@ -92,6 +101,15 @@ export default function App() {
           <Route path="aprendizaje/aws-desde-cero/modulo-5/clase-6" element={<Modulo5Clase6 />} />
           <Route path="aprendizaje/aws-desde-cero/modulo-5/clase-7" element={<Modulo5Clase7 />} />
           <Route path="aprendizaje/aws-desde-cero/modulo-5/clase-8" element={<Modulo5Clase8 />} />
+          <Route path="aprendizaje/aws-desde-cero/modulo-6" element={<Modulo6Overview />} />
+          <Route path="aprendizaje/aws-desde-cero/modulo-6/clase-1" element={<Modulo6Clase1 />} />
+          <Route path="aprendizaje/aws-desde-cero/modulo-6/clase-2" element={<Modulo6Clase2 />} />
+          <Route path="aprendizaje/aws-desde-cero/modulo-6/clase-3" element={<Modulo6Clase3 />} />
+          <Route path="aprendizaje/aws-desde-cero/modulo-6/clase-4" element={<Modulo6Clase4 />} />
+          <Route path="aprendizaje/aws-desde-cero/modulo-6/clase-5" element={<Modulo6Clase5 />} />
+          <Route path="aprendizaje/aws-desde-cero/modulo-6/clase-6" element={<Modulo6Clase6 />} />
+          <Route path="aprendizaje/aws-desde-cero/modulo-6/clase-7" element={<Modulo6Clase7 />} />
+          <Route path="aprendizaje/aws-desde-cero/modulo-6/clase-8" element={<Modulo6Clase8 />} />
           <Route path="aprendizaje/laboratorios" element={<Laboratorios />} />
           <Route path="aprendizaje/errores" element={<Errores />} />
           <Route path="aprendizaje/glosario" element={<Glosario />} />
