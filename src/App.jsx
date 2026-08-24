@@ -37,6 +37,10 @@ import Modulo5Clase1 from './pages/CursoAws/Modulo5Clase1.jsx';
 import Modulo5Clase2 from './pages/CursoAws/Modulo5Clase2.jsx';
 import Modulo5Clase3 from './pages/CursoAws/Modulo5Clase3.jsx';
 import Modulo5Clase4 from './pages/CursoAws/Modulo5Clase4.jsx';
+import Modulo5Clase5 from './pages/CursoAws/Modulo5Clase5.jsx';
+import Modulo5Clase6 from './pages/CursoAws/Modulo5Clase6.jsx';
+import Modulo5Clase7 from './pages/CursoAws/Modulo5Clase7.jsx';
+import Modulo5Clase8 from './pages/CursoAws/Modulo5Clase8.jsx';
 import Laboratorios from './pages/Laboratorios.jsx';
 import Errores from './pages/Errores.jsx';
 import Glosario from './pages/Glosario.jsx';
@@ -84,6 +88,10 @@ export default function App() {
           <Route path="aprendizaje/aws-desde-cero/modulo-5/clase-2" element={<Modulo5Clase2 />} />
           <Route path="aprendizaje/aws-desde-cero/modulo-5/clase-3" element={<Modulo5Clase3 />} />
           <Route path="aprendizaje/aws-desde-cero/modulo-5/clase-4" element={<Modulo5Clase4 />} />
+          <Route path="aprendizaje/aws-desde-cero/modulo-5/clase-5" element={<Modulo5Clase5 />} />
+          <Route path="aprendizaje/aws-desde-cero/modulo-5/clase-6" element={<Modulo5Clase6 />} />
+          <Route path="aprendizaje/aws-desde-cero/modulo-5/clase-7" element={<Modulo5Clase7 />} />
+          <Route path="aprendizaje/aws-desde-cero/modulo-5/clase-8" element={<Modulo5Clase8 />} />
           <Route path="aprendizaje/laboratorios" element={<Laboratorios />} />
           <Route path="aprendizaje/errores" element={<Errores />} />
           <Route path="aprendizaje/glosario" element={<Glosario />} />

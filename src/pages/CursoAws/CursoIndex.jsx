@@ -238,6 +238,38 @@ const MODULO_5 = [
     resumen: 'Destination, Target, la ruta local, 0.0.0.0/0 y por qué tener puerta y permiso no basta sin un camino.',
     requisito: 'Módulo 5 · Clases 1 a 3',
   },
+  {
+    to: '/aprendizaje/aws-desde-cero/modulo-5/clase-5',
+    numero: 5,
+    duracion: '45 min',
+    titulo: 'NAT Gateway, salida a Internet desde una subnet privada',
+    resumen: 'Cómo un recurso privado puede iniciar conexiones hacia Internet sin volverse públicamente accesible, y por qué Internet no puede iniciar la conversación.',
+    requisito: 'Módulo 5 · Clases 1 a 4',
+  },
+  {
+    to: '/aprendizaje/aws-desde-cero/modulo-5/clase-6',
+    numero: 6,
+    duracion: '45 min',
+    titulo: 'Security Groups vs Network ACLs, seguridad en dos niveles diferentes',
+    resumen: 'Nivel de recurso vs. nivel de subnet, stateful vs. stateless, y por qué un Allow del SG no anula un Deny de la NACL.',
+    requisito: 'Módulo 5 · Clases 1 a 5',
+  },
+  {
+    to: '/aprendizaje/aws-desde-cero/modulo-5/clase-7',
+    numero: 7,
+    duracion: '45-60 min',
+    titulo: 'Diseñando nuestra primera arquitectura VPC completa',
+    resumen: 'De los requisitos de negocio a la red: qué debe ser público, qué privado, y cómo justificar cada componente en el caso CloudShop.',
+    requisito: 'Módulo 5 · Clases 1 a 6',
+  },
+  {
+    to: '/aprendizaje/aws-desde-cero/modulo-5/clase-8',
+    numero: 8,
+    duracion: '60 min',
+    titulo: 'Laboratorio integrador: construye y diagnostica una arquitectura VPC completa',
+    resumen: 'Cierre práctico del módulo: crear la VPC, subnets, rutas, IGW y NAT reales, diagnosticar 10 arquitecturas rotas, y limpiar todo correctamente.',
+    requisito: 'Módulo 5 · Clases 1 a 7',
+  },
 ];
 
 function ClassGrid({ classes }) {
@@ -296,9 +328,6 @@ export default function CursoIndex() {
       <p className="view-intro" style={{ marginBottom: 'var(--space-4)' }}>
         Cómo se comunican los recursos que ya sabemos crear: redes, direcciones IP, VPC, subnets, rutas y gateways.
       </p>
-      <Link to="/aprendizaje/aws-desde-cero/modulo-5" className="btn btn-ghost" style={{ marginBottom: 'var(--space-4)', display: 'inline-block' }}>
-        Ver la hoja de ruta completa del módulo (8 clases planificadas) →
-      </Link>
       <ClassGrid classes={MODULO_5} />
     </div>
   );
