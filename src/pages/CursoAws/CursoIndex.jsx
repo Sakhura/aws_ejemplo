@@ -406,6 +406,17 @@ const MODULO_7 = [
   },
 ];
 
+const MODULO_8 = [
+  {
+    to: '/aprendizaje/aws-desde-cero/modulo-8/clase-1',
+    numero: 1,
+    duracion: '45 min',
+    titulo: '¿Qué es Amazon CloudWatch? Métricas, observabilidad y cómo saber qué está ocurriendo en nuestra infraestructura',
+    resumen: 'Metric, Data Point, Namespace y Dimension, más métricas comunes de EC2, ALB y RDS, para dejar de adivinar y empezar a observar.',
+    requisito: 'Módulos 0 a 7',
+  },
+];
+
 function ClassGrid({ classes }) {
   return (
     <div className="course-grid">
@@ -475,6 +486,15 @@ export default function CursoIndex() {
         Qué ocurre cuando una sola EC2 ya no alcanza o deja de funcionar: distribuir tráfico entre servidores y ajustar cuántos tenemos disponibles.
       </p>
       <ClassGrid classes={MODULO_7} />
+
+      <h3 style={{ margin: 'var(--space-8) 0 4px' }}>Módulo 8 · Monitoreo, métricas y alertas con Amazon CloudWatch</h3>
+      <p className="view-intro" style={{ marginBottom: 'var(--space-4)' }}>
+        Cómo saber que algo está fallando antes de que el usuario nos avise: métricas, alarmas, logs, dashboards y notificaciones.
+      </p>
+      <Link to="/aprendizaje/aws-desde-cero/modulo-8" className="btn btn-ghost" style={{ marginBottom: 'var(--space-4)', display: 'inline-block' }}>
+        Ver la hoja de ruta completa del módulo (8 clases planificadas) →
+      </Link>
+      <ClassGrid classes={MODULO_8} />
     </div>
   );
 }
