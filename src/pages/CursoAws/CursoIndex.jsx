@@ -548,6 +548,14 @@ export default function CursoIndex() {
         Cómo saber que algo está fallando antes de que el usuario nos avise: métricas, alarmas, logs, dashboards y notificaciones.
       </p>
       <ClassGrid classes={MODULO_8} />
+
+      <h3 style={{ margin: 'var(--space-8) 0 4px' }}>Módulo 9 · Seguridad en AWS</h3>
+      <p className="view-intro" style={{ marginBottom: 'var(--space-4)' }}>
+        Quién puede entrar, qué puede hacer, cómo protegemos los datos y los secretos, y cómo sabemos qué ocurrió: IAM en profundidad, cifrado, CloudTrail y detección de amenazas.
+      </p>
+      <Link to="/aprendizaje/aws-desde-cero/modulo-9" className="btn btn-ghost" style={{ marginBottom: 'var(--space-4)', display: 'inline-block' }}>
+        Ver la hoja de ruta completa del módulo (8 clases planificadas) →
+      </Link>
     </div>
   );
 }
