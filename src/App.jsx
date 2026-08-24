@@ -65,6 +65,7 @@ import Modulo8Clase2 from './pages/CursoAws/Modulo8Clase2.jsx';
 import Modulo8Clase3 from './pages/CursoAws/Modulo8Clase3.jsx';
 import Modulo8Clase4 from './pages/CursoAws/Modulo8Clase4.jsx';
 import Modulo8Clase5 from './pages/CursoAws/Modulo8Clase5.jsx';
+import Modulo8Clase6 from './pages/CursoAws/Modulo8Clase6.jsx';
 import Laboratorios from './pages/Laboratorios.jsx';
 import Errores from './pages/Errores.jsx';
 import Glosario from './pages/Glosario.jsx';
@@ -140,6 +141,7 @@ export default function App() {
           <Route path="aprendizaje/aws-desde-cero/modulo-8/clase-3" element={<Modulo8Clase3 />} />
           <Route path="aprendizaje/aws-desde-cero/modulo-8/clase-4" element={<Modulo8Clase4 />} />
           <Route path="aprendizaje/aws-desde-cero/modulo-8/clase-5" element={<Modulo8Clase5 />} />
+          <Route path="aprendizaje/aws-desde-cero/modulo-8/clase-6" element={<Modulo8Clase6 />} />
           <Route path="aprendizaje/laboratorios" element={<Laboratorios />} />
           <Route path="aprendizaje/errores" element={<Errores />} />
           <Route path="aprendizaje/glosario" element={<Glosario />} />

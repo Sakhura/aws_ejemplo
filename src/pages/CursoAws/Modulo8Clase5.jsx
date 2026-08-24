@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import {
   Icon, Nota, Dialogo, ConceptBadge, RoleGrid, Flow, InfoBox, QaItem, Reveal, Quiz, TrueFalseQuiz,
 } from './lessonComponents.jsx';
@@ -282,7 +283,9 @@ export default function Modulo8Clase5() {
           <div className="lesson-eyebrow"><Icon name="arrow-right" /> Puente hacia la Clase 6</div>
           <p>En una EC2 existen /var/log/messages, /var/log/httpd/, logs de aplicación, uso de memoria, uso de disco. ¿CloudWatch recibe automáticamente toda esta información interna solo porque la EC2 existe? No necesariamente. CloudWatch conoce muchas métricas de infraestructura, pero para recopilar memoria RAM, uso interno de disco y archivos de logs específicos, necesitamos un pequeño recolector dentro del servidor.</p>
           <ConceptBadge icon="settings">Módulo 8 · Clase 6 — CloudWatch Agent: cómo enviar memoria, disco y logs internos desde una EC2 hacia CloudWatch</ConceptBadge>
-          <span className="tag tag-outline">Módulo 8 · Clase 6 · próximamente</span>
+          <Link to="/aprendizaje/aws-desde-cero/modulo-8/clase-6" className="btn btn-primary" style={{ marginTop: 'var(--space-2)' }}>
+            Ir a Clase 6: CloudWatch Agent →
+          </Link>
         </div>
 
       </div>

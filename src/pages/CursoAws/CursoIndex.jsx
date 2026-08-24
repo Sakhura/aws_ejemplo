@@ -447,6 +447,14 @@ const MODULO_8 = [
     resumen: 'Log Group, Log Stream, Log Event, niveles INFO/WARN/ERROR, y cómo correlacionar logs con métricas y alarmas del mismo período para investigar un incidente.',
     requisito: 'Módulo 8 · Clases 1 a 4',
   },
+  {
+    to: '/aprendizaje/aws-desde-cero/modulo-8/clase-6',
+    numero: 6,
+    duracion: '45 min',
+    titulo: 'CloudWatch Agent, cómo enviar memoria, disco y logs internos desde una EC2 hacia CloudWatch',
+    resumen: 'Por qué RAM y disco no aparecen automáticamente, el IAM Role con CloudWatchAgentServerPolicy, y cómo configurar qué métricas y logs recopilar.',
+    requisito: 'Módulo 8 · Clases 1 a 5',
+  },
 ];
 
 function ClassGrid({ classes }) {
