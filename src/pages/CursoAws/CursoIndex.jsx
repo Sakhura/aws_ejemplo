@@ -439,6 +439,14 @@ const MODULO_8 = [
     resumen: 'Topic, Subscription y Subscriber: cómo conectar una alarma con un correo real, confirmar la suscripción, y evitar la fatiga de alertas.',
     requisito: 'Módulo 8 · Clases 1 a 3',
   },
+  {
+    to: '/aprendizaje/aws-desde-cero/modulo-8/clase-5',
+    numero: 5,
+    duracion: '45 min',
+    titulo: 'CloudWatch Logs, cómo investigar qué ocurrió dentro de una aplicación cuando las métricas y alarmas nos dicen que algo anda mal',
+    resumen: 'Log Group, Log Stream, Log Event, niveles INFO/WARN/ERROR, y cómo correlacionar logs con métricas y alarmas del mismo período para investigar un incidente.',
+    requisito: 'Módulo 8 · Clases 1 a 4',
+  },
 ];
 
 function ClassGrid({ classes }) {

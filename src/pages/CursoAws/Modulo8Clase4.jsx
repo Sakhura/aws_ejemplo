@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import {
   Icon, Nota, Dialogo, ConceptBadge, RoleGrid, Flow, InfoBox, QaItem, Reveal, Quiz, TrueFalseQuiz,
 } from './lessonComponents.jsx';
@@ -283,7 +284,9 @@ export default function Modulo8Clase4() {
           <ConceptBadge icon="alert-triangle">CloudShop Alarm — CPU promedio mayor que 80%</ConceptBadge>
           <p>Perfecto, ya sabemos que algo está ocurriendo. ¿Pero por qué? Una alarma puede decir "CPU alta", pero no necesariamente "ERROR conexión DB", "ERROR timeout", "ERROR API pagos" o "ERROR aplicación". Para responder "¿qué estaba haciendo realmente la aplicación cuando falló?" necesitamos registros detallados.</p>
           <ConceptBadge icon="file-text">Módulo 8 · Clase 5 — CloudWatch Logs: cómo investigar qué ocurrió dentro de una aplicación cuando las métricas y alarmas nos dicen que algo anda mal</ConceptBadge>
-          <span className="tag tag-outline">Módulo 8 · Clase 5 · próximamente</span>
+          <Link to="/aprendizaje/aws-desde-cero/modulo-8/clase-5" className="btn btn-primary" style={{ marginTop: 'var(--space-2)' }}>
+            Ir a Clase 5: CloudWatch Logs →
+          </Link>
         </div>
 
       </div>
