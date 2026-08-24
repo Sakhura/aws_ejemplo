@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import {
   Icon, Nota, Dialogo, ConceptBadge, RoleGrid, Flow, InfoBox, QaItem, Reveal, Quiz, TrueFalseQuiz,
 } from './lessonComponents.jsx';
@@ -291,7 +292,9 @@ export default function Modulo7Clase7() {
           <div className="lesson-eyebrow"><Icon name="arrow-right" /> Puente hacia la Clase 8</div>
           <p>"Ahora les toca a ustedes." En la próxima clase no vamos a explicar una nueva tecnología. Vamos a entregar una empresa, tráfico variable, una EC2 que falla, una AZ problemática, una RDS privada, una mala configuración y una política de escalado. El estudiante tendrá que diseñar, construir, romper, diagnosticar y reparar la arquitectura.</p>
           <ConceptBadge icon="trophy">Módulo 7 · Clase 8 — Laboratorio integrador: construir CloudShop escalable, provocar fallas y demostrar que la arquitectura puede recuperarse</ConceptBadge>
-          <span className="tag tag-outline">Módulo 7 · Clase 8 · próximamente</span>
+          <Link to="/aprendizaje/aws-desde-cero/modulo-7/clase-8" className="btn btn-primary" style={{ marginTop: 'var(--space-2)' }}>
+            Ir a Clase 8: Laboratorio integrador →
+          </Link>
         </div>
 
       </div>

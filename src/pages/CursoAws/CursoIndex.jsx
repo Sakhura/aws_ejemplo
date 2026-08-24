@@ -396,6 +396,14 @@ const MODULO_7 = [
     resumen: 'Integramos todas las piezas: ALB, Health Checks, Auto Scaling y Multi-AZ, más Security Groups por capas para conectar de forma segura con RDS.',
     requisito: 'Módulo 7 · Clases 1 a 6',
   },
+  {
+    to: '/aprendizaje/aws-desde-cero/modulo-7/clase-8',
+    numero: 8,
+    duracion: '60 min',
+    titulo: 'Laboratorio integrador: construir CloudShop escalable, provocar fallas y demostrar que la arquitectura puede recuperarse',
+    resumen: 'Cierre práctico del módulo: crear ALB + ASG + Target Tracking reales, provocar 5 pruebas de falla y carga, diagnosticar escenarios rotos y limpiar todo correctamente.',
+    requisito: 'Módulo 7 · Clases 1 a 7',
+  },
 ];
 
 function ClassGrid({ classes }) {
@@ -466,9 +474,6 @@ export default function CursoIndex() {
       <p className="view-intro" style={{ marginBottom: 'var(--space-4)' }}>
         Qué ocurre cuando una sola EC2 ya no alcanza o deja de funcionar: distribuir tráfico entre servidores y ajustar cuántos tenemos disponibles.
       </p>
-      <Link to="/aprendizaje/aws-desde-cero/modulo-7" className="btn btn-ghost" style={{ marginBottom: 'var(--space-4)', display: 'inline-block' }}>
-        Ver la hoja de ruta completa del módulo (8 clases planificadas) →
-      </Link>
       <ClassGrid classes={MODULO_7} />
     </div>
   );
