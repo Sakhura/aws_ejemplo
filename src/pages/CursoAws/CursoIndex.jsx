@@ -388,6 +388,14 @@ const MODULO_7 = [
     resumen: 'CloudWatch, CPU objetivo, Instance Warmup y elasticidad: cómo Auto Scaling decide cuándo crecer y cuándo reducir capacidad.',
     requisito: 'Módulo 7 · Clases 1 a 5',
   },
+  {
+    to: '/aprendizaje/aws-desde-cero/modulo-7/clase-7',
+    numero: 7,
+    duracion: '45 min',
+    titulo: 'ALB + Auto Scaling + Multi-AZ, construir una aplicación que distribuya carga, reemplace fallas y crezca automáticamente',
+    resumen: 'Integramos todas las piezas: ALB, Health Checks, Auto Scaling y Multi-AZ, más Security Groups por capas para conectar de forma segura con RDS.',
+    requisito: 'Módulo 7 · Clases 1 a 6',
+  },
 ];
 
 function ClassGrid({ classes }) {

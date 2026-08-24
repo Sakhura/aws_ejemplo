@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import {
   Icon, Nota, Dialogo, ConceptBadge, RoleGrid, Flow, InfoBox, QaItem, Reveal, Quiz, TrueFalseQuiz,
 } from './lessonComponents.jsx';
@@ -284,7 +285,9 @@ export default function Modulo7Clase6() {
             { icon: 'building', label: 'AZ A + AZ B' }, { icon: 'server', label: 'EC2' }, { icon: 'bar-chart', label: 'ASG' }, { icon: 'database', label: 'RDS' },
           ]} />
           <ConceptBadge icon="bar-chart">Módulo 7 · Clase 7 — ALB + Auto Scaling + Multi-AZ: construir una aplicación que distribuya carga, reemplace fallas y crezca automáticamente</ConceptBadge>
-          <span className="tag tag-outline">Módulo 7 · Clase 7 · próximamente</span>
+          <Link to="/aprendizaje/aws-desde-cero/modulo-7/clase-7" className="btn btn-primary" style={{ marginTop: 'var(--space-2)' }}>
+            Ir a Clase 7: ALB + Auto Scaling + Multi-AZ →
+          </Link>
         </div>
 
       </div>
