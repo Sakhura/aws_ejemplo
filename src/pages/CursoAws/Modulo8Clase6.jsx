@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import {
   Icon, Nota, Dialogo, ConceptBadge, RoleGrid, Flow, InfoBox, QaItem, Reveal, Quiz, TrueFalseQuiz,
 } from './lessonComponents.jsx';
@@ -300,7 +301,9 @@ export default function Modulo8Clase6() {
           <p>Ahora tenemos una pequeña avalancha de señales: ALB (Requests, Latency, Healthy Targets), EC2 (CPU, Network, Memory, Disk), Auto Scaling (cantidad de instancias), RDS (CPU, Connections, Storage), Aplicación (Logs).</p>
           <p>¿Tenemos que entrar a cada servicio y abrir diez gráficos distintos cada vez que queremos saber cómo está CloudShop? No. Necesitamos reunir las señales importantes en una sola vista operacional.</p>
           <ConceptBadge icon="bar-chart">Módulo 8 · Clase 7 — CloudWatch Dashboards: cómo construir un tablero que muestre la salud completa de nuestra aplicación en una sola pantalla</ConceptBadge>
-          <span className="tag tag-outline">Módulo 8 · Clase 7 · próximamente</span>
+          <Link to="/aprendizaje/aws-desde-cero/modulo-8/clase-7" className="btn btn-primary" style={{ marginTop: 'var(--space-2)' }}>
+            Ir a Clase 7: CloudWatch Dashboards →
+          </Link>
         </div>
 
       </div>

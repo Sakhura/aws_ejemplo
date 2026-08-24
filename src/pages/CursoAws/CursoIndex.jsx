@@ -455,6 +455,22 @@ const MODULO_8 = [
     resumen: 'Por qué RAM y disco no aparecen automáticamente, el IAM Role con CloudWatchAgentServerPolicy, y cómo configurar qué métricas y logs recopilar.',
     requisito: 'Módulo 8 · Clases 1 a 5',
   },
+  {
+    to: '/aprendizaje/aws-desde-cero/modulo-8/clase-7',
+    numero: 7,
+    duracion: '45 min',
+    titulo: 'CloudWatch Dashboards, cómo construir un tablero que muestre la salud completa de nuestra aplicación en una sola pantalla',
+    resumen: 'Widgets (Line, Number, Gauge, Alarm, Logs Insights), jerarquía visual por importancia operacional, y por qué un Dashboard no reemplaza una alarma.',
+    requisito: 'Módulo 8 · Clases 1 a 6',
+  },
+  {
+    to: '/aprendizaje/aws-desde-cero/modulo-8/clase-8',
+    numero: 8,
+    duracion: '60 min',
+    titulo: 'Laboratorio integrador: recibir una alerta, investigar métricas y logs, identificar la capa afectada y justificar el diagnóstico',
+    resumen: 'Cierre práctico del módulo: siete incidentes simulados con Dashboard + Logs + correlación temporal, diferenciando síntoma, evidencia e hipótesis antes de proponer una acción.',
+    requisito: 'Módulo 8 · Clases 1 a 7',
+  },
 ];
 
 function ClassGrid({ classes }) {
@@ -531,9 +547,6 @@ export default function CursoIndex() {
       <p className="view-intro" style={{ marginBottom: 'var(--space-4)' }}>
         Cómo saber que algo está fallando antes de que el usuario nos avise: métricas, alarmas, logs, dashboards y notificaciones.
       </p>
-      <Link to="/aprendizaje/aws-desde-cero/modulo-8" className="btn btn-ghost" style={{ marginBottom: 'var(--space-4)', display: 'inline-block' }}>
-        Ver la hoja de ruta completa del módulo (8 clases planificadas) →
-      </Link>
       <ClassGrid classes={MODULO_8} />
     </div>
   );
