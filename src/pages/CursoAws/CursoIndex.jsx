@@ -380,6 +380,14 @@ const MODULO_7 = [
     resumen: 'AMI, Instance Type, Security Group, Storage y User Data: cómo automatizar el nacimiento de una nueva EC2 sin intervención manual.',
     requisito: 'Módulo 7 · Clases 1 a 4',
   },
+  {
+    to: '/aprendizaje/aws-desde-cero/modulo-7/clase-6',
+    numero: 6,
+    duracion: '45 min',
+    titulo: 'Políticas de escalado, Scale Out, Scale In y Target Tracking',
+    resumen: 'CloudWatch, CPU objetivo, Instance Warmup y elasticidad: cómo Auto Scaling decide cuándo crecer y cuándo reducir capacidad.',
+    requisito: 'Módulo 7 · Clases 1 a 5',
+  },
 ];
 
 function ClassGrid({ classes }) {

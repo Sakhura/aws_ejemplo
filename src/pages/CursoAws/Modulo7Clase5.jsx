@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import {
   Icon, Nota, Dialogo, ConceptBadge, RoleGrid, Flow, InfoBox, QaItem, Reveal, Quiz, TrueFalseQuiz,
 } from './lessonComponents.jsx';
@@ -324,7 +325,9 @@ echo "OK" > /var/www/html/health/index.html`}</pre>
           <p>Ya tenemos Launch Template, Auto Scaling Group, EC2 reproducibles, Health Checks y Load Balancer. Pero nuestro grupo todavía puede estar Minimum = 2, Desired = 2, Maximum = 6 — y permanecer eternamente en 2 instancias, aunque lleguen 50.000 usuarios.</p>
           <p>Falta responder: ¿qué hace que Auto Scaling decida pasar de 2 a 4 instancias y luego volver a 2 cuando la demanda baja?</p>
           <ConceptBadge icon="bar-chart">Módulo 7 · Clase 6 — Políticas de escalado: Scale Out, Scale In y Target Tracking para reaccionar automáticamente a la demanda</ConceptBadge>
-          <span className="tag tag-outline">Módulo 7 · Clase 6 · próximamente</span>
+          <Link to="/aprendizaje/aws-desde-cero/modulo-7/clase-6" className="btn btn-primary" style={{ marginTop: 'var(--space-2)' }}>
+            Ir a Clase 6: Políticas de escalado →
+          </Link>
         </div>
 
       </div>
