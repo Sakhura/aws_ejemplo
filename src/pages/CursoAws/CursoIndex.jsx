@@ -372,6 +372,14 @@ const MODULO_7 = [
     resumen: 'Minimum, Desired y Maximum Capacity, cómo el ASG reemplaza instancias no saludables, y la diferencia entre Scale Out y Scale In.',
     requisito: 'Módulo 7 · Clases 1 a 3',
   },
+  {
+    to: '/aprendizaje/aws-desde-cero/modulo-7/clase-5',
+    numero: 5,
+    duracion: '45 min',
+    titulo: 'Launch Templates, la receta que permite a Auto Scaling crear servidores iguales una y otra vez',
+    resumen: 'AMI, Instance Type, Security Group, Storage y User Data: cómo automatizar el nacimiento de una nueva EC2 sin intervención manual.',
+    requisito: 'Módulo 7 · Clases 1 a 4',
+  },
 ];
 
 function ClassGrid({ classes }) {

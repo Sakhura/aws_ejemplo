@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import {
   Icon, Nota, Dialogo, ConceptBadge, RoleGrid, Flow, InfoBox, QaItem, Reveal, Quiz, TrueFalseQuiz,
 } from './lessonComponents.jsx';
@@ -292,7 +293,9 @@ export default function Modulo7Clase4() {
           <Flow steps={[{ icon: 'bar-chart', label: 'Auto Scaling' }, { label: 'Necesito una EC2 nueva' }, { label: '¿Cómo sabe exactamente qué EC2 crear?' }]} />
           <p>Necesita conocer la AMI, el tamaño, el Security Group, el almacenamiento y el User Data. No queremos configurar cada instancia manualmente — necesitamos una receta reutilizable.</p>
           <ConceptBadge icon="file-text">Módulo 7 · Clase 5 — Launch Templates: la receta que permite a Auto Scaling crear servidores iguales una y otra vez</ConceptBadge>
-          <span className="tag tag-outline">Módulo 7 · Clase 5 · próximamente</span>
+          <Link to="/aprendizaje/aws-desde-cero/modulo-7/clase-5" className="btn btn-primary" style={{ marginTop: 'var(--space-2)' }}>
+            Ir a Clase 5: Launch Templates →
+          </Link>
         </div>
 
       </div>
