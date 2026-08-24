@@ -364,6 +364,14 @@ const MODULO_7 = [
     resumen: 'Running no es lo mismo que Healthy: Path, Interval, Timeout, Healthy/Unhealthy Threshold, y por qué el ALB nunca repara la aplicación.',
     requisito: 'Módulo 7 · Clases 1 y 2',
   },
+  {
+    to: '/aprendizaje/aws-desde-cero/modulo-7/clase-4',
+    numero: 4,
+    duracion: '45 min',
+    titulo: 'Amazon EC2 Auto Scaling, mantener automáticamente la cantidad correcta de servidores',
+    resumen: 'Minimum, Desired y Maximum Capacity, cómo el ASG reemplaza instancias no saludables, y la diferencia entre Scale Out y Scale In.',
+    requisito: 'Módulo 7 · Clases 1 a 3',
+  },
 ];
 
 function ClassGrid({ classes }) {

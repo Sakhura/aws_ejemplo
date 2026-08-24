@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import {
   Icon, Nota, Dialogo, ConceptBadge, RoleGrid, Flow, InfoBox, QaItem, Reveal, Quiz, TrueFalseQuiz,
 } from './lessonComponents.jsx';
@@ -252,7 +253,9 @@ export default function Modulo7Clase3() {
           <Flow steps={[{ icon: 'target', label: 'Target Group' }, { icon: 'dot-success', label: 'A' }, { icon: 'dot-danger', label: 'B — fuera del flujo' }]} />
           <p>El ALB ya hizo su trabajo: detectó B, dejó de enviarle usuarios. Pero B sigue ahí, dañado, y ahora solo nos queda una instancia funcional: A. ¿Quién se encargará de mantener automáticamente la cantidad de servidores que necesitamos y crear un reemplazo cuando falte capacidad?</p>
           <ConceptBadge icon="bar-chart">Módulo 7 · Clase 4 — Amazon EC2 Auto Scaling: mantener automáticamente la cantidad correcta de servidores</ConceptBadge>
-          <span className="tag tag-outline">Módulo 7 · Clase 4 · próximamente</span>
+          <Link to="/aprendizaje/aws-desde-cero/modulo-7/clase-4" className="btn btn-primary" style={{ marginTop: 'var(--space-2)' }}>
+            Ir a Clase 4: Amazon EC2 Auto Scaling →
+          </Link>
         </div>
 
       </div>
