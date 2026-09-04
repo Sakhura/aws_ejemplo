@@ -1,3 +1,4 @@
+import { Component } from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { IamProvider } from './state/iamStore.jsx';
 import AppShell from './components/AppShell.jsx';
@@ -94,10 +95,45 @@ import LaboratorioDetalle from './pages/LaboratorioDetalle.jsx';
 import Errores from './pages/Errores.jsx';
 import Glosario from './pages/Glosario.jsx';
 
+class ErrorBoundary extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { hasError: false };
+  }
+
+  static getDerivedStateFromError() {
+    return { hasError: true };
+  }
+
+  componentDidCatch(error, info) {
+    // eslint-disable-next-line no-console
+    console.error('Unhandled error in routed content:', error, info);
+  }
+
+  render() {
+    if (this.state.hasError) {
+      return (
+        <div style={{ padding: 'var(--space-8, 32px)', maxWidth: '60ch' }}>
+          <h2>Se ha producido un error</h2>
+          <p>
+            Algo salió mal al mostrar esta página. Prueba a recargar; si el problema persiste,
+            puede que un dato guardado (por ejemplo una política JSON) tenga un formato inesperado.
+          </p>
+          <button type="button" className="btn btn-primary" onClick={() => window.location.assign('/')}>
+            Volver al inicio
+          </button>
+        </div>
+      );
+    }
+    return this.props.children;
+  }
+}
+
 export default function App() {
   return (
     <IamProvider>
       <BrowserRouter>
+        <ErrorBoundary>
         <Routes>
           <Route element={<AppShell />}>
             <Route index element={<Navigate to="/iam/usuarios/crear" replace />} />
@@ -196,6 +232,7 @@ export default function App() {
             <Route path="*" element={<Navigate to="/iam/usuarios/crear" replace />} />
           </Route>
         </Routes>
+        </ErrorBoundary>
       </BrowserRouter>
     </IamProvider>
   );

@@ -48,6 +48,13 @@ export default function Politicas() {
       setError('MalformedPolicyDocument: el JSON de la política no es válido.');
       return;
     }
+    const isPlainObject = typeof parsedDocument === 'object' && parsedDocument !== null && !Array.isArray(parsedDocument);
+    const statement = isPlainObject ? parsedDocument.Statement : undefined;
+    const hasValidStatement = statement !== undefined && (typeof statement === 'object' && statement !== null);
+    if (!isPlainObject || !hasValidStatement) {
+      setError('MalformedPolicyDocument: el documento debe ser un objeto con un campo "Statement" (objeto o lista de objetos).');
+      return;
+    }
     if (editingId) dispatch(updatePolicy(editingId, { name: name.trim(), type, document: parsedDocument }));
     else dispatch(createPolicy({ name: name.trim(), type, document: parsedDocument }));
     setFormOpen(false);
