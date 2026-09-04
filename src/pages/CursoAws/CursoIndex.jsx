@@ -557,6 +557,14 @@ const MODULO_10 = [
     resumen: 'Runtime, handler, event y context: la anatomía de cualquier función Lambda, con la notificación de reseñas de CloudShop como ejemplo.',
     requisito: 'Módulo 10 · Clase 1',
   },
+  {
+    to: '/aprendizaje/aws-desde-cero/modulo-10/clase-3',
+    numero: 3,
+    duracion: '45 min',
+    titulo: 'Lambda + API Gateway',
+    resumen: 'Cómo método y ruta deciden qué función se invoca, cómo cambia event al llegar por HTTP, y la forma esperada de la respuesta.',
+    requisito: 'Módulo 10 · Clases 1 y 2, Módulo 7',
+  },
 ];
 
 function ClassGrid({ classes }) {

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import {
   Icon, Nota, Dialogo, ConceptBadge, RoleGrid, Flow, QaItem, Reveal, Quiz, TrueFalseQuiz,
 } from './lessonComponents.jsx';
@@ -241,10 +242,12 @@ export default function Modulo10Clase2() {
         </section>
 
         <div className="bridge-callout">
-          <div className="lesson-eyebrow"><Icon name="arrow-right" /> Próximamente</div>
+          <div className="lesson-eyebrow"><Icon name="arrow-right" /> Puente hacia la Clase 3</div>
           <p>Nuestra función ya funciona probándola manualmente con un Test Event. Pero para que sea útil de verdad, necesitamos que cualquier cliente —o cualquier otro sistema— pueda dispararla a través de una URL real, con una solicitud HTTP normal.</p>
           <ConceptBadge icon="globe">Módulo 10 · Clase 3 — Lambda + API Gateway: exponer una función como endpoint HTTP</ConceptBadge>
-          <span className="tag tag-outline">Módulo 10 · Clase 3 · próximamente</span>
+          <Link to="/aprendizaje/aws-desde-cero/modulo-10/clase-3" className="btn btn-primary" style={{ marginTop: 'var(--space-2)' }}>
+            Ir a Clase 3: Lambda + API Gateway →
+          </Link>
         </div>
 
       </div>
