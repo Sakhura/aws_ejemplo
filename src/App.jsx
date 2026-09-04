@@ -6,6 +6,7 @@ import UsuariosCrear from './pages/UsuariosCrear/UsuariosCrear.jsx';
 import Grupos from './pages/Grupos.jsx';
 import Roles from './pages/Roles.jsx';
 import Politicas from './pages/Politicas.jsx';
+import PolicySimulator from './pages/PolicySimulator.jsx';
 import Proveedores from './pages/Proveedores.jsx';
 import CursoIndex from './pages/CursoAws/CursoIndex.jsx';
 import Clase1 from './pages/CursoAws/Clase1.jsx';
@@ -104,6 +105,7 @@ export default function App() {
             <Route path="iam/grupos" element={<Grupos />} />
             <Route path="iam/roles" element={<Roles />} />
             <Route path="iam/politicas" element={<Politicas />} />
+            <Route path="iam/politicas/simulador" element={<PolicySimulator />} />
             <Route path="iam/proveedores" element={<Proveedores />} />
             <Route path="aprendizaje/aws-desde-cero" element={<CursoIndex />} />
             <Route path="aprendizaje/aws-desde-cero/clase-1" element={<Clase1 />} />
