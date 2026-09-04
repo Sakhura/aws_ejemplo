@@ -121,8 +121,11 @@ export default function UsuariosCrear() {
   }
 
   function handleDownload() {
-    if (!createdUser) return;
-    downloadCsv(`${form.username}-credenciales.csv`, credentialsToCsv(form.username, createdUser));
+    if (submitState !== 'created') return;
+    const csvContent = createdUser
+      ? credentialsToCsv(form.username, createdUser)
+      : `Usuario,Nota\n${form.username},"Contraseña establecida por el usuario al crear la cuenta; no se vuelve a mostrar aquí."\n`;
+    downloadCsv(`${form.username}-credenciales.csv`, csvContent);
     dispatch(markCredentialsDownloaded(form.username));
   }
 
@@ -198,7 +201,7 @@ export default function UsuariosCrear() {
         <button
           type="button"
           className="btn btn-secondary"
-          disabled={!createdUser}
+          disabled={submitState !== 'created'}
           onClick={handleDownload}
         >
           <IconDownload />
@@ -427,19 +430,25 @@ function Step3({ form, selectedGroups, selectedPolicies, submitState, createdUse
   const groupNames = [...selectedGroups];
   const policyNames = [...selectedPolicies];
 
-  if (submitState === 'created' && createdUser) {
+  if (submitState === 'created') {
     return (
       <div className="success-banner">
         <IconCheck style={{ color: 'var(--color-accent)', flex: 'none', marginTop: 3, width: 18, height: 18 }} />
         <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-4)', width: '100%' }}>
           <div>
             <div className="alert-title" style={{ color: 'var(--color-accent-200)' }}>Usuario {form.username} creado</div>
-            <div className="alert-body" style={{ margin: '4px 0 0' }}>Estas credenciales son ficticias, existen solo dentro de este simulador y se muestran una única vez. Descárgalas ahora desde la barra inferior.</div>
+            <div className="alert-body" style={{ margin: '4px 0 0' }}>
+              {createdUser
+                ? 'Estas credenciales son ficticias, existen solo dentro de este simulador y se muestran una única vez. Descárgalas ahora desde la barra inferior.'
+                : 'El usuario ya puede iniciar sesión con la contraseña que definiste. Descarga la constancia de creación desde la barra inferior.'}
+            </div>
           </div>
-          <div className="credential-box">
-            <div className="credential-row"><span className="text-muted">ID de clave de acceso</span><code className="mono">{createdUser.accessKeyId}</code></div>
-            <div className="credential-row"><span className="text-muted">Clave de acceso secreta</span><code className="mono">{createdUser.secretAccessKey}</code></div>
-          </div>
+          {createdUser && (
+            <div className="credential-box">
+              <div className="credential-row"><span className="text-muted">ID de clave de acceso</span><code className="mono">{createdUser.accessKeyId}</code></div>
+              <div className="credential-row"><span className="text-muted">Clave de acceso secreta</span><code className="mono">{createdUser.secretAccessKey}</code></div>
+            </div>
+          )}
         </div>
       </div>
     );
