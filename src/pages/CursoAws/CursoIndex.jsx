@@ -540,6 +540,17 @@ const MODULO_9 = [
   },
 ];
 
+const MODULO_10 = [
+  {
+    to: '/aprendizaje/aws-desde-cero/modulo-10/clase-1',
+    numero: 1,
+    duracion: '45 min',
+    titulo: '¿Qué es Serverless? Introducción a AWS Lambda',
+    resumen: 'De administrar servidores a solo traer código: modelo de ejecución por eventos, cobro por invocación, y cuándo Lambda no es la mejor opción.',
+    requisito: 'Módulos 0, 3 y 7',
+  },
+];
+
 function ClassGrid({ classes }) {
   return (
     <div className="course-grid">
@@ -632,6 +643,7 @@ export default function CursoIndex() {
       <Link to="/aprendizaje/aws-desde-cero/modulo-10" className="btn btn-ghost" style={{ marginBottom: 'var(--space-4)', display: 'inline-block' }}>
         Ver la hoja de ruta completa del módulo (8 clases planificadas) →
       </Link>
+      <ClassGrid classes={MODULO_10} />
     </div>
   );
 }

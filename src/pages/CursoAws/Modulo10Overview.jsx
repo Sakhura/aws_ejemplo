@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import {
   Icon, Nota, Dialogo, ConceptBadge, RoleGrid, Flow, QaItem,
 } from './lessonComponents.jsx';
@@ -90,10 +91,12 @@ export default function Modulo10Overview() {
         </section>
 
         <div className="bridge-callout">
-          <div className="lesson-eyebrow"><Icon name="arrow-right" /> Próximamente</div>
+          <div className="lesson-eyebrow"><Icon name="arrow-right" /> Empecemos</div>
           <ConceptBadge icon="zap">Módulo 10 · Clase 1 — ¿Qué es Serverless? Introducción a AWS Lambda: de administrar servidores a solo traer código</ConceptBadge>
-          <Nota><p>Esa clase abrirá retomando el caso de la notificación de reseñas de CloudShop, comparando conceptualmente el camino EC2 (Módulos 3 y 7) con el camino Lambda, antes de entrar en el modelo de ejecución por eventos.</p></Nota>
-          <span className="tag tag-outline">Módulo 10 · Clase 1 · próximamente</span>
+          <Nota><p>Esa clase abre retomando el caso de la notificación de reseñas de CloudShop, comparando conceptualmente el camino EC2 (Módulos 3 y 7) con el camino Lambda, antes de entrar en el modelo de ejecución por eventos.</p></Nota>
+          <Link to="/aprendizaje/aws-desde-cero/modulo-10/clase-1" className="btn btn-primary" style={{ marginTop: 'var(--space-2)' }}>
+            Ir a Clase 1: ¿Qué es Serverless? Introducción a AWS Lambda →
+          </Link>
         </div>
 
       </div>
