@@ -589,6 +589,14 @@ const MODULO_10 = [
     resumen: 'Partition Key y Sort Key, diseño de claves según el patrón de acceso, hot partitions, y por qué DynamoDB combina tan bien con Lambda.',
     requisito: 'Módulo 10 · Clases 1 a 5, Módulo 6',
   },
+  {
+    to: '/aprendizaje/aws-desde-cero/modulo-10/clase-7',
+    numero: 7,
+    duracion: '45 min',
+    titulo: 'Lambda + DynamoDB',
+    resumen: 'PutItem, Query, el permiso IAM sobre el ARN exacto de la tabla, y cómo diagnosticar ResourceNotFoundException vs. AccessDeniedException.',
+    requisito: 'Módulo 10 · Clases 1 a 6',
+  },
 ];
 
 function ClassGrid({ classes }) {

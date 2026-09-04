@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import {
   Icon, Nota, Dialogo, ConceptBadge, RoleGrid, Flow, QaItem, Reveal, Quiz, TrueFalseQuiz,
 } from './lessonComponents.jsx';
@@ -194,10 +195,12 @@ export default function Modulo10Clase6() {
         </section>
 
         <div className="bridge-callout">
-          <div className="lesson-eyebrow"><Icon name="arrow-right" /> Próximamente</div>
+          <div className="lesson-eyebrow"><Icon name="arrow-right" /> Puente hacia la Clase 7</div>
           <p>Ya sabemos diseñar la tabla. Ahora falta la pieza final: conectar nuestra función Lambda con DynamoDB para leer y escribir datos de verdad, cerrando el ciclo completo de la función de reseñas de CloudShop.</p>
           <ConceptBadge icon="database">Módulo 10 · Clase 7 — Lambda + DynamoDB: integrar cómputo y datos sin administrar ningún servidor</ConceptBadge>
-          <span className="tag tag-outline">Módulo 10 · Clase 7 · próximamente</span>
+          <Link to="/aprendizaje/aws-desde-cero/modulo-10/clase-7" className="btn btn-primary" style={{ marginTop: 'var(--space-2)' }}>
+            Ir a Clase 7: Lambda + DynamoDB →
+          </Link>
         </div>
 
       </div>
