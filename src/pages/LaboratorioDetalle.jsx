@@ -10,11 +10,11 @@ export default function LaboratorioDetalle() {
   const state = useIamState();
   const dispatch = useIamDispatch();
   const labDef = labDefinitionsById[labId];
-  const seeded = useRef(false);
+  const seededLabId = useRef(null);
 
   useEffect(() => {
-    if (labDef?.seed && !seeded.current) {
-      seeded.current = true;
+    if (labDef?.seed && seededLabId.current !== labId) {
+      seededLabId.current = labId;
       labDef.seed(dispatch, state);
     }
     // Intencionalmente solo depende de labId: seed() debe correr una vez al
