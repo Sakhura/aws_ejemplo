@@ -12,23 +12,12 @@ export function passwordScore(password) {
   return Number(c.length) + Number(c.upper) + Number(c.digit) + Number(c.symbol);
 }
 
-export function isPasswordValid(password) {
-  return passwordScore(password) === 4;
-}
-
 export function passwordStrength(password) {
   if (!password) return { label: '', width: 0, color: 'var(--color-danger-border)' };
   const score = passwordScore(password);
   if (score <= 2) return { label: 'Débil', width: 28, color: 'var(--color-danger-border)' };
   if (score === 3) return { label: 'Media', width: 66, color: 'var(--color-warning-base)' };
   return { label: 'Fuerte', width: 100, color: 'var(--color-accent)' };
-}
-
-const USERNAME_PATTERN = /^[A-Za-z0-9+=,.@_-]+$/;
-
-export function isUsernameValid(username) {
-  const trimmed = username.trim();
-  return trimmed.length > 0 && USERNAME_PATTERN.test(trimmed);
 }
 
 function randomToken(len) {

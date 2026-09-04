@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { IconWarning, IconInfo, IconQuestion, IconCheck, IconDownload, IconSpinner } from '../../components/icons.jsx';
-import { availableGroups, availablePolicies } from '../../data/sampleData.js';
+import { useIamState, useIamDispatch } from '../../state/iamStore.jsx';
+import { createUser, addUserToGroup, attachPolicy, markCredentialsDownloaded } from '../../state/iamReducer.js';
+import { isValidUsername, isValidPassword } from '../../state/iamLogic.js';
 import {
-  isPasswordValid,
-  isUsernameValid,
   passwordStrength,
   generateFakeCredentials,
   credentialsToCsv,
@@ -37,6 +37,8 @@ function downloadCsv(filename, content) {
 }
 
 export default function UsuariosCrear() {
+  const state = useIamState();
+  const dispatch = useIamDispatch();
   const [step, setStep] = useState(1);
   const [form, setForm] = useState(INITIAL_FORM);
   const [touched, setTouched] = useState({ password: true, passwordConfirm: false });
@@ -46,9 +48,9 @@ export default function UsuariosCrear() {
   const [submitState, setSubmitState] = useState('idle');
   const [createdUser, setCreatedUser] = useState(null);
 
-  const passValid = isPasswordValid(form.password);
+  const passValid = isValidPassword(form.password);
   const mismatch = form.password !== form.passwordConfirm;
-  const userValid = isUsernameValid(form.username);
+  const userValid = isValidUsername(form.username);
   const strength = passwordStrength(form.password);
 
   const showPasswordError = form.accessType === 'console' && (touched.password || attemptedSubmit) && !passValid;
@@ -99,10 +101,20 @@ export default function UsuariosCrear() {
     });
   }
 
-  function createUser() {
+  function submitUser() {
     setSubmitState('submitting');
     setTimeout(() => {
-      const creds = generateFakeCredentials();
+      dispatch(createUser({
+        username: form.username,
+        courseTag: form.courseTag,
+        accessType: form.accessType,
+        password: form.accessType === 'console' ? form.password : null,
+        requirePasswordReset: form.accessType === 'console' && form.requirePasswordReset,
+      }));
+      selectedGroups.forEach((groupId) => dispatch(addUserToGroup(form.username, groupId)));
+      selectedPolicies.forEach((policyId) => dispatch(attachPolicy('user', form.username, policyId)));
+
+      const creds = form.accessType === 'programmatic' ? generateFakeCredentials() : null;
       setCreatedUser(creds);
       setSubmitState('created');
     }, 900);
@@ -111,6 +123,7 @@ export default function UsuariosCrear() {
   function handleDownload() {
     if (!createdUser) return;
     downloadCsv(`${form.username}-credenciales.csv`, credentialsToCsv(form.username, createdUser));
+    dispatch(markCredentialsDownloaded(form.username));
   }
 
   return (
@@ -159,6 +172,8 @@ export default function UsuariosCrear() {
           )}
           {step === 2 && (
             <Step2
+              groups={Object.values(state.groups)}
+              policies={Object.values(state.policies)}
               selectedGroups={selectedGroups}
               selectedPolicies={selectedPolicies}
               toggleGroup={(id) => toggleSet(setSelectedGroups, id)}
@@ -199,7 +214,7 @@ export default function UsuariosCrear() {
             </button>
           )}
           {step === 3 && submitState !== 'created' && (
-            <button type="button" className="btn btn-primary" onClick={createUser} disabled={submitState === 'submitting'}>
+            <button type="button" className="btn btn-primary" onClick={submitUser} disabled={submitState === 'submitting'}>
               {submitState === 'submitting' ? (<><IconSpinner /> Creando…</>) : 'Crear usuario'}
             </button>
           )}
@@ -356,14 +371,14 @@ function Step1({ form, updateField, setTouched, showPasswordError, showMismatchE
   );
 }
 
-function Step2({ selectedGroups, selectedPolicies, toggleGroup, togglePolicy }) {
+function Step2({ groups, policies, selectedGroups, selectedPolicies, toggleGroup, togglePolicy }) {
   const nothingSelected = selectedGroups.size === 0 && selectedPolicies.size === 0;
   return (
     <>
       <div>
         <div className="radio-group-label">Grupos</div>
         <div className="checklist">
-          {availableGroups.map((g) => {
+          {groups.map((g) => {
             const checked = selectedGroups.has(g.id);
             return (
               <label key={g.id} className={`checklist-item${checked ? ' is-checked' : ''}`}>
@@ -381,14 +396,14 @@ function Step2({ selectedGroups, selectedPolicies, toggleGroup, togglePolicy }) 
       <div>
         <div className="radio-group-label">Políticas adjuntas directamente (opcional)</div>
         <div className="checklist">
-          {availablePolicies.map((p) => {
+          {policies.map((p) => {
             const checked = selectedPolicies.has(p.id);
             return (
               <label key={p.id} className={`checklist-item${checked ? ' is-checked' : ''}`}>
                 <input type="checkbox" checked={checked} onChange={() => togglePolicy(p.id)} style={{ marginTop: 2 }} />
                 <span>
                   <div className="checklist-item-name">{p.name}</div>
-                  <div className="checklist-item-meta">{p.desc}</div>
+                  <div className="checklist-item-meta">{p.type}</div>
                 </span>
               </label>
             );

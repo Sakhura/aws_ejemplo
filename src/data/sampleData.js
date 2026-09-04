@@ -57,17 +57,3 @@ export const glossary = [
   { term: 'Clave de acceso', def: 'Par de identificador y clave secreta para la CLI y el SDK. La parte secreta se muestra una sola vez.' },
   { term: 'Federación', def: 'Entrar en la cuenta con una identidad externa, como la de la universidad, y recibir un rol temporal.' },
 ];
-
-// Practice groups/policies offered in step 2 of the create-user wizard.
-export const availableGroups = [
-  { id: 'practicas-lectura', name: 'practicas-lectura', desc: 'LecturaS3 · lectura del bucket de prácticas' },
-  { id: 'practicas-computo', name: 'practicas-computo', desc: 'EC2Laboratorio · lectura y arranque de instancias' },
-  { id: 'ayudantes-catedra', name: 'ayudantes-catedra', desc: '3 políticas · soporte a la clase' },
-  { id: 'sin-permisos', name: 'sin-permisos', desc: 'Ninguna política adjunta' },
-];
-
-export const availablePolicies = [
-  { id: 'LecturaS3', name: 'LecturaS3', desc: 'Solo lectura sobre el bucket de prácticas' },
-  { id: 'EC2Laboratorio', name: 'EC2Laboratorio', desc: 'Lectura y arranque de instancias del laboratorio' },
-  { id: 'DenegarBorradoBuckets', name: 'DenegarBorradoBuckets', desc: 'Deny explícito de borrado en buckets' },
-];
