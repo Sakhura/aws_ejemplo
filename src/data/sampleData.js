@@ -1,12 +1,5 @@
 // Sample data ported verbatim from design_handoff_panel_iam/Consola IAM.dc.html
 
-export const groups = [
-  { name: 'practicas-lectura', users: 18, policiesTag: { text: 'LecturaS3', variant: 'accent' }, created: '12/03/2026' },
-  { name: 'practicas-computo', users: 12, policiesTag: { text: 'EC2Laboratorio', variant: 'accent' }, created: '12/03/2026' },
-  { name: 'ayudantes-catedra', users: 4, policiesTag: { text: '3 políticas', variant: 'neutral' }, created: '28/02/2026' },
-  { name: 'sin-permisos', users: 1, policiesTag: { text: 'Ninguna', variant: 'outline' }, created: '05/04/2026' },
-];
-
 export const roles = [
   { name: 'rol-lambda-informes', trust: 'Servicio: lambda', maxDuration: '1 h', lastActivity: 'Hace 2 horas' },
   { name: 'rol-ec2-lectura-logs', trust: 'Servicio: ec2', maxDuration: '1 h', lastActivity: 'Hace 1 día' },
