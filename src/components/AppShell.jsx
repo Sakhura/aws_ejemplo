@@ -3,7 +3,7 @@ import { NavLink, Outlet, useLocation } from 'react-router-dom';
 import { IconMenu } from './icons.jsx';
 
 const accesoItems = [
-  { to: '/iam/usuarios/crear', label: 'Usuarios', match: '/iam/usuarios' },
+  { to: '/iam/usuarios', label: 'Usuarios' },
   { to: '/iam/grupos', label: 'Grupos de usuarios' },
   { to: '/iam/roles', label: 'Roles' },
   { to: '/iam/politicas', label: 'Políticas' },
