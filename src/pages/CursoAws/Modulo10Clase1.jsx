@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import {
   Icon, Nota, Dialogo, ConceptBadge, RoleGrid, Flow, QaItem, Reveal, Quiz, TrueFalseQuiz,
 } from './lessonComponents.jsx';
@@ -188,10 +189,12 @@ export default function Modulo10Clase1() {
         </section>
 
         <div className="bridge-callout">
-          <div className="lesson-eyebrow"><Icon name="arrow-right" /> Próximamente</div>
+          <div className="lesson-eyebrow"><Icon name="arrow-right" /> Puente hacia la Clase 2</div>
           <p>Ya entendemos el modelo. Ahora toca escribir código de verdad: crear nuestra primera función Lambda y entender las tres piezas que aparecen en cualquier función, sin importar el lenguaje que usemos.</p>
           <ConceptBadge icon="zap">Módulo 10 · Clase 2 — Nuestra primera función Lambda: runtime, handler, event y context</ConceptBadge>
-          <span className="tag tag-outline">Módulo 10 · Clase 2 · próximamente</span>
+          <Link to="/aprendizaje/aws-desde-cero/modulo-10/clase-2" className="btn btn-primary" style={{ marginTop: 'var(--space-2)' }}>
+            Ir a Clase 2: Nuestra primera función Lambda →
+          </Link>
         </div>
 
       </div>

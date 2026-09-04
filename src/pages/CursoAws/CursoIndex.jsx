@@ -549,6 +549,14 @@ const MODULO_10 = [
     resumen: 'De administrar servidores a solo traer código: modelo de ejecución por eventos, cobro por invocación, y cuándo Lambda no es la mejor opción.',
     requisito: 'Módulos 0, 3 y 7',
   },
+  {
+    to: '/aprendizaje/aws-desde-cero/modulo-10/clase-2',
+    numero: 2,
+    duracion: '45 min',
+    titulo: 'Nuestra primera función Lambda',
+    resumen: 'Runtime, handler, event y context: la anatomía de cualquier función Lambda, con la notificación de reseñas de CloudShop como ejemplo.',
+    requisito: 'Módulo 10 · Clase 1',
+  },
 ];
 
 function ClassGrid({ classes }) {
