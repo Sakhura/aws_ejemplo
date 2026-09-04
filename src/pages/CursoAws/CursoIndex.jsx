@@ -624,6 +624,14 @@ export default function CursoIndex() {
         Ver la hoja de ruta completa del módulo (8 clases planificadas) →
       </Link>
       <ClassGrid classes={MODULO_9} />
+
+      <h3 style={{ margin: 'var(--space-8) 0 4px' }}>Módulo 10 · Computación Serverless con AWS Lambda</h3>
+      <p className="view-intro" style={{ marginBottom: 'var(--space-4)' }}>
+        De administrar servidores a solo traer código: AWS Lambda, API Gateway, roles de ejecución y Amazon DynamoDB.
+      </p>
+      <Link to="/aprendizaje/aws-desde-cero/modulo-10" className="btn btn-ghost" style={{ marginBottom: 'var(--space-4)', display: 'inline-block' }}>
+        Ver la hoja de ruta completa del módulo (8 clases planificadas) →
+      </Link>
     </div>
   );
 }

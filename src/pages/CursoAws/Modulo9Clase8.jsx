@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import {
   Icon, Nota, Dialogo, Flow, InfoBox, QaItem, Reveal, Quiz,
 } from './lessonComponents.jsx';
@@ -249,6 +250,10 @@ DB_PASSWORD=Sup3rSecreta2024!`}</pre>
           ]} />
           <p>Ya no pregunta solamente &quot;¿quién tiene acceso?&quot;. Ahora puede preguntar: &quot;¿esta identidad tiene exactamente lo que necesita, sus credenciales son temporales, sus datos están protegidos, y tenemos evidencia de todo lo que ha hecho?&quot;</p>
           <p>Con esto se completa el recorrido de <strong>AWS desde cero</strong> a través de cómputo, almacenamiento, redes, bases de datos, alta disponibilidad, monitoreo y seguridad — las piezas con las que CloudShop, desde la Clase 1 del Módulo 0, se construyó paso a paso hasta convertirse en una arquitectura completa, observable y segura.</p>
+          <p>Todo lo construido hasta aquí sigue dependiendo de servidores que nosotros encendemos, escalamos y aseguramos. ¿Y si, para ciertos casos, ni siquiera tuviéramos que pensar en el servidor?</p>
+          <Link to="/aprendizaje/aws-desde-cero/modulo-10" className="btn btn-primary" style={{ marginTop: 'var(--space-2)' }}>
+            Ver la hoja de ruta del Módulo 10: Computación Serverless con AWS Lambda →
+          </Link>
         </div>
 
       </div>
