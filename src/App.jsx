@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { IamProvider } from './state/iamStore.jsx';
 import AppShell from './components/AppShell.jsx';
+import Usuarios from './pages/Usuarios.jsx';
 import UsuariosCrear from './pages/UsuariosCrear/UsuariosCrear.jsx';
 import Grupos from './pages/Grupos.jsx';
 import Roles from './pages/Roles.jsx';
@@ -98,6 +99,7 @@ export default function App() {
         <Routes>
           <Route element={<AppShell />}>
             <Route index element={<Navigate to="/iam/usuarios/crear" replace />} />
+            <Route path="iam/usuarios" element={<Usuarios />} />
             <Route path="iam/usuarios/crear" element={<UsuariosCrear />} />
             <Route path="iam/grupos" element={<Grupos />} />
             <Route path="iam/roles" element={<Roles />} />
