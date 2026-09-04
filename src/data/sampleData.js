@@ -6,15 +6,6 @@ export const providers = [
   { name: 'idp-pruebas-2025', type: 'SAML 2.0', role: 'Sin rol', status: { text: 'Certificado caducado', variant: 'outline' } },
 ];
 
-export const labs = [
-  { number: '01', duration: '15 min', title: 'Crear tu primer usuario IAM', body: 'Configura nombre, contraseña que cumpla la política y descarga el .csv de credenciales.', progress: 100, meta: 'Completado · 5 de 5 comprobaciones', locked: false },
-  { number: '02', duration: '20 min', title: 'Permisos por grupo, no por persona', body: 'Crea el grupo practicas-lectura, adjunta LecturaS3 y mete dos usuarios dentro.', progress: 60, meta: 'En curso · 3 de 5 comprobaciones', locked: false },
-  { number: '03', duration: '25 min', title: 'Escribir una política desde cero', body: 'Redacta el JSON que permite leer un bucket y deniega el borrado, y pruébalo con el simulador.', progress: 0, meta: 'Sin empezar', locked: false },
-  { number: '04', duration: '20 min', title: 'Asumir un rol temporal', body: 'Configura la política de confianza de un rol y asúmelo desde la CLI con credenciales que caducan.', progress: 0, meta: 'Bloqueado · requiere el laboratorio 03', locked: true },
-  { number: '05', duration: '30 min', title: 'Depurar un acceso denegado', body: 'Un usuario no puede subir archivos. Encuentra el Deny explícito que se lo impide.', progress: 0, meta: 'Bloqueado · requiere el laboratorio 03', locked: true },
-  { number: '06', duration: '15 min', title: 'Activar la verificación en dos pasos', body: 'Añade MFA a tu usuario y comprueba qué operaciones deja de permitir sin ella.', progress: 0, meta: 'Sin empezar', locked: false },
-];
-
 export const commonErrors = [
   { severity: 'danger', title: 'Contraseña demasiado débil: debe incluir mayúsculas y números', body: 'La contraseña no cumple la política de la cuenta. Usa 12 caracteres o más con mayúscula, número y símbolo; el usuario no se crea hasta entonces.', metaTop: 'Bloquea la creación', metaBottom: 'Paso 1 · Detalles' },
   { severity: 'danger', title: 'AccessDenied: no tienes permiso para realizar esta operación', body: 'Ninguna política adjunta permite esa acción, o hay un Deny explícito que gana. Revisa las políticas del usuario y de sus grupos, en ese orden.', metaTop: 'Bloquea la operación', metaBottom: 'Políticas' },
