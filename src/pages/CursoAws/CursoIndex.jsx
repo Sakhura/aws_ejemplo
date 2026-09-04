@@ -581,6 +581,14 @@ const MODULO_10 = [
     resumen: 'Memoria y CPU ligadas, timeout, variables de entorno vs. secretos, y por qué la primera invocación tras inactividad se siente más lenta.',
     requisito: 'Módulo 10 · Clases 1 a 4',
   },
+  {
+    to: '/aprendizaje/aws-desde-cero/modulo-10/clase-6',
+    numero: 6,
+    duracion: '45 min',
+    titulo: 'Amazon DynamoDB',
+    resumen: 'Partition Key y Sort Key, diseño de claves según el patrón de acceso, hot partitions, y por qué DynamoDB combina tan bien con Lambda.',
+    requisito: 'Módulo 10 · Clases 1 a 5, Módulo 6',
+  },
 ];
 
 function ClassGrid({ classes }) {

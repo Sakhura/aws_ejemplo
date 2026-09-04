@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import {
   Icon, Nota, Dialogo, ConceptBadge, Flow, QaItem, Reveal, Quiz, TrueFalseQuiz,
 } from './lessonComponents.jsx';
@@ -184,10 +185,12 @@ export default function Modulo10Clase5() {
         </section>
 
         <div className="bridge-callout">
-          <div className="lesson-eyebrow"><Icon name="arrow-right" /> Próximamente</div>
+          <div className="lesson-eyebrow"><Icon name="arrow-right" /> Puente hacia la Clase 6</div>
           <p>Nuestra función ya está bien configurada. Pero hasta ahora solo enviaba una notificación — no guardaba nada. Para que CloudShop pueda consultar después todas las reseñas recibidas, necesitamos un lugar donde guardarlas. Y ese lugar, en el mundo serverless, casi nunca es una base de datos relacional tradicional.</p>
           <ConceptBadge icon="database">Módulo 10 · Clase 6 — Amazon DynamoDB: la base de datos NoSQL administrada y serverless</ConceptBadge>
-          <span className="tag tag-outline">Módulo 10 · Clase 6 · próximamente</span>
+          <Link to="/aprendizaje/aws-desde-cero/modulo-10/clase-6" className="btn btn-primary" style={{ marginTop: 'var(--space-2)' }}>
+            Ir a Clase 6: Amazon DynamoDB →
+          </Link>
         </div>
 
       </div>
