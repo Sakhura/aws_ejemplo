@@ -150,3 +150,14 @@ describe('evaluateAgainstDocument: for the Simulator\'s "raw JSON" mode', () => 
     expect(result.effect).toBe('Deny');
   });
 });
+
+describe('evaluate: Statement as a bare object (not wrapped in an array)', () => {
+  it('normalizes a single Statement object instead of throwing', () => {
+    const bareStatementDoc = {
+      Version: '2012-10-17',
+      Statement: { Effect: 'Allow', Action: 's3:GetObject', Resource: 'arn:aws:s3:::practicas-curso/*' },
+    };
+    const result = evaluateAgainstDocument({ document: bareStatementDoc, action: 's3:GetObject', resource: 'arn:aws:s3:::practicas-curso/x', mfaPresent: false });
+    expect(result.effect).toBe('Allow');
+  });
+});

@@ -59,7 +59,7 @@ export function evaluate({ principal, action, resource, state }) {
   policyIds.forEach((policyId) => {
     const policy = state.policies[policyId];
     if (!policy) return;
-    policy.document.Statement.forEach((statement) => {
+    toArray(policy.document.Statement).forEach((statement) => {
       if (statementMatches(statement, action, resource, mfaPresent)) {
         matched.push({ policyId: policy.id, policyName: policy.name, statement });
       }
@@ -71,7 +71,7 @@ export function evaluate({ principal, action, resource, state }) {
 
 export function evaluateAgainstDocument({ document, action, resource, mfaPresent = false }) {
   const matched = [];
-  document.Statement.forEach((statement) => {
+  toArray(document.Statement).forEach((statement) => {
     if (statementMatches(statement, action, resource, mfaPresent)) {
       matched.push({ policyId: null, policyName: '(documento sin guardar)', statement });
     }
