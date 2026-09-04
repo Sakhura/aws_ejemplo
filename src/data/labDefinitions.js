@@ -255,7 +255,7 @@ export const labDefinitions = [
     steps: [
       { title: 'Activa MFA', body: 'En Usuarios, activa la casilla de MFA para uno de tus usuarios.' },
       { title: 'Crea una política condicionada a MFA', body: 'En Políticas, crea EliminarUsuarioConMFA: Allow sobre iam:DeleteUser con Condition aws:MultiFactorAuthPresent: true, y adjúntala al usuario.' },
-      { title: 'Compruébalo en el Simulador', body: 'Prueba iam:DeleteUser para ese usuario. Luego desactiva su MFA y vuelve a probar: debe cambiar a Deny.' },
+      { title: 'Compruébalo en el Simulador', body: 'Prueba iam:DeleteUser para ese usuario. Luego desactiva su MFA y vuelve a probar: debe cambiar a Deny. Cuando termines, vuelve a activar el MFA de ese usuario — el laboratorio queda completo con el MFA activo, no desactivado.' },
     ],
     checks: [
       { id: 'mfa-activo', label: 'Un usuario tiene MFA activado', verify: (state) => Object.values(state.users).some((u) => u.mfaEnabled) },
