@@ -69,6 +69,14 @@ import Modulo8Clase6 from './pages/CursoAws/Modulo8Clase6.jsx';
 import Modulo8Clase7 from './pages/CursoAws/Modulo8Clase7.jsx';
 import Modulo8Clase8 from './pages/CursoAws/Modulo8Clase8.jsx';
 import Modulo9Overview from './pages/CursoAws/Modulo9Overview.jsx';
+import Modulo9Clase1 from './pages/CursoAws/Modulo9Clase1.jsx';
+import Modulo9Clase2 from './pages/CursoAws/Modulo9Clase2.jsx';
+import Modulo9Clase3 from './pages/CursoAws/Modulo9Clase3.jsx';
+import Modulo9Clase4 from './pages/CursoAws/Modulo9Clase4.jsx';
+import Modulo9Clase5 from './pages/CursoAws/Modulo9Clase5.jsx';
+import Modulo9Clase6 from './pages/CursoAws/Modulo9Clase6.jsx';
+import Modulo9Clase7 from './pages/CursoAws/Modulo9Clase7.jsx';
+import Modulo9Clase8 from './pages/CursoAws/Modulo9Clase8.jsx';
 import Laboratorios from './pages/Laboratorios.jsx';
 import Errores from './pages/Errores.jsx';
 import Glosario from './pages/Glosario.jsx';
@@ -148,6 +156,14 @@ export default function App() {
           <Route path="aprendizaje/aws-desde-cero/modulo-8/clase-7" element={<Modulo8Clase7 />} />
           <Route path="aprendizaje/aws-desde-cero/modulo-8/clase-8" element={<Modulo8Clase8 />} />
           <Route path="aprendizaje/aws-desde-cero/modulo-9" element={<Modulo9Overview />} />
+          <Route path="aprendizaje/aws-desde-cero/modulo-9/clase-1" element={<Modulo9Clase1 />} />
+          <Route path="aprendizaje/aws-desde-cero/modulo-9/clase-2" element={<Modulo9Clase2 />} />
+          <Route path="aprendizaje/aws-desde-cero/modulo-9/clase-3" element={<Modulo9Clase3 />} />
+          <Route path="aprendizaje/aws-desde-cero/modulo-9/clase-4" element={<Modulo9Clase4 />} />
+          <Route path="aprendizaje/aws-desde-cero/modulo-9/clase-5" element={<Modulo9Clase5 />} />
+          <Route path="aprendizaje/aws-desde-cero/modulo-9/clase-6" element={<Modulo9Clase6 />} />
+          <Route path="aprendizaje/aws-desde-cero/modulo-9/clase-7" element={<Modulo9Clase7 />} />
+          <Route path="aprendizaje/aws-desde-cero/modulo-9/clase-8" element={<Modulo9Clase8 />} />
           <Route path="aprendizaje/laboratorios" element={<Laboratorios />} />
           <Route path="aprendizaje/errores" element={<Errores />} />
           <Route path="aprendizaje/glosario" element={<Glosario />} />

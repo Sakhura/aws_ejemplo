@@ -473,6 +473,73 @@ const MODULO_8 = [
   },
 ];
 
+const MODULO_9 = [
+  {
+    to: '/aprendizaje/aws-desde-cero/modulo-9/clase-1',
+    numero: 1,
+    duracion: '45 min',
+    titulo: 'Identidad, autenticación, autorización, MFA y la cuenta root',
+    resumen: 'Tres preguntas que no son la misma pregunta, los factores de autenticación, y por qué la cuenta root no es para el trabajo diario.',
+    requisito: 'Módulos 0 a 8',
+  },
+  {
+    to: '/aprendizaje/aws-desde-cero/modulo-9/clase-2',
+    numero: 2,
+    duracion: '45 min',
+    titulo: 'IAM Policies y mínimo privilegio',
+    resumen: 'Effect, Action, Resource, denegación implícita, Deny explícito y por qué el comodín "*" merece cuidado, leyendo JSON real sin miedo.',
+    requisito: 'Módulo 9 · Clase 1',
+  },
+  {
+    to: '/aprendizaje/aws-desde-cero/modulo-9/clase-3',
+    numero: 3,
+    duracion: '45 min',
+    titulo: 'IAM Roles y credenciales temporales',
+    resumen: 'Trust policy, AssumeRole, AWS STS, Instance Profile, y por qué evitar Access Keys permanentes dentro de código o servidores.',
+    requisito: 'Módulo 9 · Clases 1 y 2',
+  },
+  {
+    to: '/aprendizaje/aws-desde-cero/modulo-9/clase-4',
+    numero: 4,
+    duracion: '45 min',
+    titulo: 'Cifrado y AWS KMS',
+    resumen: 'Cifrado en tránsito vs. en reposo, qué es una clave, AWS KMS, key policies, y por qué el cifrado complementa a IAM sin reemplazarlo.',
+    requisito: 'Módulo 9 · Clases 1 a 3',
+  },
+  {
+    to: '/aprendizaje/aws-desde-cero/modulo-9/clase-5',
+    numero: 5,
+    duracion: '45 min',
+    titulo: 'AWS Secrets Manager',
+    resumen: 'Por qué evitar contraseñas y tokens hardcodeados, cómo una aplicación obtiene un secreto vía IAM, y qué es la rotación automática.',
+    requisito: 'Módulo 9 · Clases 1 a 4',
+  },
+  {
+    to: '/aprendizaje/aws-desde-cero/modulo-9/clase-6',
+    numero: 6,
+    duracion: '45 min',
+    titulo: 'AWS CloudTrail',
+    resumen: 'Quién hizo qué, cuándo y desde dónde: eventos de administración, Event history, Trails hacia S3, y auditoría de la cuenta root.',
+    requisito: 'Módulo 9 · Clases 1 a 5, Módulo 8',
+  },
+  {
+    to: '/aprendizaje/aws-desde-cero/modulo-9/clase-7',
+    numero: 7,
+    duracion: '45 min',
+    titulo: 'GuardDuty y Security Hub',
+    resumen: 'Detección automática de amenazas, cómo leer un finding, por qué GuardDuty no bloquea nada por sí solo, y centralización con Security Hub.',
+    requisito: 'Módulo 9 · Clases 1 a 6',
+  },
+  {
+    to: '/aprendizaje/aws-desde-cero/modulo-9/clase-8',
+    numero: 8,
+    duracion: '60 min',
+    titulo: 'Laboratorio integrador: diseñar y auditar CloudShop segura',
+    resumen: 'Cierre práctico del módulo: seis hallazgos de seguridad para investigar, priorizar y corregir, integrando todo lo aprendido en el módulo.',
+    requisito: 'Módulo 9 · Clases 1 a 7',
+  },
+];
+
 function ClassGrid({ classes }) {
   return (
     <div className="course-grid">
@@ -556,6 +623,7 @@ export default function CursoIndex() {
       <Link to="/aprendizaje/aws-desde-cero/modulo-9" className="btn btn-ghost" style={{ marginBottom: 'var(--space-4)', display: 'inline-block' }}>
         Ver la hoja de ruta completa del módulo (8 clases planificadas) →
       </Link>
+      <ClassGrid classes={MODULO_9} />
     </div>
   );
 }

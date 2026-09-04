@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import {
   Icon, Nota, Dialogo, ConceptBadge, RoleGrid, Flow, QaItem,
 } from './lessonComponents.jsx';
@@ -100,10 +101,12 @@ export default function Modulo9Overview() {
         </section>
 
         <div className="bridge-callout">
-          <div className="lesson-eyebrow"><Icon name="arrow-right" /> Próximamente</div>
+          <div className="lesson-eyebrow"><Icon name="arrow-right" /> Empecemos</div>
           <ConceptBadge icon="user">Módulo 9 · Clase 1 — Identidad, autenticación, autorización, MFA y la cuenta root: quién puede entrar a AWS y cómo protegemos ese acceso</ConceptBadge>
-          <Nota><p>Esa clase abrirá con tres conceptos que no son iguales: identidad (¿quién eres?), autenticación (¿puedes demostrarlo?) y autorización (¿qué puedes hacer?), antes de entrar en MFA y las buenas prácticas para proteger la cuenta root.</p></Nota>
-          <span className="tag tag-outline">Módulo 9 · Clase 1 · próximamente</span>
+          <Nota><p>Esa clase abre con tres conceptos que no son iguales: identidad (¿quién eres?), autenticación (¿puedes demostrarlo?) y autorización (¿qué puedes hacer?), antes de entrar en MFA y las buenas prácticas para proteger la cuenta root.</p></Nota>
+          <Link to="/aprendizaje/aws-desde-cero/modulo-9/clase-1" className="btn btn-primary" style={{ marginTop: 'var(--space-2)' }}>
+            Ir a Clase 1: Identidad, autenticación y la cuenta root →
+          </Link>
         </div>
 
       </div>
