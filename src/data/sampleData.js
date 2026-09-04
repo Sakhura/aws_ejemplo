@@ -1,13 +1,5 @@
 // Sample data ported verbatim from design_handoff_panel_iam/Consola IAM.dc.html
 
-export const policies = [
-  { name: 'LecturaS3', type: 'Propia del curso', attachedTo: '1 grupo', scope: { text: 'Solo lectura', variant: 'accent' } },
-  { name: 'EC2Laboratorio', type: 'Propia del curso', attachedTo: '1 grupo', scope: { text: 'Lectura y arranque', variant: 'neutral' } },
-  { name: 'CambiarPropiaContrasena', type: 'Administrada', attachedTo: '4 usuarios', scope: { text: 'Autoservicio', variant: 'neutral' } },
-  { name: 'DenegarBorradoBuckets', type: 'Propia del curso', attachedTo: '2 grupos', scope: { text: 'Deny explícito', variant: 'outline' } },
-  { name: 'AdministradorTotal', type: 'Administrada', attachedTo: '1 usuario', scope: { text: 'Riesgo alto', variant: 'outline' } },
-];
-
 export const providers = [
   { name: 'idp-universidad', type: 'SAML 2.0', role: 'rol-auditoria-curso', status: { text: 'Activo', variant: 'accent' } },
   { name: 'github-acciones', type: 'OIDC', role: 'rol-lambda-informes', status: { text: 'Activo', variant: 'accent' } },
