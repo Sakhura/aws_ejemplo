@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import {
   Icon, Nota, Dialogo, ConceptBadge, Flow, QaItem, Reveal, Quiz, TrueFalseQuiz,
 } from './lessonComponents.jsx';
@@ -204,10 +205,12 @@ export default function Modulo10Clase4() {
         </section>
 
         <div className="bridge-callout">
-          <div className="lesson-eyebrow"><Icon name="arrow-right" /> Próximamente</div>
+          <div className="lesson-eyebrow"><Icon name="arrow-right" /> Puente hacia la Clase 5</div>
           <p>Nuestra función ya tiene permisos correctos. Pero todavía no hablamos de cuánta memoria usa, cuánto puede tardar antes de que Lambda la corte, ni por qué a veces la primera invocación después de un rato de inactividad se siente más lenta que las siguientes.</p>
           <ConceptBadge icon="clock">Módulo 10 · Clase 5 — Configuración, límites y cold starts: memoria, timeout, variables de entorno y rendimiento</ConceptBadge>
-          <span className="tag tag-outline">Módulo 10 · Clase 5 · próximamente</span>
+          <Link to="/aprendizaje/aws-desde-cero/modulo-10/clase-5" className="btn btn-primary" style={{ marginTop: 'var(--space-2)' }}>
+            Ir a Clase 5: Configuración, límites y cold starts →
+          </Link>
         </div>
 
       </div>

@@ -573,6 +573,14 @@ const MODULO_10 = [
     resumen: 'Trust policy hacia lambda.amazonaws.com, permisos mínimos de logs, y cómo diagnosticar un AccessDeniedException con CloudWatch Logs.',
     requisito: 'Módulo 10 · Clases 1 a 3, Módulo 9',
   },
+  {
+    to: '/aprendizaje/aws-desde-cero/modulo-10/clase-5',
+    numero: 5,
+    duracion: '45 min',
+    titulo: 'Configuración, límites y cold starts',
+    resumen: 'Memoria y CPU ligadas, timeout, variables de entorno vs. secretos, y por qué la primera invocación tras inactividad se siente más lenta.',
+    requisito: 'Módulo 10 · Clases 1 a 4',
+  },
 ];
 
 function ClassGrid({ classes }) {
