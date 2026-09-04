@@ -47,6 +47,7 @@ export default function UsuariosCrear() {
   const [selectedPolicies, setSelectedPolicies] = useState(new Set());
   const [submitState, setSubmitState] = useState('idle');
   const [createdUser, setCreatedUser] = useState(null);
+  const [duplicateUsernameError, setDuplicateUsernameError] = useState(false);
 
   const passValid = isValidPassword(form.password);
   const mismatch = form.password !== form.passwordConfirm;
@@ -61,6 +62,7 @@ export default function UsuariosCrear() {
 
   function updateField(key, value) {
     setForm((f) => ({ ...f, [key]: value }));
+    if (key === 'username') setDuplicateUsernameError(false);
   }
 
   function resetWizard() {
@@ -72,6 +74,7 @@ export default function UsuariosCrear() {
     setSelectedPolicies(new Set());
     setSubmitState('idle');
     setCreatedUser(null);
+    setDuplicateUsernameError(false);
   }
 
   function goNext() {
@@ -102,6 +105,11 @@ export default function UsuariosCrear() {
   }
 
   function submitUser() {
+    if (state.users[form.username]) {
+      setDuplicateUsernameError(true);
+      setStep(1);
+      return;
+    }
     setSubmitState('submitting');
     setTimeout(() => {
       dispatch(createUser({
@@ -171,6 +179,7 @@ export default function UsuariosCrear() {
               userValid={userValid}
               attemptedSubmit={attemptedSubmit}
               strength={strength}
+              duplicateUsernameError={duplicateUsernameError}
             />
           )}
           {step === 2 && (
@@ -186,6 +195,7 @@ export default function UsuariosCrear() {
           {step === 3 && (
             <Step3
               form={form}
+              state={state}
               selectedGroups={selectedGroups}
               selectedPolicies={selectedPolicies}
               submitState={submitState}
@@ -230,9 +240,19 @@ export default function UsuariosCrear() {
   );
 }
 
-function Step1({ form, updateField, setTouched, showPasswordError, showMismatchError, showAnyPasswordAlert, userValid, attemptedSubmit, strength }) {
+function Step1({ form, updateField, setTouched, showPasswordError, showMismatchError, showAnyPasswordAlert, userValid, attemptedSubmit, strength, duplicateUsernameError }) {
   return (
     <>
+      {duplicateUsernameError && (
+        <div role="alert" className="alert alert-danger">
+          <IconWarning style={{ color: 'var(--color-danger-icon)', flex: 'none', marginTop: 2 }} />
+          <div>
+            <div className="alert-title">Ya existe un usuario con este nombre</div>
+            <div className="alert-body">Elige un nombre de usuario distinto: {form.username} ya está en uso.</div>
+          </div>
+        </div>
+      )}
+
       {showAnyPasswordAlert && (
         <div role="alert" className="alert alert-danger">
           <IconWarning style={{ color: 'var(--color-danger-icon)', flex: 'none', marginTop: 2 }} />
@@ -426,9 +446,9 @@ function Step2({ groups, policies, selectedGroups, selectedPolicies, toggleGroup
   );
 }
 
-function Step3({ form, selectedGroups, selectedPolicies, submitState, createdUser }) {
-  const groupNames = [...selectedGroups];
-  const policyNames = [...selectedPolicies];
+function Step3({ form, state, selectedGroups, selectedPolicies, submitState, createdUser }) {
+  const groupNames = [...selectedGroups].map((id) => state.groups[id]?.name ?? id);
+  const policyNames = [...selectedPolicies].map((id) => state.policies[id]?.name ?? id);
 
   if (submitState === 'created') {
     return (
