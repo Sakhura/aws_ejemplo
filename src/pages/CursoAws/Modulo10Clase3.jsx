@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import {
   Icon, Nota, Dialogo, ConceptBadge, RoleGrid, Flow, QaItem, Reveal, Quiz, TrueFalseQuiz,
 } from './lessonComponents.jsx';
@@ -206,10 +207,12 @@ export default function Modulo10Clase3() {
         </section>
 
         <div className="bridge-callout">
-          <div className="lesson-eyebrow"><Icon name="arrow-right" /> Próximamente</div>
+          <div className="lesson-eyebrow"><Icon name="arrow-right" /> Puente hacia la Clase 4</div>
           <p>Nuestra función ya recibe tráfico real desde internet. Pero todavía no le dimos permiso para hacer nada más allá de responder — ni leer un producto, ni escribir en ninguna base de datos. Necesita su propia identidad dentro de AWS.</p>
           <ConceptBadge icon="key">Módulo 10 · Clase 4 — IAM y el Execution Role de Lambda: dar a cada función solo los permisos que necesita</ConceptBadge>
-          <span className="tag tag-outline">Módulo 10 · Clase 4 · próximamente</span>
+          <Link to="/aprendizaje/aws-desde-cero/modulo-10/clase-4" className="btn btn-primary" style={{ marginTop: 'var(--space-2)' }}>
+            Ir a Clase 4: IAM y el Execution Role de Lambda →
+          </Link>
         </div>
 
       </div>

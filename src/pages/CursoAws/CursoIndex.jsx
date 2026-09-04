@@ -565,6 +565,14 @@ const MODULO_10 = [
     resumen: 'Cómo método y ruta deciden qué función se invoca, cómo cambia event al llegar por HTTP, y la forma esperada de la respuesta.',
     requisito: 'Módulo 10 · Clases 1 y 2, Módulo 7',
   },
+  {
+    to: '/aprendizaje/aws-desde-cero/modulo-10/clase-4',
+    numero: 4,
+    duracion: '45 min',
+    titulo: 'IAM y el Execution Role de Lambda',
+    resumen: 'Trust policy hacia lambda.amazonaws.com, permisos mínimos de logs, y cómo diagnosticar un AccessDeniedException con CloudWatch Logs.',
+    requisito: 'Módulo 10 · Clases 1 a 3, Módulo 9',
+  },
 ];
 
 function ClassGrid({ classes }) {
