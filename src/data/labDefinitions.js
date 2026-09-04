@@ -1,5 +1,5 @@
 import { evaluate } from '../state/policyEngine.js';
-import { createGroup, createPolicy, createUser } from '../state/iamReducer.js';
+import { seedLab05 } from '../state/iamReducer.js';
 
 const LAB05_SEED_MARKER_GROUP_NAME = 'lab05-soporte';
 
@@ -116,8 +116,13 @@ export const labDefinitions = [
         },
       },
       {
+        // Nota (I4): esta comprobación evalúa exactamente la misma condición
+        // que 'allow-lectura' — no verifica nada distinto ni confirma que el
+        // alumno usó realmente el Simulador (eso no es observable desde el
+        // estado). Se etiqueta honestamente como un refuerzo del check
+        // anterior, no como una comprobación independiente.
         id: 'simulado-allow',
-        label: 'Simulador: la acción de lectura da Allow (misma condición que el paso anterior, confirmada desde el Simulador)',
+        label: 'Repite la comprobación anterior: la lectura sigue dando Allow (no es una prueba distinta del check 2)',
         verify: (state) => {
           const policy = findByName(state.policies, 'AccesoControladoS3');
           if (!policy) return false;
@@ -125,8 +130,10 @@ export const labDefinitions = [
         },
       },
       {
+        // Nota (I4): idéntica a 'deny-borrado' por el mismo motivo — ver la
+        // nota de 'simulado-allow' arriba.
         id: 'simulado-deny',
-        label: 'Simulador: la acción de borrado da Deny',
+        label: 'Repite la comprobación anterior: el borrado sigue dando Deny (no es una prueba distinta del check 3)',
         verify: (state) => {
           const policy = findByName(state.policies, 'AccesoControladoS3');
           if (!policy) return false;
@@ -177,24 +184,26 @@ export const labDefinitions = [
     ],
     seed: (dispatch, state) => {
       if (findByName(state.groups, LAB05_SEED_MARKER_GROUP_NAME)) return; // idempotent: ya sembrado
-      dispatch(createUser({ username: 'lab05-usuario-soporte', courseTag: 'lab=05', accessType: 'console', password: 'Soporte2026!!', requirePasswordReset: true }));
-      dispatch(createGroup({ name: LAB05_SEED_MARKER_GROUP_NAME, desc: 'Precargado por el Laboratorio 05' }));
-      dispatch(createPolicy({
-        name: 'Lab05-DenegarSubida',
-        type: 'Propia del curso',
-        document: { Version: '2012-10-17', Statement: [{ Effect: 'Deny', Action: 's3:PutObject', Resource: 'arn:aws:s3:::practicas-curso/*' }] },
-      }));
-      // Nota: las dos últimas dispatch de este seed asumen que el reducer ya
-      // procesó las anteriores en el mismo ciclo de render (React 18+ agrupa
-      // dispatches síncronos y aplica cada reducer sobre el resultado del
-      // anterior dentro del mismo batch, por lo que el grupo y la política
-      // recién creados ya existen para las líneas siguientes).
+      // Un único dispatch compuesto: crea el usuario, el grupo, la política
+      // Allow de referencia y el Deny bloqueante, mete al usuario en el
+      // grupo y adjunta ambas políticas al grupo — todo atómicamente dentro
+      // del reducer (ver SEED_LAB05 en iamReducer.js). Tres dispatches
+      // independientes de createUser/createGroup/createPolicy no pueden
+      // enlazarse entre sí después, porque esos action creators generan ids
+      // dentro del reducer y no devuelven nada a quien los llama.
+      dispatch(seedLab05());
     },
     checks: [
       {
         id: 'diagnosticado',
         label: 'Localizaste el Deny explícito con el Simulador',
-        verify: (state) => Boolean(findByName(state.policies, 'Lab05-DenegarSubida')),
+        // Nota: el grupo lab05-soporte (creado por el seed y que ningún paso
+        // del laboratorio pide borrar) es la señal de "diagnóstico
+        // completado". No puede ser la existencia de Lab05-DenegarSubida: el
+        // paso 3 pide precisamente eliminar o ajustar esa política, así que
+        // usarla como marcador se invierte en cuanto el alumno hace lo que
+        // se le pide (ver I1).
+        verify: (state) => Boolean(findByName(state.groups, LAB05_SEED_MARKER_GROUP_NAME)),
       },
       {
         id: 'corregido',
@@ -220,10 +229,17 @@ export const labDefinitions = [
         verify: (state) => {
           const user = state.users['lab05-usuario-soporte'];
           if (!user) return true;
-          return user.policies.every((pid) => {
+          // Revisa tanto las políticas directas del usuario como las de sus
+          // grupos (el seed adjunta las políticas del laboratorio al grupo,
+          // no al usuario directamente).
+          const policyIds = [
+            ...user.policies,
+            ...user.groups.flatMap((gid) => state.groups[gid]?.policies ?? []),
+          ];
+          return policyIds.every((pid) => {
             const policy = state.policies[pid];
             if (!policy) return true;
-            return !policy.document.Statement.some((s) => s.Effect === 'Allow' && toArrayLocal(s.Action).includes('*') && toArrayLocal(s.Resource).includes('*'));
+            return !toArrayLocal(policy.document?.Statement).some((s) => s.Effect === 'Allow' && toArrayLocal(s.Action).includes('*') && toArrayLocal(s.Resource).includes('*'));
           });
         },
       },
@@ -244,29 +260,35 @@ export const labDefinitions = [
     checks: [
       { id: 'mfa-activo', label: 'Un usuario tiene MFA activado', verify: (state) => Object.values(state.users).some((u) => u.mfaEnabled) },
       {
+        // Nota (C3): reescrito para evaluar el MISMO documento de política
+        // dos veces (una con mfaPresent: false, otra con mfaPresent: true),
+        // en vez de exigir dos usuarios distintos en dos estados de MFA
+        // simultáneos. Esto es lo que el propio laboratorio describe:
+        // "Prueba iam:DeleteUser... Luego desactiva su MFA y vuelve a
+        // probar" — un solo usuario, MFA alternado, misma política probada
+        // dos veces. Antes, con checks live que exigían un usuario CON MFA y
+        // otro SIN MFA a la vez, un alumno que sigue el laboratorio al pie
+        // de la letra nunca podía tener ambos checks en verde a la vez.
         id: 'deny-sin-mfa',
-        label: 'La acción sensible da Deny para un usuario sin MFA',
+        label: 'La política da Deny cuando se prueba sin MFA',
         verify: (state) => {
           const policy = findByName(state.policies, 'EliminarUsuarioConMFA');
-          const withoutMfa = Object.values(state.users).find((u) => !u.mfaEnabled && policy && u.policies.includes(policy.id));
-          if (!withoutMfa) return false;
-          return evaluate({ principal: { type: 'user', id: withoutMfa.username }, action: 'iam:DeleteUser', resource: '*', state }).effect === 'Deny';
+          if (!policy) return false;
+          const holder = Object.values(state.users).find((u) => u.policies.includes(policy.id));
+          if (!holder) return false;
+          return evaluateAgainstPolicy(policy, 'iam:DeleteUser', '*', false).effect === 'Deny';
         },
       },
       {
         id: 'allow-con-mfa',
-        label: 'La misma acción da Allow para un usuario con MFA activo',
+        label: 'La misma política da Allow cuando se prueba con MFA',
         verify: (state) => {
           const policy = findByName(state.policies, 'EliminarUsuarioConMFA');
-          const withMfa = Object.values(state.users).find((u) => u.mfaEnabled && policy && u.policies.includes(policy.id));
-          if (!withMfa) return false;
-          return evaluate({ principal: { type: 'user', id: withMfa.username }, action: 'iam:DeleteUser', resource: '*', state }).effect === 'Allow';
+          if (!policy) return false;
+          const holder = Object.values(state.users).find((u) => u.policies.includes(policy.id));
+          if (!holder) return false;
+          return evaluateAgainstPolicy(policy, 'iam:DeleteUser', '*', true).effect === 'Allow';
         },
-      },
-      {
-        id: 'otra-accion-no-cambia',
-        label: 'Confirmaste que otra acción sin Condition no depende de MFA',
-        verify: (state) => Object.values(state.policies).some((p) => p.document.Statement.some((s) => s.Effect === 'Allow' && !s.Condition)),
       },
     ],
   },
@@ -281,7 +303,7 @@ function toArrayLocal(value) {
   return Array.isArray(value) ? value : [value];
 }
 
-function evaluateAgainstPolicy(policy, action, resource) {
+function evaluateAgainstPolicy(policy, action, resource, mfaPresent = false) {
   const fakeState = { users: {}, groups: {}, roles: {}, labs: {}, policies: { [policy.id]: policy } };
-  return evaluate({ principal: { type: 'user', id: '__lab-check__' }, action, resource, state: { ...fakeState, users: { '__lab-check__': { username: '__lab-check__', groups: [], policies: [policy.id], mfaEnabled: false } } } });
+  return evaluate({ principal: { type: 'user', id: '__lab-check__' }, action, resource, state: { ...fakeState, users: { '__lab-check__': { username: '__lab-check__', groups: [], policies: [policy.id], mfaEnabled: mfaPresent } } } });
 }

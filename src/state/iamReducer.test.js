@@ -5,6 +5,7 @@ import {
   createGroup, deleteGroup, addUserToGroup, removeUserFromGroup,
   createPolicy, updatePolicy, deletePolicy, attachPolicy, detachPolicy,
   createRole, deleteRole, assumeRole, clearRoleSession,
+  seedLab05,
 } from './iamReducer.js';
 
 function withUser(state, overrides = {}) {
@@ -46,6 +47,19 @@ describe('createUser / deleteUser', () => {
     state = iamReducer(state, deleteUser('alumno-01'));
     expect(state.users['alumno-01']).toBeUndefined();
     expect(state.groups[groupId].members).toEqual([]);
+  });
+
+  it('CREATE_USER is a no-op when the username already exists (I2)', () => {
+    let state = withUser(initialIamState);
+    state = iamReducer(state, markCredentialsDownloaded('alumno-01'));
+    const before = state;
+    state = iamReducer(state, createUser({
+      username: 'alumno-01', courseTag: 'other', accessType: 'programmatic',
+      password: null, requirePasswordReset: false,
+    }));
+    expect(state).toBe(before);
+    expect(state.users['alumno-01'].credentialsDownloaded).toBe(true);
+    expect(state.users['alumno-01'].accessType).toBe('console');
   });
 });
 
@@ -189,5 +203,35 @@ describe('roles: create/delete/assume/clear session', () => {
     const roleId = Object.keys(state.roles)[0];
     state = iamReducer(state, deleteRole(roleId));
     expect(state.roles[roleId]).toBeUndefined();
+  });
+});
+
+describe('SEED_LAB05 (compound seed action, C1/I1)', () => {
+  it('atomically wires the whole scenario: user in group, both policies attached to the group', () => {
+    const state = iamReducer(initialIamState, seedLab05());
+
+    const user = state.users['lab05-usuario-soporte'];
+    expect(user).toBeTruthy();
+
+    const group = Object.values(state.groups).find((g) => g.name === 'lab05-soporte');
+    expect(group).toBeTruthy();
+    expect(group.members).toEqual(['lab05-usuario-soporte']);
+    expect(user.groups).toEqual([group.id]);
+
+    const allowPolicy = Object.values(state.policies).find((p) => p.name === 'Lab05-AccesoSoporte');
+    const denyPolicy = Object.values(state.policies).find((p) => p.name === 'Lab05-DenegarSubida');
+    expect(allowPolicy).toBeTruthy();
+    expect(denyPolicy).toBeTruthy();
+    expect(group.policies).toEqual(expect.arrayContaining([allowPolicy.id, denyPolicy.id]));
+  });
+
+  it('is idempotent: dispatching it twice does not duplicate the group, user or policies', () => {
+    let state = iamReducer(initialIamState, seedLab05());
+    state = iamReducer(state, seedLab05());
+
+    expect(Object.keys(state.users).length).toBe(1);
+    expect(Object.values(state.groups).filter((g) => g.name === 'lab05-soporte').length).toBe(1);
+    expect(Object.values(state.policies).filter((p) => p.name === 'Lab05-AccesoSoporte').length).toBe(1);
+    expect(Object.values(state.policies).filter((p) => p.name === 'Lab05-DenegarSubida').length).toBe(1);
   });
 });

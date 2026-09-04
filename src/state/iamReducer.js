@@ -7,6 +7,9 @@ export const initialIamState = { users: {}, groups: {}, policies: {}, roles: {},
 export function createUser({ username, courseTag, accessType, password, requirePasswordReset }) {
   return { type: 'CREATE_USER', payload: { username, courseTag, accessType, password, requirePasswordReset } };
 }
+export function seedLab05() {
+  return { type: 'SEED_LAB05' };
+}
 export function deleteUser(username) {
   return { type: 'DELETE_USER', payload: { username } };
 }
@@ -78,6 +81,14 @@ export function iamReducer(state, action) {
   switch (action.type) {
     case 'CREATE_USER': {
       const { username, courseTag, accessType, password, requirePasswordReset } = action.payload;
+      // Defense-in-depth: a duplicate username would silently overwrite the
+      // existing user and desync the users<->groups invariant (see I2). The
+      // primary guard lives in UsuariosCrear.jsx's submitUser, which checks
+      // this before dispatching and shows a form error; this no-op protects
+      // the invariant for any other caller too, following the same
+      // no-op-on-duplicate pattern already used below by ADD_USER_TO_GROUP
+      // and ATTACH_POLICY.
+      if (state.users[username]) return state;
       return {
         ...state,
         users: {
@@ -93,6 +104,68 @@ export function iamReducer(state, action) {
             createdAt: nowIso(),
           },
         },
+      };
+    }
+
+    case 'SEED_LAB05': {
+      // Compound seed for Lab 05: atomically builds the whole scenario graph
+      // in a single dispatch, since createGroup/createPolicy/createUser
+      // generate ids inside the reducer and return nothing to the caller —
+      // three independent dispatches from the seed function can never wire
+      // themselves together afterward (see C1).
+      const groupName = 'lab05-soporte';
+      const alreadySeeded = Object.values(state.groups).some((g) => g.name === groupName);
+      if (alreadySeeded) return state; // idempotent: ya sembrado
+
+      const username = 'lab05-usuario-soporte';
+      const groupId = generateId('grp');
+      const allowPolicyId = generateId('pol');
+      const denyPolicyId = generateId('pol');
+      const bucketPattern = 'arn:aws:s3:::practicas-curso/*';
+
+      const existingUser = state.users[username];
+      const user = existingUser ?? {
+        username,
+        courseTag: 'lab=05',
+        accessType: 'console',
+        password: 'Soporte2026!!',
+        requirePasswordReset: true,
+        mfaEnabled: false,
+        accessKey: null,
+        credentialsDownloaded: false,
+        groups: [],
+        policies: [],
+        createdAt: nowIso(),
+      };
+
+      const allowPolicy = {
+        id: allowPolicyId,
+        name: 'Lab05-AccesoSoporte',
+        type: 'Propia del curso',
+        document: { Version: '2012-10-17', Statement: [{ Effect: 'Allow', Action: 's3:*', Resource: bucketPattern }] },
+        createdAt: nowIso(),
+      };
+      const denyPolicy = {
+        id: denyPolicyId,
+        name: 'Lab05-DenegarSubida',
+        type: 'Propia del curso',
+        document: { Version: '2012-10-17', Statement: [{ Effect: 'Deny', Action: 's3:PutObject', Resource: bucketPattern }] },
+        createdAt: nowIso(),
+      };
+      const group = {
+        id: groupId,
+        name: groupName,
+        desc: 'Precargado por el Laboratorio 05',
+        policies: [allowPolicyId, denyPolicyId],
+        members: [username],
+        createdAt: nowIso(),
+      };
+
+      return {
+        ...state,
+        users: { ...state.users, [username]: { ...user, groups: [...user.groups, groupId] } },
+        groups: { ...state.groups, [groupId]: group },
+        policies: { ...state.policies, [allowPolicyId]: allowPolicy, [denyPolicyId]: denyPolicy },
       };
     }
 
