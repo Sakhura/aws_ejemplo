@@ -965,7 +965,7 @@ Create `src/pages/Usuarios.jsx`:
 ```jsx
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { IconSearch } from '../components/icons.jsx';
+import { IconCheck, IconSearch } from '../components/icons.jsx';
 import { Tag, ViewHeader } from '../components/ui.jsx';
 import { useIamState, useIamDispatch } from '../state/iamStore.jsx';
 import { deleteUser, setMfaEnabled, attachPolicy, detachPolicy } from '../state/iamReducer.js';
@@ -1016,7 +1016,7 @@ export default function Usuarios() {
                   <td>
                     <label className="checkbox">
                       <input type="checkbox" checked={u.mfaEnabled} onChange={(e) => dispatch(setMfaEnabled(u.username, e.target.checked))} />
-                      <span className="box" />
+                      <span className="box"><IconCheck /></span>
                       <span>{u.mfaEnabled ? 'Activo' : 'Inactivo'}</span>
                     </label>
                   </td>
@@ -2203,6 +2203,7 @@ Create `src/pages/PolicySimulator.jsx`:
 ```jsx
 import { useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
+import { IconCheck } from '../components/icons.jsx';
 import { ViewHeader } from '../components/ui.jsx';
 import { useIamState } from '../state/iamStore.jsx';
 import { evaluate, evaluateAgainstDocument } from '../state/policyEngine.js';
@@ -2294,7 +2295,7 @@ export default function PolicySimulator() {
               </div>
               <label className="checkbox">
                 <input type="checkbox" checked={mfaPresent} onChange={(e) => setMfaPresent(e.target.checked)} />
-                <span className="box" />
+                <span className="box"><IconCheck /></span>
                 <span>Simular con MFA presente</span>
               </label>
             </>
