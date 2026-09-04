@@ -597,6 +597,14 @@ const MODULO_10 = [
     resumen: 'PutItem, Query, el permiso IAM sobre el ARN exacto de la tabla, y cómo diagnosticar ResourceNotFoundException vs. AccessDeniedException.',
     requisito: 'Módulo 10 · Clases 1 a 6',
   },
+  {
+    to: '/aprendizaje/aws-desde-cero/modulo-10/clase-8',
+    numero: 8,
+    duracion: '60 min',
+    titulo: 'Laboratorio integrador: construir una API serverless completa para CloudShop',
+    resumen: 'Cierre práctico del módulo: cinco fallas simuladas de integración para diagnosticar y corregir, uniendo Lambda, API Gateway, IAM y DynamoDB.',
+    requisito: 'Módulo 10 · Clases 1 a 7',
+  },
 ];
 
 function ClassGrid({ classes }) {

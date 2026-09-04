@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import {
   Icon, Nota, Dialogo, ConceptBadge, RoleGrid, Flow, QaItem, Reveal, Quiz, TrueFalseQuiz,
 } from './lessonComponents.jsx';
@@ -235,10 +236,12 @@ export default function Modulo10Clase7() {
         </section>
 
         <div className="bridge-callout">
-          <div className="lesson-eyebrow"><Icon name="arrow-right" /> Próximamente</div>
+          <div className="lesson-eyebrow"><Icon name="arrow-right" /> Puente hacia la Clase 8</div>
           <p>Ya tenemos todas las piezas por separado: Lambda, API Gateway, IAM, configuración, DynamoDB. Falta cerrar el módulo de la forma en que cerramos todos los anteriores: construyendo una API serverless completa para CloudShop, de principio a fin.</p>
           <ConceptBadge icon="zap">Módulo 10 · Clase 8 — Laboratorio integrador: construir una API serverless completa para CloudShop</ConceptBadge>
-          <span className="tag tag-outline">Módulo 10 · Clase 8 · próximamente</span>
+          <Link to="/aprendizaje/aws-desde-cero/modulo-10/clase-8" className="btn btn-primary" style={{ marginTop: 'var(--space-2)' }}>
+            Ir a Clase 8: Laboratorio integrador →
+          </Link>
         </div>
 
       </div>
