@@ -1,12 +1,5 @@
 // Sample data ported verbatim from design_handoff_panel_iam/Consola IAM.dc.html
 
-export const roles = [
-  { name: 'rol-lambda-informes', trust: 'Servicio: lambda', maxDuration: '1 h', lastActivity: 'Hace 2 horas' },
-  { name: 'rol-ec2-lectura-logs', trust: 'Servicio: ec2', maxDuration: '1 h', lastActivity: 'Hace 1 día' },
-  { name: 'rol-alumno-temporal', trust: 'Cuenta: 4820-1174-9930', maxDuration: '15 min', lastActivity: 'Hace 6 días' },
-  { name: 'rol-auditoria-curso', trust: 'Federación SAML', maxDuration: '4 h', lastActivity: 'Sin uso' },
-];
-
 export const policies = [
   { name: 'LecturaS3', type: 'Propia del curso', attachedTo: '1 grupo', scope: { text: 'Solo lectura', variant: 'accent' } },
   { name: 'EC2Laboratorio', type: 'Propia del curso', attachedTo: '1 grupo', scope: { text: 'Lectura y arranque', variant: 'neutral' } },
