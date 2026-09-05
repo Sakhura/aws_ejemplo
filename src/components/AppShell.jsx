@@ -95,6 +95,10 @@ export default function AppShell() {
           <Outlet />
         </main>
       </div>
+
+      <footer className="app-footer">
+        <strong>Nube Académica</strong> es un proyecto educativo sin fines de lucro, creado entre nosotros dos.
+      </footer>
     </div>
   );
 }

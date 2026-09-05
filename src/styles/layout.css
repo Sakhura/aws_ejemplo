@@ -12,6 +12,16 @@
 }
 .disclaimer-bar strong { color: var(--color-accent-300); font-weight: 600; }
 
+.app-footer {
+  padding: var(--space-4) var(--space-6);
+  background: var(--color-neutral-900);
+  border-top: 1px solid var(--color-divider);
+  font-size: 11.5px;
+  text-align: center;
+  color: color-mix(in srgb, var(--color-text) 55%, transparent);
+}
+.app-footer strong { color: var(--color-accent-300); font-weight: 600; }
+
 .app-shell {
   min-height: 100vh;
   background: var(--color-bg);
