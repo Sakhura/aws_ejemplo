@@ -20,6 +20,8 @@
   text-align: center;
   color: color-mix(in srgb, var(--color-text) 55%, transparent);
 }
+.app-footer p { margin: 0; }
+.app-footer p + p { margin-top: 2px; opacity: 0.75; }
 .app-footer strong { color: var(--color-accent-300); font-weight: 600; }
 
 .app-shell {

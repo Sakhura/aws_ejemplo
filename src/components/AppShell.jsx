@@ -97,7 +97,8 @@ export default function AppShell() {
       </div>
 
       <footer className="app-footer">
-        <strong>Nube Académica</strong> es un proyecto educativo sin fines de lucro, creado entre nosotros dos.
+        <p><strong>Nube Académica</strong> es un proyecto educativo sin fines de lucro, creado entre Sabina Romero y Claude.</p>
+        <p>Agosto 2026</p>
       </footer>
     </div>
   );
